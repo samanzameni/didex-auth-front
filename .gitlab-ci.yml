@@ -1,0 +1,34 @@
+variables:
+  RELEASE_FOLDER: 'dist\didex-auth'
+  DEPLOY_FOLDER: 'c:\sites\didex.authClient'
+
+stages:
+  # - build
+  # - test
+  - deploy
+
+# build_job:
+#   stage: build
+#   only:
+#     - tags
+#   script:
+#     - npm i
+#     - npm run build-dev
+# test_job:
+#   stage: test
+#   only:
+#     - tags
+#   script:
+#     - dir
+
+deploy_job:
+  stage: deploy
+  only:
+    - tags
+  script:
+    - npm i
+    - npm run build-dev
+    - xcopy  /S /Q /Y /F .\dist\didex-exchange C:\sites\didex.authClient\
+  # dependencies:
+  #   - build_job
+  #   - test_job
