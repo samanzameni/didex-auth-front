@@ -28,7 +28,7 @@ deploy_job:
   script:
     - npm i
     - npm run build-dev
-    - xcopy  /S /Q /Y /F .\dist\didex-exchange C:\sites\didex.authClient\
+    - xcopy  /S /Q /Y /F .\dist\didex-auth C:\sites\didex.authClient\
   # dependencies:
   #   - build_job
   #   - test_job
