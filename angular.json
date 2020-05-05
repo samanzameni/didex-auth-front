@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "didex-auth"
+    }
+  },
+  "defaultProject": "didex-auth",
+  "cli": {
+    "analytics": "13a19652-4b51-4faa-bf6a-95ecb5759124"
+  }
 }

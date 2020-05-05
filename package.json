@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --aot --port 4001",
+    "build": "ng build --prod --aot --base-href /auth/ --deploy-url /auth/",
+    "build-dev": "ng build --aot --base-href /auth/ --deploy-url /auth/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -12,10 +13,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.0",
+    "@angular/cdk": "^9.2.2",
     "@angular/common": "~9.1.0",
     "@angular/compiler": "~9.1.0",
     "@angular/core": "~9.1.0",
     "@angular/forms": "~9.1.0",
+    "@angular/material": "^9.2.2",
     "@angular/platform-browser": "~9.1.0",
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/router": "~9.1.0",
