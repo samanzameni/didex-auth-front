@@ -73,7 +73,7 @@ export class ResetPasswordPageComponent extends AuthPageDirective
       (response) => {
         this.setLoadingOff();
         setTimeout(() => {
-          this.router.navigateByUrl('/auth/signin');
+          this.router.navigateByUrl('/signin');
         }, 1500);
       },
       (errorResponse) => {
