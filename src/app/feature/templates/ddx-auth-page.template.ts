@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 import { AuthService } from '@core/services';
 import { ProButtonComponent } from '@widget/components';
 import { CONSTANTS } from '@core/util/constants';
+import { environment } from '@environments/environment';
 
 @Directive()
 export abstract class AuthPageDirective implements AfterViewInit {
@@ -116,6 +117,21 @@ export abstract class AuthPageDirective implements AfterViewInit {
 
   setReCaptchaToken(token: string): void {
     this.authForm.controls.token.setValue(token);
+  }
+
+  handleRedirectionOnSuccess(): void {
+    // TODO: it's bullshit :D
+    const link = document.createElement('a');
+    const baseURL =
+      'https://' + (environment.production ? '' : 'dev.') + 'didex.com';
+    link.href = `${baseURL}/invest`;
+    link.style.width = '1px';
+    link.style.height = '1px';
+    link.style.position = 'fixed';
+    link.style.top = '0';
+    link.style.left = '0';
+    document.getElementsByTagName('body')[0].appendChild(link);
+    link.click();
   }
 
   abstract onSubmit(): void;

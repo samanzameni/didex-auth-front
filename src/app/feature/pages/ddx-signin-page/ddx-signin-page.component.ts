@@ -45,7 +45,7 @@ export class SignInPageComponent extends AuthPageDirective
     this.authService.requestSignIn(formData as AuthFormData).subscribe(
       (response) => {
         this.setLoadingOff();
-        this.router.navigateByUrl('/');
+        this.handleRedirectionOnSuccess();
       },
       (errorResponse) => {
         this.setLoadingOff();
