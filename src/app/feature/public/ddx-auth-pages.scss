@@ -1,0 +1,149 @@
+@import '../../../styles.scss';
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+
+  background: $ddx-dark-deep;
+  background: linear-gradient(to top right, $ddx-dark-deep, $ddx-dark-main);
+
+  form {
+    color: $ddx-light;
+    box-sizing: border-box;
+    padding: 10px;
+
+    .title {
+      display: flex;
+      align-items: center;
+
+      img {
+        height: 30px;
+        object-fit: contain;
+        margin-right: 5px;
+      }
+
+      b {
+        margin: 0 5px;
+      }
+    }
+
+    .password-hints-container {
+      margin: 0px 0 10px 0;
+
+      li {
+        position: relative;
+        font-size: 10px;
+        margin: 0 2px;
+        padding-left: 15px;
+        transition: cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:before {
+          content: '\2022';
+          display: flex;
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          top: 3px;
+          left: 0;
+          color: $ddx-light;
+          font-size: 20px;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &.approved {
+          color: $ddx-green;
+
+          &:before {
+            color: $ddx-green;
+          }
+        }
+      }
+    }
+
+    ::ng-deep mat-checkbox,
+    mat-checkbox {
+      margin-bottom: 10px;
+
+      ::ng-deep .mat-checkbox-label,
+      .mat-checkbox-label {
+        line-height: 15px;
+        white-space: normal;
+      }
+    }
+
+    .description {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      margin-top: 15px;
+
+      p {
+        width: 50%;
+        flex-shrink: 0;
+        color: $ddx-light-darker;
+        font-weight: lighter;
+
+        a,
+        a:hover,
+        a:active {
+          color: $ddx-accent-main;
+          text-decoration: none;
+          font-weight: normal;
+        }
+      }
+
+      p.captcha {
+        display: none;
+        text-align: left;
+      }
+
+      p.message {
+        text-align: center;
+      }
+
+      p.forgot-password {
+        width: 100%;
+        text-align: right;
+      }
+    }
+
+    .recaptcha-container {
+      margin-bottom: 5px;
+      height: 78px;
+    }
+
+    .forgot-password {
+      width: 100%;
+      font-weight: lighter;
+      text-align: right;
+
+      a,
+      a:hover,
+      a:active {
+        color: $ddx-accent-main;
+        text-decoration: none;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $break-narrow-mobile) {
+  :host {
+    form {
+      .description {
+        p.captcha {
+          display: block;
+        }
+
+        p.message {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

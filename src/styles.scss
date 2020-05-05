@@ -1,32 +1,57 @@
+@import 'assets/styles/reset';
+@import 'assets/styles/colors';
+@import 'assets/styles/constants';
+@import 'assets/styles/overpass';
 
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
-// Plus imports for other components in your app.
+@import 'assets/styles/kit';
 
-// Include the common styles for Angular Material. We include this here so that you only
-// have to load a single css file for Angular Material in your app.
-// Be sure that you only ever include this mixin once!
-@include mat-core();
+body {
+  font-family: 'overpass';
+  font-size: 12px;
+  line-height: 14px !important;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: $ddx-dark-deep;
+  color: $ddx-light;
+}
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$didex-auth-primary: mat-palette($mat-indigo);
-$didex-auth-accent: mat-palette($mat-pink, A200, A100, A400);
+a,
+a:active {
+  color: $ddx-light;
+}
 
-// The warn palette is optional (defaults to red).
-$didex-auth-warn: mat-palette($mat-red);
+.mat-form-field-wrapper {
+  margin-top: 0.75em;
+  margin-bottom: 0.25em;
+  padding-bottom: 0.25em;
+}
 
-// Create the theme object (a Sass map containing all of the palettes).
-$didex-auth-theme: mat-light-theme($didex-auth-primary, $didex-auth-accent, $didex-auth-warn);
+.mat-error {
+  margin: 4px 0;
+}
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
-@include angular-material-theme($didex-auth-theme);
+* {
+  scrollbar-color: rgba($ddx-light, 0.2) rgba($ddx-light, 0.1); /* thumb and track color */
+  scrollbar-width: 5px;
+}
 
-/* You can add global styles to this file, and also import other style files */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba($ddx-light, 0.1);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba($ddx-light, 0.2);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba($ddx-light, 0.3);
+}

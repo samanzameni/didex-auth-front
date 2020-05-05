@@ -1,0 +1,9 @@
+export const CONSTANTS = {
+  SERVER_URL: 'https://api.didex.com/',
+  MOCK_SERVER_URL: 'https://devapi.didex.com/',
+  PHONE_VERIFICATION_CODE_LENGTH: 6,
+  PAGINATION_LIMIT_BIG: 100,
+  PAGINATION_LIMIT: 25,
+  PAGINATION_LIMIT_SMALL: 10,
+  RECAPTCHA_SITE_KEY: '6LcgguIUAAAAAE1GXYfJd7z-uEah67Dd9kTgWcpz',
+};
