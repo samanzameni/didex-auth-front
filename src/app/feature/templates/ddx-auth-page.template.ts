@@ -120,18 +120,9 @@ export abstract class AuthPageDirective implements AfterViewInit {
   }
 
   handleRedirectionOnSuccess(): void {
-    // TODO: it's bullshit :D
-    const link = document.createElement('a');
-    const baseURL =
+    const url =
       'https://' + (environment.production ? '' : 'dev.') + 'didex.com';
-    link.href = `${baseURL}/invest`;
-    link.style.width = '1px';
-    link.style.height = '1px';
-    link.style.position = 'fixed';
-    link.style.top = '0';
-    link.style.left = '0';
-    document.getElementsByTagName('body')[0].appendChild(link);
-    link.click();
+    window.open(url);
   }
 
   abstract onSubmit(): void;

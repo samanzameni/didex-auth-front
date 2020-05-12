@@ -1,10 +1,17 @@
-import { Component, OnInit, Renderer2, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Renderer2,
+  AfterViewInit,
+  OnDestroy,
+} from '@angular/core';
 import { AuthPageDirective } from '@feature/templates/ddx-auth-page.template';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '@core/services';
 import { AuthFormData } from '@core/models';
 import { environment } from '@environments/environment';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'ddx-signin-page',
@@ -15,14 +22,18 @@ import { environment } from '@environments/environment';
   ],
 })
 export class SignInPageComponent extends AuthPageDirective
-  implements OnInit, AfterViewInit {
+  implements OnInit, AfterViewInit, OnDestroy {
+  private paramSubscription: Subscription;
+  private redirectURL: string;
   constructor(
     protected formBuilder: FormBuilder,
     protected renderer: Renderer2,
+    protected route: ActivatedRoute,
     protected router: Router,
     protected authService: AuthService
   ) {
     super(formBuilder, renderer, router, authService);
+    this.redirectURL = null;
   }
 
   ngOnInit() {
@@ -31,10 +42,22 @@ export class SignInPageComponent extends AuthPageDirective
       password: ['', [Validators.required]],
       token: ['', environment.production ? [Validators.required] : []],
     });
+
+    this.paramSubscription = this.route.queryParams.subscribe((params) => {
+      if (params) {
+        this.redirectURL = params.from;
+      }
+    });
   }
 
   ngAfterViewInit(): void {
     super.ngAfterViewInit();
+  }
+
+  ngOnDestroy(): void {
+    if (this.paramSubscription) {
+      this.paramSubscription.unsubscribe();
+    }
   }
 
   onSubmit(): void {
@@ -45,11 +68,18 @@ export class SignInPageComponent extends AuthPageDirective
     this.authService.requestSignIn(formData as AuthFormData).subscribe(
       (response) => {
         this.setLoadingOff();
-        this.handleRedirectionOnSuccess();
+        if (this.redirectURL && this.redirectURL.length > 0) {
+          this.router.navigateByUrl(
+            this.router.parseUrl(
+              '/external-redirect?redirect_url='.concat(this.redirectURL)
+            )
+          );
+        } else {
+          this.handleRedirectionOnSuccess();
+        }
       },
       (errorResponse) => {
         this.setLoadingOff();
-        // alert(JSON.stringify(errorResponse));
 
         if (errorResponse.status === 400) {
           const errors = errorResponse.error.errors;
