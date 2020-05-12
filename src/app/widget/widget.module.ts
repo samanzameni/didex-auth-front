@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProButtonComponent } from './components';
+import {
+  ProButtonComponent,
+  ExternalUrlRedirectorComponent,
+} from './components';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -27,6 +30,7 @@ import {
     ArrangeStackDirective,
     //
     ProButtonComponent,
+    ExternalUrlRedirectorComponent,
   ],
   imports: [
     CommonModule,
@@ -50,6 +54,7 @@ import {
     ArrangeStackDirective,
     //
     ProButtonComponent,
+    ExternalUrlRedirectorComponent,
   ],
 })
 export class WidgetModule {}

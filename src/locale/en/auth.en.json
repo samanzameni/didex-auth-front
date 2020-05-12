@@ -1,1 +1,84 @@
-{}
+{
+  "activate": {
+    "success_all_set": "All set!",
+    "success_redirect_message": "You will be redirected to homepage soon ...",
+    "error_error": "Error!",
+    "error_message": "An error occured while activating your account."
+  },
+
+  "forgot": {
+    "title": "Forgot DidEx password?",
+    "email": "Email",
+    "email_placeholder": "abc@example.com",
+    "email_error_required": "Email is required",
+    "email_error_invalid": "Email must be a valid address",
+    "reset_button": "Reset",
+    "reset_message": "Guideline for resetting your password has been sent to: ",
+    "remember_message": "Remembered your password?",
+    "sign_in": "Sign In"
+  },
+
+  "reset": {
+    "title": "Reset you password",
+    "new_password": "New Password",
+    "password_hint_length": "Must be at least 8 characters",
+    "password_hint_lower": "Must contain a lower case character",
+    "password_hint_upper": "Must contain an upper case character",
+    "password_hint_number": "Must contain a number/digit",
+    "password_hint_sign": "Must contain a sign",
+    "confirm_password": "Confirm Password",
+    "confirm_password_error_required": "Password must be confirmed",
+    "confirm_password_error_match": "Passwords must match",
+    "reset_button": "Reset"
+  },
+
+  "signin": {
+    "title": "Sign in to DidEx",
+    "forgot_password": "Forgot password?",
+    "email": "Email",
+    "email_placeholder": "abc@example.com",
+    "email_error_required": "Email is required",
+    "email_error_invalid": "Email must be a valid address",
+    "password": "Password",
+    "password_error_required": "Password is required",
+    "sign_in": "Sign In",
+    "recaptcha_message_before": "This site is protected by reCAPTCHA and the Google",
+    "recaptcha_message_privacy": "Privacy Policy",
+    "recaptcha_message_between": "and",
+    "recapthca_message_terms": "Terms of Service",
+    "recaptcha_message_after": "apply",
+    "not_a_member": "Not a member?",
+    "sign_up": "Sign Up"
+  },
+
+  "signup": {
+    "title": "Sign up for DidEx",
+    "email": "Email",
+    "email_placeholder": "abc@example.com",
+    "email_error_required": "Email is required",
+    "email_error_invalid": "Email must be a valid address",
+    "password": "Password",
+    "password_hint_length": "Must be at least 8 characters",
+    "password_hint_lower": "Must contain a lower case character",
+    "password_hint_upper": "Must contain an upper case character",
+    "password_hint_number": "Must contain a number/digit",
+    "password_hint_sign": "Must contain a sign",
+    "confirm_password": "Confirm Password",
+    "confirm_password_error_required": "Password must be confirmed",
+    "confirm_password_error_match": "Passwords must match",
+    "terms_check": "Creating an account means you’re okay with our Terms of Service, Privacy Policy, and our default Notification Settings.",
+    "sign_in": "Sign In",
+    "recaptcha_message_before": "This site is protected by reCAPTCHA and the Google",
+    "recaptcha_message_privacy": "Privacy Policy",
+    "recaptcha_message_between": "and",
+    "recapthca_message_terms": "Terms of Service",
+    "recaptcha_message_after": "apply",
+    "not_a_member": "Not a member?",
+    "sign_up": "Sign Up"
+  },
+
+  "success": {
+    "title": "Success!",
+    "message": "Check your mailbox for the activation email"
+  }
+}
