@@ -85,6 +85,6 @@ export class AuthService {
     );
     this.storageService.clearUserToken();
     this.isUserAuthorized = false;
-    this.router.navigateByUrl('/auth/signin');
+    this.router.navigateByUrl('/signin');
   }
 }

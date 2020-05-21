@@ -69,7 +69,7 @@ export class SignUpPageComponent extends AuthPageDirective
     this.authService.requestSignUp(formData as AuthFormData).subscribe(
       (response) => {
         this.setLoadingOff();
-        this.router.navigateByUrl('/auth/signup/success');
+        this.router.navigateByUrl('/signup/success');
       },
       (errorResponse) => {
         this.setLoadingOff();
