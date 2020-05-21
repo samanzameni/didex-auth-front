@@ -30,7 +30,7 @@ export class ActivateEmailPageComponent implements OnInit {
     const link = document.createElement('a');
     const baseURL =
       'https://' + (environment.production ? '' : 'dev.') + 'didex.com';
-    link.href = `${baseURL}/invest`;
+    link.href = `${baseURL}`;
     link.style.width = '1px';
     link.style.height = '1px';
     link.style.position = 'fixed';
