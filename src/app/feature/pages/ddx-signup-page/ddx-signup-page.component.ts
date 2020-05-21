@@ -86,7 +86,7 @@ export class SignUpPageComponent extends AuthPageDirective
           }
 
           for (const key of Object.keys(errors)) {
-            if (!['email', 'password'].includes(key)) {
+            if (!['email', 'password', 'default'].includes(key)) {
               alert(`An error occured: There is something wrong with ${key}`);
             }
           }

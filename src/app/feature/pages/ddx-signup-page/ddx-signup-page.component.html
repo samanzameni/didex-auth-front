@@ -6,7 +6,8 @@
   #form
 >
   <h1 class="title">
-    <img src="assets/images/logo-white-symbol.svg" alt="logo" /> Sign up for
+    <a href="/"><img src="assets/images/logo-white-symbol.svg" alt="logo" /></a>
+    Sign up for
     <b>DidEx</b>
   </h1>
   <hr class="title-seperator" />
@@ -21,14 +22,15 @@
       id="email"
       placeholder="abc@example.com"
     />
-
+  </mat-form-field>
+  <ng-container *ngIf="authFormGroup.controls.email.dirty">
     <mat-error *ngIf="authFormGroup.controls.email.hasError('required')"
       >Email is required</mat-error
     >
     <mat-error *ngIf="authFormGroup.controls.email.hasError('email')">
       Email must be a valid address
     </mat-error>
-  </mat-form-field>
+  </ng-container>
   <ng-container *ngIf="authFormErrors && authFormErrors.email">
     <mat-error *ngFor="let error of authFormErrors.email">
       {{ error }}
@@ -81,8 +83,8 @@
       Must contain a sign
     </li>
   </ul>
-  <ng-container *ngIf="authFormErrors && authFormErrors.email">
-    <mat-error *ngFor="let error of authFormErrors.email">
+  <ng-container *ngIf="authFormErrors && authFormErrors.password">
+    <mat-error *ngFor="let error of authFormErrors.password">
       {{ error }}
     </mat-error>
   </ng-container>
@@ -99,6 +101,8 @@
     <mat-icon matSuffix (click)="toggleHidePassword()">{{
       isHidden ? 'visibility_off' : 'visibility'
     }}</mat-icon>
+  </mat-form-field>
+  <ng-container *ngIf="authFormGroup.controls.confirmPassword.dirty">
     <mat-error
       *ngIf="authFormGroup.controls.confirmPassword.hasError('required')"
     >
@@ -109,7 +113,7 @@
     >
       Passwords must match
     </mat-error>
-  </mat-form-field>
+  </ng-container>
 
   <mat-checkbox formControlName="acceptedTerms" required #checkbox
     >Creating an account means you’re okay with our Terms of Service, Privacy
@@ -118,6 +122,12 @@
 
   <div arrangeCenter #recaptcha class="recaptcha-container"></div>
   <input type="hidden" name="token" formControlName="token" value="" />
+
+  <ng-container *ngIf="authFormErrors && authFormErrors.default">
+    <mat-error *ngFor="let error of authFormErrors.default">
+      {{ error }}
+    </mat-error>
+  </ng-container>
 
   <pro-button
     color="primary"
