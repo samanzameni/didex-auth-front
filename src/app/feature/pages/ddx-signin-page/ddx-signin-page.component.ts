@@ -68,14 +68,26 @@ export class SignInPageComponent extends AuthPageDirective
     this.authService.requestSignIn(formData as AuthFormData).subscribe(
       (response) => {
         this.setLoadingOff();
-        if (this.redirectURL && this.redirectURL.length > 0) {
-          this.router.navigateByUrl(
-            this.router.parseUrl(
-              '/external-redirect?redirect_url='.concat(this.redirectURL)
-            )
-          );
-        } else {
-          this.handleRedirectionOnSuccess();
+        if (response.status === 200) {
+          if (this.redirectURL && this.redirectURL.length > 0) {
+            this.router.navigateByUrl(
+              this.router.parseUrl(
+                '/external-redirect?redirect_url='.concat(this.redirectURL)
+              )
+            );
+          } else {
+            this.handleRedirectionOnSuccess();
+          }
+        } else if (response.status === 202) {
+          if (this.redirectURL && this.redirectURL.length > 0) {
+            this.router.navigateByUrl(
+              this.router.parseUrl(
+                '/signin/two-factor?redirect_url='.concat(this.redirectURL)
+              )
+            );
+          } else {
+            this.router.navigateByUrl('/signin/two-factor');
+          }
         }
       },
       (errorResponse) => {

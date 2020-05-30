@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import * as jwtDecode from 'jwt-decode';
+import { HttpResponse } from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
@@ -43,8 +44,23 @@ export class AuthService {
     return this.restService.requestNewPassword(formData);
   }
 
-  public requestSignIn(formData: AuthFormData): Observable<AuthFormResponse> {
+  public requestSignIn(
+    formData: AuthFormData
+  ): Observable<HttpResponse<AuthFormResponse>> {
     return this.restService.requestLogin(formData).pipe(
+      tap((response) => {
+        if (response.status === 200) {
+          this.storageService.setUserAccessToken({
+            didexAccessToken: response.body.token,
+          });
+          this.isUserAuthorized = true;
+        }
+      })
+    );
+  }
+
+  public requestTwoFactorSignIn(formData: any): Observable<any> {
+    return this.restService.requestTwoFactorLogin(formData).pipe(
       tap((response) => {
         this.storageService.setUserAccessToken({
           didexAccessToken: response.token,

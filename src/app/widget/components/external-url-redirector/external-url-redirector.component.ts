@@ -22,6 +22,7 @@ export class ExternalUrlRedirectorComponent implements OnInit, OnDestroy {
   }
 
   redirectTo(url: string): void {
+    console.log(url);
     const link = document.createElement('a');
     link.href = url;
     link.style.width = '1px';

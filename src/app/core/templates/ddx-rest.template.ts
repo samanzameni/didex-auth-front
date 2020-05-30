@@ -1,4 +1,9 @@
-import { HttpHeaders, HttpClient, HttpRequest } from '@angular/common/http';
+import {
+  HttpHeaders,
+  HttpClient,
+  HttpRequest,
+  HttpResponse,
+} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { StorageService } from '@core/services/ddx-storage.service';
@@ -72,12 +77,48 @@ export abstract class AbstractRESTService {
   }
 
   /**
+   * Sends a custom request to the url + base WITHOUT custom headers,
+   * so be careful using this.
+   *
+   */
+  protected httpPureRequestWithFullResponse(
+    url: string,
+    method: string,
+    body?: object
+  ): Observable<HttpResponse<any>> {
+    url = this.baseURL + url;
+    switch (method) {
+      case 'GET':
+        return this.http.get(url, { observe: 'response' });
+      case 'POST':
+        return this.http.post(url, body, { observe: 'response' });
+      case 'PUT':
+        return this.http.put(url, body, { observe: 'response' });
+      case 'DELETE':
+        return this.http.delete(url, { observe: 'response' });
+      default:
+        return undefined;
+    }
+  }
+
+  /**
    * Sends a GET request with custom headers
    *
    */
   public httpGET(url: string): Observable<any> {
     return this.http.get(this.baseURL + url, {
       headers: this.getFullHeaders(),
+    });
+  }
+
+  /**
+   * Sends a GET request with custom headers
+   *
+   */
+  public httpGETWithFullResponse(url: string): Observable<any> {
+    return this.http.get(this.baseURL + url, {
+      headers: this.getFullHeaders(),
+      observe: 'response',
     });
   }
 

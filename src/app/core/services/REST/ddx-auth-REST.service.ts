@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AbstractRESTService } from '@core/templates';
 import { StorageService } from '../ddx-storage.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import {
   AuthFormData,
   AuthFormResponse,
@@ -28,12 +28,22 @@ export class AuthRESTService extends AbstractRESTService {
     ) as Observable<AuthFormResponse>;
   }
 
-  public requestLogin(data: AuthFormData): Observable<AuthFormResponse> {
-    return this.httpPureRequest(
+  public requestLogin(
+    data: AuthFormData
+  ): Observable<HttpResponse<AuthFormResponse>> {
+    return this.httpPureRequestWithFullResponse(
       `api/Account/login`,
       'POST',
       data
-    ) as Observable<AuthFormResponse>;
+    ) as Observable<HttpResponse<AuthFormResponse>>;
+  }
+
+  public requestTwoFactorLogin(data: any): Observable<any> {
+    return this.httpPureRequestWithFullResponse(
+      `api/Account/twoFactorLogin`,
+      'POST',
+      data
+    ) as Observable<any>;
   }
 
   public requestResetPassword(

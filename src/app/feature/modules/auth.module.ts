@@ -11,6 +11,7 @@ import {
   SignUpSuccessPageComponent,
   ResetPasswordPageComponent,
   ActivateEmailPageComponent,
+  TwoFactorSigninPageComponent,
 } from '@feature/pages';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'signin',
     component: SignInPageComponent,
+  },
+  {
+    path: 'signin/two-factor',
+    component: TwoFactorSigninPageComponent,
   },
   {
     path: 'signup',
@@ -60,6 +65,7 @@ const routes: Routes = [
     SignUpSuccessPageComponent,
     ResetPasswordPageComponent,
     ActivateEmailPageComponent,
+    TwoFactorSigninPageComponent,
   ],
   imports: [
     CommonModule,
