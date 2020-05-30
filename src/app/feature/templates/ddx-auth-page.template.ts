@@ -122,7 +122,16 @@ export abstract class AuthPageDirective implements AfterViewInit {
   handleRedirectionOnSuccess(): void {
     const url =
       'https://' + (environment.production ? '' : 'dev.') + 'didex.com';
-    window.open(url);
+    const link = document.createElement('a');
+    link.href = url;
+    link.style.width = '1px';
+    link.style.height = '1px';
+    link.style.position = 'fixed';
+    link.style.top = '0';
+    link.style.left = '0';
+    link.target = '_self';
+    document.getElementsByTagName('body')[0].appendChild(link);
+    link.click();
   }
 
   abstract onSubmit(): void;

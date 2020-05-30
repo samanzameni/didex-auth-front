@@ -1,0 +1,40 @@
+<form
+  #disableForm="ngForm"
+  autocomplete="off"
+  arrangeStack
+  [formGroup]="authFormGroup"
+  (ngSubmit)="onSubmit()"
+>
+  <h1 class="title">
+    <a href="/"><img src="assets/images/logo-white-symbol.svg" alt="logo" /></a>
+    Two Factor Authentication
+  </h1>
+  <hr class="title-seperator" />
+
+  <mat-form-field appearance="outline">
+    <mat-label>Code</mat-label>
+    <input matInput type="text" name="code" formControlName="code" required />
+  </mat-form-field>
+  <mat-hint>Code from your authenticator app</mat-hint>
+  <ng-container *ngIf="authFormGroup.controls.code.dirty">
+    <mat-error *ngIf="authFormGroup.controls.code.hasError('required')"
+      >Code is required
+    </mat-error>
+  </ng-container>
+  <ng-container *ngIf="!!authFormErrors && authFormErrors.code">
+    <mat-error *ngFor="let error of authFormErrors.code">{{ error }}</mat-error>
+  </ng-container>
+  <ng-container *ngIf="!!authFormErrors && authFormErrors.default">
+    <mat-error *ngFor="let error of authFormErrors.default">{{
+      error
+    }}</mat-error>
+  </ng-container>
+  <pro-button
+    color="primary"
+    type="submit"
+    [disabled]="!isFormValid"
+    #submitButton
+  >
+    Sign in
+  </pro-button>
+</form>
