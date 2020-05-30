@@ -89,13 +89,25 @@ export abstract class AbstractRESTService {
     url = this.baseURL + url;
     switch (method) {
       case 'GET':
-        return this.http.get(url, { observe: 'response' });
+        return this.http.get(url, {
+          observe: 'response',
+          withCredentials: true,
+        });
       case 'POST':
-        return this.http.post(url, body, { observe: 'response' });
+        return this.http.post(url, body, {
+          observe: 'response',
+          withCredentials: true,
+        });
       case 'PUT':
-        return this.http.put(url, body, { observe: 'response' });
+        return this.http.put(url, body, {
+          observe: 'response',
+          withCredentials: true,
+        });
       case 'DELETE':
-        return this.http.delete(url, { observe: 'response' });
+        return this.http.delete(url, {
+          observe: 'response',
+          withCredentials: true,
+        });
       default:
         return undefined;
     }
