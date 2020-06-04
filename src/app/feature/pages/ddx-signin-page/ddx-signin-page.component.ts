@@ -4,6 +4,7 @@ import {
   Renderer2,
   AfterViewInit,
   OnDestroy,
+  ChangeDetectorRef,
 } from '@angular/core';
 import { AuthPageDirective } from '@feature/templates/ddx-auth-page.template';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -30,9 +31,10 @@ export class SignInPageComponent extends AuthPageDirective
     protected renderer: Renderer2,
     protected route: ActivatedRoute,
     protected router: Router,
-    protected authService: AuthService
+    protected authService: AuthService,
+    protected cdRef: ChangeDetectorRef
   ) {
-    super(formBuilder, renderer, router, authService);
+    super(formBuilder, renderer, router, authService, cdRef);
     this.redirectURL = null;
   }
 
@@ -40,7 +42,8 @@ export class SignInPageComponent extends AuthPageDirective
     this.authForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
-      token: ['', environment.production ? [Validators.required] : []],
+      // token: ['', environment.production ? [Validators.required] : []],
+      token: ['', [Validators.required]],
     });
 
     this.paramSubscription = this.route.queryParams.subscribe((params) => {

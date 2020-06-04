@@ -1,4 +1,10 @@
-import { Component, OnInit, Renderer2, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Renderer2,
+  AfterViewInit,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '@core/services';
 import { AuthPageDirective } from '@feature/templates';
@@ -25,9 +31,10 @@ export class ResetPasswordPageComponent extends AuthPageDirective
     protected renderer: Renderer2,
     protected route: ActivatedRoute,
     protected authService: AuthService,
-    protected router: Router
+    protected router: Router,
+    protected cdRef: ChangeDetectorRef
   ) {
-    super(formBuilder, renderer, router, authService);
+    super(formBuilder, renderer, router, authService, cdRef);
   }
 
   ngOnInit(): void {
