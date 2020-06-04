@@ -4,6 +4,7 @@ import {
   ViewChild,
   Renderer2,
   AfterViewInit,
+  ChangeDetectorRef,
 } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { mustMatch, isStrong } from '@core/util/validators';
@@ -30,9 +31,10 @@ export class SignUpPageComponent extends AuthPageDirective
     protected formBuilder: FormBuilder,
     protected renderer: Renderer2,
     protected router: Router,
-    protected authService: AuthService
+    protected authService: AuthService,
+    protected cdRef: ChangeDetectorRef
   ) {
-    super(formBuilder, renderer, router, authService);
+    super(formBuilder, renderer, router, authService, cdRef);
   }
 
   ngOnInit() {

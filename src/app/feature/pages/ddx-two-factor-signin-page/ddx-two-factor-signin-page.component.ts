@@ -4,6 +4,7 @@ import {
   AfterViewInit,
   Renderer2,
   OnDestroy,
+  ChangeDetectorRef,
 } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -29,9 +30,10 @@ export class TwoFactorSigninPageComponent extends AuthPageDirective
     protected renderer: Renderer2,
     protected route: ActivatedRoute,
     protected authService: AuthService,
-    protected router: Router
+    protected router: Router,
+    protected cdRef: ChangeDetectorRef
   ) {
-    super(formBuilder, renderer, router, authService);
+    super(formBuilder, renderer, router, authService, cdRef);
   }
 
   ngOnInit(): void {

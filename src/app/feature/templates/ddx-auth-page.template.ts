@@ -5,6 +5,7 @@ import {
   Directive,
   ElementRef,
   AfterViewInit,
+  ChangeDetectorRef,
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@core/services';
@@ -25,7 +26,8 @@ export abstract class AuthPageDirective implements AfterViewInit {
     protected formBuilder: FormBuilder,
     protected renderer: Renderer2,
     protected router: Router,
-    protected authService: AuthService
+    protected authService: AuthService,
+    protected cdRef: ChangeDetectorRef
   ) {
     this.formErrors = {};
     this.isPasswordHidden = true;
@@ -117,6 +119,7 @@ export abstract class AuthPageDirective implements AfterViewInit {
 
   setReCaptchaToken(token: string): void {
     this.authForm.controls.token.setValue(token);
+    this.cdRef.detectChanges();
   }
 
   handleRedirectionOnSuccess(): void {
