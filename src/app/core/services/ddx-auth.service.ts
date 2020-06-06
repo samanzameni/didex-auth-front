@@ -62,6 +62,7 @@ export class AuthService {
   public requestTwoFactorSignIn(formData: any): Observable<any> {
     return this.restService.requestTwoFactorLogin(formData).pipe(
       tap((response) => {
+        debugger;
         this.storageService.setUserAccessToken({
           didexAccessToken: response.token,
         });
