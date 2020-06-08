@@ -9,7 +9,7 @@ import {
 } from '@core/models';
 import { StorageService } from './ddx-storage.service';
 import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { tap, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import * as jwtDecode from 'jwt-decode';
 import { HttpResponse } from '@angular/common/http';
@@ -61,6 +61,7 @@ export class AuthService {
 
   public requestTwoFactorSignIn(formData: any): Observable<any> {
     return this.restService.requestTwoFactorLogin(formData).pipe(
+      map((response) => response.body),
       tap((response) => {
         this.storageService.setUserAccessToken({
           didexAccessToken: response.token,

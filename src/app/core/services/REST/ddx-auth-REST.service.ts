@@ -38,12 +38,14 @@ export class AuthRESTService extends AbstractRESTService {
     ) as Observable<HttpResponse<AuthFormResponse>>;
   }
 
-  public requestTwoFactorLogin(data: any): Observable<any> {
+  public requestTwoFactorLogin(
+    data: any
+  ): Observable<HttpResponse<AuthFormResponse>> {
     return this.httpPureRequestWithFullResponse(
       `api/Account/twoFactorLogin`,
       'POST',
       data
-    ) as Observable<any>;
+    ) as Observable<HttpResponse<AuthFormResponse>>;
   }
 
   public requestResetPassword(
