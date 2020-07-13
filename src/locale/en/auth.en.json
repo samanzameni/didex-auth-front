@@ -3,7 +3,7 @@
     "success_all_set": "All set!",
     "success_redirect_message": "You will be redirected to homepage soon ...",
     "error_error": "Error!",
-    "error_message": "An error occured while activating your account."
+    "error_message": "An error occurred while activating your account."
   },
 
   "forgot": {
@@ -22,7 +22,7 @@
     "title": "Reset you password",
     "new_password": "New Password",
     "password_hint_length": "Must be at least 8 characters",
-    "password_hint_lower": "Must contain a lower case character",
+    "password_hint_lower": "Must contain at least a lowercase letter",
     "password_hint_upper": "Must contain an upper case character",
     "password_hint_number": "Must contain a number/digit",
     "password_hint_sign": "Must contain a sign",
@@ -52,21 +52,21 @@
   },
 
   "signup": {
-    "title": "Sign up for DidEx",
+    "title": "Sign up for a DidEx account",
     "email": "Email",
     "email_placeholder": "abc@example.com",
     "email_error_required": "Email is required",
     "email_error_invalid": "Email must be a valid address",
     "password": "Password",
     "password_hint_length": "Must be at least 8 characters",
-    "password_hint_lower": "Must contain a lower case character",
+    "password_hint_lower": "Must contain at least a lowercase letter",
     "password_hint_upper": "Must contain an upper case character",
     "password_hint_number": "Must contain a number/digit",
     "password_hint_sign": "Must contain a sign",
     "confirm_password": "Confirm Password",
     "confirm_password_error_required": "Password must be confirmed",
     "confirm_password_error_match": "Passwords must match",
-    "terms_check": "Creating an account means you’re okay with our Terms of Service, Privacy Policy, and our default Notification Settings.",
+    "terms_check": "I acknowledge that I have read, fully understand and agree to DidEx Terms of Service, Privacy Policy and default notification settings.",
     "sign_in": "Sign In",
     "recaptcha_message_before": "This site is protected by reCAPTCHA and the Google",
     "recaptcha_message_privacy": "Privacy Policy",
