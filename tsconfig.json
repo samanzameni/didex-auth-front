@@ -7,6 +7,7 @@
       "@feature/*": ["app/feature/*"],
       "@widget/*": ["app/widget/*"],
       "@assets/*": ["assets/*"],
+      "@locale/*": ["locale/*"],
       "@environments/*": ["environments/*"]
     },
     "outDir": "./dist/out-tsc",
@@ -20,7 +21,8 @@
     "target": "es2015",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

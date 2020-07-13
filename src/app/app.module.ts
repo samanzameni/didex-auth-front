@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from '@core/core.module';
 import { FeatureModule } from '@feature/feature.module';
 import { WidgetModule } from '@widget/widget.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +19,9 @@ import { WidgetModule } from '@widget/widget.module';
     CoreModule,
     FeatureModule,
     WidgetModule,
+    //
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

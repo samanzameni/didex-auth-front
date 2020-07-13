@@ -80,5 +80,13 @@
   "success": {
     "title": "Success!",
     "message": "Check your mailbox for the activation email"
+  },
+
+  "2fa": {
+    "title": "Two Factor Authentication",
+    "code": "Code",
+    "code_hint": "Code form your authenticator app",
+    "code_error_required": "Code is required",
+    "sign_in": "Sign In"
   }
 }

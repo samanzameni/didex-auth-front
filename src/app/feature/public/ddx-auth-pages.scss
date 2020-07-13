@@ -67,11 +67,20 @@
     ::ng-deep mat-checkbox,
     mat-checkbox {
       margin-bottom: 10px;
+      font-size: 12px;
 
       ::ng-deep .mat-checkbox-label,
       .mat-checkbox-label {
-        line-height: 15px;
+        line-height: 14px;
         white-space: normal;
+      }
+
+      ::ng-deep .mat-icon,
+      .mat-icon {
+        font-size: 15px;
+        line-height: 15px;
+        width: 15px;
+        height: 15px;
       }
     }
 

@@ -7,34 +7,35 @@
 >
   <h1 class="title">
     <a href="/"><img src="assets/images/logo-white-symbol.svg" alt="logo" /></a
-    >Sign in to
-    <b>DidEx</b>
+    >{{ 'auth.signin.title' | ddxLocale }}
   </h1>
   <hr class="title-seperator" />
 
   <p class="footnote forgot-password">
-    <a routerLink="/forgot-password">Forgot password?</a>
+    <a routerLink="/forgot-password">{{
+      'auth.signin.forgot_password' | ddxLocale
+    }}</a>
   </p>
 
   <mat-form-field appearance="outline" for="email">
-    <mat-label>Email</mat-label>
+    <mat-label>{{ 'auth.signin.email' | ddxLocale }}</mat-label>
     <input
       type="email"
       formControlName="email"
       matInput
       name="email"
       id="email"
-      placeholder="abc@example.com"
+      placeholder="{{ 'auth.signin.email_placeholder' | ddxLocale }}"
       autofocus
       #emailInput
     />
   </mat-form-field>
   <ng-container *ngIf="authFormControls.email.dirty">
     <mat-error *ngIf="authFormControls.email.hasError('required')">
-      Email is required
+      {{ 'auth.signin.email_error_required' | ddxLocale }}
     </mat-error>
     <mat-error *ngIf="authFormControls.email.hasError('email')">
-      Email must be a valid address
+      {{ 'auth.signin.email_error_invalid' | ddxLocale }}
     </mat-error>
     <ng-container *ngIf="authFormErrors && authFormErrors.email">
       <mat-error *ngFor="let error of authFormErrors.email">
@@ -44,7 +45,7 @@
   </ng-container>
 
   <mat-form-field appearance="outline" for="password">
-    <mat-label>Password</mat-label>
+    <mat-label>{{ 'auth.signin.password' | ddxLocale }}</mat-label>
     <input
       [type]="isHidden ? 'password' : 'text'"
       formControlName="password"
@@ -58,7 +59,7 @@
   </mat-form-field>
   <ng-container *ngIf="authFormControls.password.dirty">
     <mat-error *ngIf="authFormControls.password.hasError('required')">
-      Password is required
+      {{ 'auth.signin.password_error_required' | ddxLocale }}
     </mat-error>
     <ng-container *ngIf="authFormErrors && authFormErrors.password">
       <mat-error *ngFor="let error of authFormErrors.password">
@@ -76,25 +77,27 @@
     [disabled]="!isFormValid"
     #submitButton
   >
-    Sign In
+    {{ 'auth.signin.sign_in' | ddxLocale }}
   </pro-button>
 
   <div class="description">
     <p class="footnote captcha">
-      This site is protected by reCAPTCHA and the Google
-      <a href="https://policies.google.com/privacy" target="_blank"
-        >Privacy Policy</a
-      >
-      and
-      <a href="https://policies.google.com/terms" target="_blank"
-        >Terms of Service</a
-      >
-      apply.
+      {{ 'auth.signin.recaptcha_message_before' | ddxLocale }}
+      <a href="https://policies.google.com/privacy" target="_blank">{{
+        'auth.signin.recaptcha_message_privacy' | ddxLocale
+      }}</a>
+      {{ 'auth.signin.recaptcha_message_between' | ddxLocale }}
+      <a href="https://policies.google.com/terms" target="_blank">{{
+        'auth.signin.recaptcha_message_terms' | ddxLocale
+      }}</a>
+      {{ 'auth.signin.recaptcha_message_after' | ddxLocale }}
     </p>
 
     <p class="footnote message">
-      Not a member?
-      <a tabindex="-1" routerLink="/signup">Sign up</a>
+      {{ 'auth.signin.not_a_member' | ddxLocale }}
+      <a tabindex="-1" routerLink="/signup">{{
+        'auth.signin.sign_up' | ddxLocale
+      }}</a>
     </p>
   </div>
 </form>
