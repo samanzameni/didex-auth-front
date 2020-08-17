@@ -14,7 +14,7 @@
     color: $ddx-light;
     box-sizing: border-box;
     padding: 10px;
-    margin-top: 80px;
+    margin-top: 100px;
 
     .title {
       display: flex;
@@ -29,6 +29,10 @@
       b {
         margin: 0 5px;
       }
+    }
+
+    pro-button {
+      margin-top: 25px;
     }
 
     .password-hints-container {
@@ -92,7 +96,7 @@
       margin-top: 15px;
 
       p {
-        width: 50%;
+        width: 100%;
         flex-shrink: 0;
         color: $ddx-light-darker;
         font-weight: lighter;
@@ -107,7 +111,7 @@
       }
 
       p.captcha {
-        display: none;
+        display: block;
         text-align: left;
       }
 
