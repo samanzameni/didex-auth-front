@@ -1,12 +1,14 @@
 @import './typography';
 @import './animations';
 
-$input-width: 420px;
+$input-width: 535px;
 
 form {
   width: 100%;
   max-width: $input-width;
   box-sizing: border-box;
+
+  margin: 0 10px;
 
   .title__container {
     display: flex;
