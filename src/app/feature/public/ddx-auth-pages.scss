@@ -87,6 +87,14 @@
         white-space: normal;
       }
 
+      ::ng-deep .mat-checkbox-inner-container {
+        margin: 0 8px 0 0;
+      }
+
+      ::ng-deep .mat-checkbox-layout {
+        align-items: unset;
+      }
+
       ::ng-deep .mat-icon,
       .mat-icon {
         font-size: 15px;
