@@ -36,8 +36,11 @@
     }
 
     .password-hints-container {
-      display: none;
+      max-height: 0;
+      overflow: hidden;
 
+      display: flex;
+      flex-direction: column;
       margin: 0px 0 10px 0;
 
       li {
@@ -71,8 +74,8 @@
       }
 
       &.show {
-        display: flex;
-        flex-direction: column;
+        max-height: 100%;
+        transition: max-height 1s ease-in;
       }
     }
 
