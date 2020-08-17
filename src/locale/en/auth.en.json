@@ -75,7 +75,8 @@
     "recaptcha_message_after": "apply",
     "not_a_member": "Not a member?",
     "sign_up": "Sign Up",
-    "next": "Next"
+    "next": "Next",
+    "submit": "Submit"
   },
 
   "success": {

@@ -13,5 +13,21 @@
         width: 70%;
       }
     }
+
+    #get-code__container {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+      span#timer {
+        display: flex;
+        align-items: center;
+        padding-right: 10px;
+      }
+
+      button {
+        width: 20%;
+      }
+    }
   }
 }

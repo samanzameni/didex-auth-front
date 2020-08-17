@@ -60,24 +60,7 @@
     </mat-form-field>
   </div>
 
-  <div arrangeStack id="submitNumberButtonContainer">
-    <button
-      mat-flat-button
-      color="accent"
-      type="button"
-      [disabled]="
-        !phoneVerificationFormControls.countryTelephoneCode.valid ||
-        !phoneVerificationFormControls.mobileNumber.valid ||
-        !timerFinished
-      "
-      (click)="onSubmitNumber()"
-      #submitNumberButton
-    >
-      {{ 'kyc.phone_verification.button_submit' | ddxLocale }}
-    </button>
-  </div>
-
-  <div arrangeInline id="resendCode">
+  <!-- <div arrangeInline id="resendCode">
     <button
       mat-stroked-button
       color="basic"
@@ -89,13 +72,9 @@
     >
       {{ 'kyc.phone_verification.resend_code_button' | ddxLocale }}
     </button>
-  </div>
+  </div> -->
 
-  <div arrangeInline id="timer">
-    <span>{{ countdownTimer }}</span>
-  </div>
-
-  <div id="code" [ngClass]="{ hidden: !hasSubmittedNumber }">
+  <div id="code-input">
     <p class="message">
       {{ 'kyc.phone_verification.verification_message' | ddxLocale }}
     </p>
@@ -133,6 +112,25 @@
         </mat-error>
       </div>
     </mat-form-field>
+  </div>
+
+  <div id="get-code__container">
+    <span id="timer">{{ countdownTimer }}</span>
+
+    <button
+      mat-flat-button
+      color="accent"
+      type="button"
+      [disabled]="
+        !phoneVerificationFormControls.countryTelephoneCode.valid ||
+        !phoneVerificationFormControls.mobileNumber.valid ||
+        !timerFinished
+      "
+      (click)="onSubmitNumber()"
+      #submitNumberButton
+    >
+      {{ 'auth.signup.submit' | ddxLocale }}
+    </button>
   </div>
 
   <pro-button color="primary" type="submit" #submitButton>
