@@ -11,7 +11,6 @@ import {
   SignupPhoneVerificationComponent,
   SignupSuccessfulComponent,
   ForgotPasswordPageComponent,
-  SignUpSuccessPageComponent,
   ResetPasswordPageComponent,
   ActivateEmailPageComponent,
   TwoFactorSigninPageComponent,
@@ -77,7 +76,7 @@ const routes: Routes = [
     SignupPhoneVerificationComponent,
     SignupSuccessfulComponent,
     ForgotPasswordPageComponent,
-    SignUpSuccessPageComponent,
+
     ResetPasswordPageComponent,
     ActivateEmailPageComponent,
     TwoFactorSigninPageComponent,
