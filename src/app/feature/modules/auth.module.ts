@@ -38,7 +38,6 @@ const routes: Routes = [
   },
   {
     path: 'signup',
-    pathMatch: 'full',
     component: SignUpWrapperComponent,
     children: [
       { path: '', pathMatch: 'full', redirectTo: 'credentials' },
