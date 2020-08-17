@@ -10,6 +10,7 @@ import { CONSTANTS, COUNTRIES } from '@core/util/constants';
 import { interval, timer } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { PhoneVerificationPageDirective } from '@feature/templates';
 import { FormBuilder } from '@angular/forms';
 import { secondsToTime } from '@core/util/time';
 
@@ -18,7 +19,9 @@ import { secondsToTime } from '@core/util/time';
   templateUrl: './ddx-signup-phone-verification.component.html',
   styleUrls: ['./ddx-signup-phone-verification.component.scss'],
 })
-export class SignupPhoneVerificationComponent implements OnInit {
+export class SignupPhoneVerificationComponent
+  extends PhoneVerificationPageDirective
+  implements OnInit {
   private hasSubmittedMobileNumber: boolean;
   private formErrors: any;
   private countries: DropdownSelectItem[];
@@ -34,6 +37,8 @@ export class SignupPhoneVerificationComponent implements OnInit {
     protected renderer: Renderer2,
     protected formBuilder: FormBuilder
   ) {
+    super(router, el, renderer, formBuilder);
+    this.renderer.addClass(this.el.nativeElement, 'phone-verification-form');
     this.hasSubmittedMobileNumber = false;
     this.countries = COUNTRIES.map((country) => {
       return {
@@ -43,7 +48,9 @@ export class SignupPhoneVerificationComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    super.ngOnInit();
+  }
 
   get countriesList(): DropdownSelectItem[] {
     return this.countries;
