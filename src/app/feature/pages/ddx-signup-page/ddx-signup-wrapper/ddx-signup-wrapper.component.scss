@@ -1,27 +1,37 @@
 @import '../../../../../styles.scss';
 
+$input-width: 535px;
+
 :host {
-  .title__container {
-    display: flex;
-    margin-bottom: 20px;
+  form {
+    width: 100%;
+    max-width: $input-width;
+    box-sizing: border-box;
 
-    h1.title {
-      font-weight: 600;
-      width: 100%;
-      text-align: left;
-      padding-bottom: 10px;
+    margin: 100px 10px 0 10px;
 
-      &.active {
-        color: $ddx-accent-main;
-        border-bottom: 1px solid $ddx-accent-main;
-      }
+    .title__container {
+      display: flex;
+      margin-bottom: 20px;
 
-      a {
-        text-decoration: none;
-      }
+      h1.title {
+        font-weight: 600;
+        width: 100%;
+        text-align: left;
+        padding-bottom: 10px;
 
-      b {
-        font-weight: bold;
+        &.active {
+          color: $ddx-accent-main;
+          border-bottom: 1px solid $ddx-accent-main;
+        }
+
+        a {
+          text-decoration: none;
+        }
+
+        b {
+          font-weight: bold;
+        }
       }
     }
   }

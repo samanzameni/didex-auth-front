@@ -4,44 +4,44 @@
 $input-width: 535px;
 
 form {
-  width: 100%;
-  max-width: $input-width;
+  // width: 100%;
+  // max-width: $input-width;
   box-sizing: border-box;
 
-  margin: 0 10px;
+  // margin: 0 10px;
 
-  .title__container {
-    display: flex;
-    margin-bottom: 20px;
+  // .title__container {
+  //   display: flex;
+  //   margin-bottom: 20px;
 
-    h1.title {
-      font-weight: 600;
-      width: 100%;
-      text-align: left;
-      padding-bottom: 10px;
+  //   h1.title {
+  //     font-weight: 600;
+  //     width: 100%;
+  //     text-align: left;
+  //     padding-bottom: 10px;
 
-      &.active {
-        color: $ddx-accent-main;
-        border-bottom: 1px solid $ddx-accent-main;
-      }
+  //     &.active {
+  //       color: $ddx-accent-main;
+  //       border-bottom: 1px solid $ddx-accent-main;
+  //     }
 
-      a {
-        text-decoration: none;
-      }
+  //     a {
+  //       text-decoration: none;
+  //     }
 
-      b {
-        font-weight: bold;
-      }
-    }
-  }
+  //     b {
+  //       font-weight: bold;
+  //     }
+  //   }
+  // }
 
-  hr.title-seperator {
-    width: 30%;
-    margin-right: auto;
-    margin-left: 0;
-    margin-bottom: 20px;
-    border: 1px solid $ddx-accent-main;
-  }
+  // hr.title-seperator {
+  //   width: 30%;
+  //   margin-right: auto;
+  //   margin-left: 0;
+  //   margin-bottom: 20px;
+  //   border: 1px solid $ddx-accent-main;
+  // }
 
   .mat-form-field-appearance-outline .mat-form-field-suffix {
     top: 0em;
