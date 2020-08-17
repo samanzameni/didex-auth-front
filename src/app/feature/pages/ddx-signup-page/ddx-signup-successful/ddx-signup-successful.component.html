@@ -1,1 +1,20 @@
-<p>ddx-signup-successful works!</p>
+<div id="successful-content__container">
+  <img
+    id="successful-logo"
+    src="assets/images/signup-successful-icon.svg"
+    alt="signup successful"
+  />
+
+  <h1>{{ 'auth.success.title' | ddxLocale }}</h1>
+  <p>{{ 'auth.success.message' | ddxLocale }}</p>
+
+  <button
+    class="continue-button"
+    routerLink="/"
+    mat-raised-button
+    color="primary"
+    type="button"
+  >
+    {{ 'auth.success.continue' | ddxLocale }}
+  </button>
+</div>

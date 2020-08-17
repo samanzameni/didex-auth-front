@@ -81,8 +81,9 @@
   },
 
   "success": {
-    "title": "Success!",
-    "message": "Check your mailbox for the activation email"
+    "title": "You have successfully registered",
+    "message": "Please check your email to verify and activate your account.",
+    "continue": "Continue"
   },
 
   "2fa": {
