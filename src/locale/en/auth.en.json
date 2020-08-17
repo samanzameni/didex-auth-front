@@ -74,7 +74,8 @@
     "recapthca_message_terms": "Terms of Service",
     "recaptcha_message_after": "apply",
     "not_a_member": "Not a member?",
-    "sign_up": "Sign Up"
+    "sign_up": "Sign Up",
+    "next": "Next"
   },
 
   "success": {
