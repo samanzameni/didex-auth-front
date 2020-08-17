@@ -18,7 +18,7 @@
 
   <!-- <hr class="title-seperator" /> -->
 
-  <mat-form-field appearance="outline">
+  <mat-form-field>
     <mat-label>{{ 'auth.signup.email' | ddxLocale }}</mat-label>
     <input
       type="email"
@@ -43,7 +43,7 @@
     </mat-error>
   </ng-container>
 
-  <mat-form-field appearance="outline">
+  <mat-form-field>
     <mat-label>{{ 'auth.signup.password' | ddxLocale }}</mat-label>
     <input
       [type]="isHidden ? 'password' : 'text'"
@@ -95,14 +95,15 @@
     </mat-error>
   </ng-container>
 
-  <mat-form-field appearance="outline">
-    <mat-label>{{ 'auth.signup.confirm_message' | ddxLocale }}</mat-label>
+  <mat-form-field>
+    <mat-label>{{ 'auth.signup.confirm_password' | ddxLocale }}</mat-label>
     <input
       [type]="isHidden ? 'password' : 'text'"
       formControlName="confirmPassword"
       matInput
       name="confirm-password"
       id="confirm-password"
+      placeholder="{{ 'auth.signup.confirm_password' | ddxLocale }}"
     />
     <mat-icon matSuffix (click)="toggleHidePassword()">{{
       isHidden ? 'visibility_off' : 'visibility'
