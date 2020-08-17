@@ -1,0 +1,28 @@
+@import '../../../../../styles.scss';
+
+:host {
+  .title__container {
+    display: flex;
+    margin-bottom: 20px;
+
+    h1.title {
+      font-weight: 600;
+      width: 100%;
+      text-align: left;
+      padding-bottom: 10px;
+
+      &.active {
+        color: $ddx-accent-main;
+        border-bottom: 1px solid $ddx-accent-main;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      b {
+        font-weight: bold;
+      }
+    }
+  }
+}
