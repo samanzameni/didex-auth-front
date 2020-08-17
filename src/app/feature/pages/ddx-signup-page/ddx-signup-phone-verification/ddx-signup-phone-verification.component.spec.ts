@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DdxSignupPhoneVerificationComponent } from './ddx-signup-phone-verification.component';
+import { SignupPhoneVerificationComponent } from './ddx-signup-phone-verification.component';
 
-describe('DdxSignupPhoneVerificationComponent', () => {
-  let component: DdxSignupPhoneVerificationComponent;
-  let fixture: ComponentFixture<DdxSignupPhoneVerificationComponent>;
+describe('SignupPhoneVerificationComponent', () => {
+  let component: SignupPhoneVerificationComponent;
+  let fixture: ComponentFixture<SignupPhoneVerificationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DdxSignupPhoneVerificationComponent ]
-    })
-    .compileComponents();
+      declarations: [SignupPhoneVerificationComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DdxSignupPhoneVerificationComponent);
+    fixture = TestBed.createComponent(SignupPhoneVerificationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

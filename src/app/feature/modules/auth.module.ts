@@ -9,6 +9,7 @@ import {
   SignUpWrapperComponent,
   SignupCredentialsComponent,
   SignupPhoneVerificationComponent,
+  SignupSuccessfulComponent,
   ForgotPasswordPageComponent,
   SignUpSuccessPageComponent,
   ResetPasswordPageComponent,
@@ -41,31 +42,19 @@ const routes: Routes = [
     pathMatch: 'full',
     component: SignUpWrapperComponent,
     children: [
-      { path: '', pathMatch: 'full', redirectTo: '' },
-      { path: '', component: SignupCredentialsComponent },
+      { path: '', pathMatch: 'full', redirectTo: 'credentials' },
+      { path: 'credentials', component: SignupCredentialsComponent },
       {
         path: 'phone-verification',
         component: SignupPhoneVerificationComponent,
       },
       {
-        path: 'identity-proof',
-        component: KYCIdentityProofPageComponent,
-      },
-      {
-        path: 'selfie',
-        component: KYCSelfiePageComponent,
-      },
-      {
-        path: 'done',
-        component: KYCDonePageComponent,
+        path: 'successful',
+        component: SignupSuccessfulComponent,
       },
     ],
   },
-  {
-    path: 'signup/success',
-    pathMatch: 'full',
-    component: SignUpSuccessPageComponent,
-  },
+
   {
     path: 'forgot-password',
     component: ForgotPasswordPageComponent,
@@ -86,6 +75,7 @@ const routes: Routes = [
     SignUpWrapperComponent,
     SignupCredentialsComponent,
     SignupPhoneVerificationComponent,
+    SignupSuccessfulComponent,
     ForgotPasswordPageComponent,
     SignUpSuccessPageComponent,
     ResetPasswordPageComponent,
