@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './ddx-signup-credentials.component.html',
   styleUrls: ['./ddx-signup-credentials.component.scss'],
 })
-export class DdxSignupCredentialsComponent implements OnInit {
+export class SignupCredentialsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}

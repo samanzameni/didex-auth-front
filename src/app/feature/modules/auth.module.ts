@@ -7,6 +7,8 @@ import { WidgetModule } from '@widget/widget.module';
 import {
   SignInPageComponent,
   SignUpWrapperComponent,
+  SignupCredentialsComponent,
+  SignupPhoneVerificationComponent,
   ForgotPasswordPageComponent,
   SignUpSuccessPageComponent,
   ResetPasswordPageComponent,
@@ -38,6 +40,26 @@ const routes: Routes = [
     path: 'signup',
     pathMatch: 'full',
     component: SignUpWrapperComponent,
+    children: [
+      { path: '', pathMatch: 'full', redirectTo: '' },
+      { path: '', component: SignupCredentialsComponent },
+      {
+        path: 'phone-verification',
+        component: SignupPhoneVerificationComponent,
+      },
+      {
+        path: 'identity-proof',
+        component: KYCIdentityProofPageComponent,
+      },
+      {
+        path: 'selfie',
+        component: KYCSelfiePageComponent,
+      },
+      {
+        path: 'done',
+        component: KYCDonePageComponent,
+      },
+    ],
   },
   {
     path: 'signup/success',
@@ -62,6 +84,8 @@ const routes: Routes = [
   declarations: [
     SignInPageComponent,
     SignUpWrapperComponent,
+    SignupCredentialsComponent,
+    SignupPhoneVerificationComponent,
     ForgotPasswordPageComponent,
     SignUpSuccessPageComponent,
     ResetPasswordPageComponent,

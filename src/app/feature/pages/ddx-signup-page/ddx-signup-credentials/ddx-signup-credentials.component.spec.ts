@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DdxSignupCredentialsComponent } from './ddx-signup-credentials.component';
+import { SignupCredentialsComponent } from './ddx-signup-credentials.component';
 
 describe('DdxSignupCredentialsComponent', () => {
-  let component: DdxSignupCredentialsComponent;
-  let fixture: ComponentFixture<DdxSignupCredentialsComponent>;
+  let component: SignupCredentialsComponent;
+  let fixture: ComponentFixture<SignupCredentialsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DdxSignupCredentialsComponent ]
-    })
-    .compileComponents();
+      declarations: [SignupCredentialsComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DdxSignupCredentialsComponent);
+    fixture = TestBed.createComponent(SignupCredentialsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
