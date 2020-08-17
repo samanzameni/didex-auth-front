@@ -2,7 +2,7 @@
 
 :host {
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
   width: 100vw;
   min-height: 100vh;
@@ -14,6 +14,7 @@
     color: $ddx-light;
     box-sizing: border-box;
     padding: 10px;
+    margin-top: 80px;
 
     .title {
       display: flex;
