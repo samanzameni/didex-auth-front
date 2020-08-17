@@ -125,7 +125,12 @@
     </mat-error>
   </ng-container>
 
-  <mat-checkbox formControlName="acceptedTerms" required #checkbox>
+  <mat-checkbox
+    id="term-acceptance__checkbox"
+    formControlName="acceptedTerms"
+    required
+    #checkbox
+  >
     {{ 'auth.signup.terms_check' | ddxLocale }}
     <a href="https://didex.com/terms-service" target="_blank"
       ><mat-icon>launch</mat-icon></a
