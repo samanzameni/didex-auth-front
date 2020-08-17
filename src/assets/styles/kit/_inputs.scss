@@ -8,13 +8,21 @@ form {
   max-width: $input-width;
   box-sizing: border-box;
 
-  h1.title {
-    font-weight: lighter;
-    width: 100%;
-    text-align: left;
+  .title__container {
+    display: flex;
 
-    b {
-      font-weight: bold;
+    h1.title {
+      font-weight: lighter;
+      width: 100%;
+      text-align: left;
+
+      &.active {
+        color: $ddx-accent-main;
+      }
+
+      b {
+        font-weight: bold;
+      }
     }
   }
 
@@ -43,6 +51,7 @@ form {
   }
 
   .mat-form-field {
+    width: 100%;
     font-size: 14px;
   }
 }

@@ -33,7 +33,7 @@
   },
 
   "signin": {
-    "title": "Sign in to DidEx",
+    "title": "Sign in",
     "forgot_password": "Forgot password?",
     "email": "Email",
     "email_placeholder": "abc@example.com",
@@ -52,7 +52,7 @@
   },
 
   "signup": {
-    "title": "Sign up for a DidEx account",
+    "title": "Sign up",
     "email": "Email",
     "email_placeholder": "abc@example.com",
     "email_error_required": "Email is required",

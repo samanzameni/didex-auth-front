@@ -5,10 +5,15 @@
   (ngSubmit)="onSubmit()"
   #form
 >
-  <h1 class="title">
-    <a href="/"><img src="assets/images/logo-white-symbol.svg" alt="logo" /></a
-    >{{ 'auth.signin.title' | ddxLocale }}
-  </h1>
+  <div class="title__container">
+    <h1 class="title active">
+      {{ 'auth.signin.title' | ddxLocale }}
+    </h1>
+    <h1 class="title">
+      {{ 'auth.signup.title' | ddxLocale }}
+    </h1>
+  </div>
+
   <hr class="title-seperator" />
 
   <p class="footnote forgot-password">
@@ -17,7 +22,7 @@
     }}</a>
   </p>
 
-  <mat-form-field appearance="outline" for="email">
+  <mat-form-field for="email">
     <mat-label>{{ 'auth.signin.email' | ddxLocale }}</mat-label>
     <input
       type="email"
@@ -44,7 +49,7 @@
     </ng-container>
   </ng-container>
 
-  <mat-form-field appearance="outline" for="password">
+  <mat-form-field for="password">
     <mat-label>{{ 'auth.signin.password' | ddxLocale }}</mat-label>
     <input
       [type]="isHidden ? 'password' : 'text'"
