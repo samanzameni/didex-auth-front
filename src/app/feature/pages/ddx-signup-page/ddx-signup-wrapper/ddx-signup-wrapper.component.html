@@ -1,10 +1,4 @@
-<form
-  arrangeStack
-  autocomplete="off"
-  [formGroup]="authFormGroup"
-  (ngSubmit)="onSubmit()"
-  #form
->
+<div class="signup-wrapper" arrangeStack>
   <div class="title__container">
     <h1 class="title">
       <a routerLink="/signin">
@@ -16,4 +10,4 @@
     </h1>
   </div>
   <router-outlet></router-outlet>
-</form>
+</div>
