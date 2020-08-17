@@ -76,9 +76,9 @@
 
   <div id="code-input">
     <p class="message">
-      {{ 'kyc.phone_verification.verification_message' | ddxLocale }}
+      {{ 'auth.signup.sms-code' | ddxLocale }}
     </p>
-    <mat-form-field>
+    <mat-form-field id="sms-code__input">
       <input
         type="text"
         placeholder="123456"
@@ -133,7 +133,7 @@
     </button>
   </div>
 
-  <pro-button color="primary" type="submit" #submitButton>
+  <pro-button id="next-button" color="primary" type="submit" #submitButton>
     {{ 'auth.signup.next' | ddxLocale }}
   </pro-button>
 

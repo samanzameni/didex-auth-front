@@ -14,10 +14,29 @@
       }
     }
 
+    div#code-input {
+      display: flex;
+      justify-content: space-between;
+
+      p.message {
+        width: 25%;
+
+        display: flex;
+        align-items: center;
+        padding-top: 6px;
+      }
+
+      mat-form-field#sms-code__input {
+        width: 70%;
+      }
+    }
+
     #get-code__container {
       width: 100%;
       display: flex;
       justify-content: flex-end;
+
+      margin-bottom: 20px;
 
       span#timer {
         display: flex;
@@ -28,6 +47,10 @@
       button {
         width: 20%;
       }
+    }
+
+    pro-button#next-button {
+      margin-bottom: 25px;
     }
   }
 }
