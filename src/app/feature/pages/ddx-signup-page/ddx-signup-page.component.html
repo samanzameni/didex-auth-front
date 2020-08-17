@@ -5,11 +5,18 @@
   (ngSubmit)="onSubmit()"
   #form
 >
-  <h1 class="title">
-    <a href="/"><img src="assets/images/logo-white-symbol.svg" alt="logo" /></a>
-    {{ 'auth.signup.title' | ddxLocale }}
-  </h1>
-  <hr class="title-seperator" />
+  <div class="title__container">
+    <h1 class="title">
+      <a routerLink="/signin">
+        {{ 'auth.signin.title' | ddxLocale }}
+      </a>
+    </h1>
+    <h1 class="title active">
+      {{ 'auth.signup.title' | ddxLocale }}
+    </h1>
+  </div>
+
+  <!-- <hr class="title-seperator" /> -->
 
   <mat-form-field appearance="outline">
     <mat-label>{{ 'auth.signup.email' | ddxLocale }}</mat-label>
@@ -152,11 +159,11 @@
       {{ 'auth.signup.recaptcha_message_after' | ddxLocale }}
     </p>
 
-    <p class="footnote message">
+    <!-- <p class="footnote message">
       {{ 'auth.signup.not_a_member' | ddxLocale }}
       <a tabindex="-1" routerLink="/signin">{{
         'auth.signup.sign_in' | ddxLocale
       }}</a>
-    </p>
+    </p> -->
   </div>
 </form>
