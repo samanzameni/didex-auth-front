@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { WidgetModule } from '@widget/widget.module';
 import {
   SignInPageComponent,
-  SignUpPageComponent,
+  SignUpWrapperComponent,
   ForgotPasswordPageComponent,
   SignUpSuccessPageComponent,
   ResetPasswordPageComponent,
@@ -37,7 +37,7 @@ const routes: Routes = [
   {
     path: 'signup',
     pathMatch: 'full',
-    component: SignUpPageComponent,
+    component: SignUpWrapperComponent,
   },
   {
     path: 'signup/success',
@@ -61,7 +61,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     SignInPageComponent,
-    SignUpPageComponent,
+    SignUpWrapperComponent,
     ForgotPasswordPageComponent,
     SignUpSuccessPageComponent,
     ResetPasswordPageComponent,

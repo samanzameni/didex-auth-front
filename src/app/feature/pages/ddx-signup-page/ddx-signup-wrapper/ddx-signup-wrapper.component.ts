@@ -16,14 +16,14 @@ import { MatCheckbox } from '@angular/material/checkbox';
 import { environment } from '@environments/environment';
 
 @Component({
-  selector: 'ddx-signup-page',
-  templateUrl: './ddx-signup-page.component.html',
+  selector: 'ddx-signup-wrapper',
+  templateUrl: './ddx-signup-wrapper.component.html',
   styleUrls: [
     '../../../public/ddx-auth-pages.scss',
-    './ddx-signup-page.component.scss',
+    './ddx-signup-wrapper.component.scss',
   ],
 })
-export class SignUpPageComponent extends AuthPageDirective
+export class SignUpWrapperComponent extends AuthPageDirective
   implements OnInit, AfterViewInit {
   @ViewChild(MatCheckbox) checkbox: MatCheckbox;
 
