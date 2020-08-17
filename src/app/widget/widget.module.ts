@@ -57,6 +57,7 @@ import {
     //
     ProButtonComponent,
     ExternalUrlRedirectorComponent,
+    DropdownAutocompleteCountriesComponent,
   ],
 })
 export class WidgetModule {}
