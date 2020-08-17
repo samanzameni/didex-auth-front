@@ -1,0 +1,17 @@
+@import '../../../../../styles.scss';
+
+:host {
+  form {
+    div.mobile-number__container {
+      display: flex;
+      justify-content: space-between;
+
+      dropdown-autocomplete-countries#countryTelephoneCode {
+        width: 25%;
+      }
+      mat-form-field#mobileNumber {
+        width: 70%;
+      }
+    }
+  }
+}

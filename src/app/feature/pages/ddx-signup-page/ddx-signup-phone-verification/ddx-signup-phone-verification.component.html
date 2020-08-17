@@ -6,57 +6,134 @@
   *ngIf="phoneVerification"
   [formGroup]="phoneVerification"
 >
-  <dropdown-autocomplete-countries
-    id="countryTelephoneCode"
-    caption="{{ 'kyc.phone_verification.country' | ddxLocale }}"
-    desiredValueKey="phoneCode"
-    [control]="phoneVerificationFormControls.countryTelephoneCode"
-  >
-  </dropdown-autocomplete-countries>
+  <div class="mobile-number__container">
+    <dropdown-autocomplete-countries
+      id="countryTelephoneCode"
+      caption="{{ 'kyc.phone_verification.country' | ddxLocale }}"
+      desiredValueKey="phoneCode"
+      [control]="phoneVerificationFormControls.countryTelephoneCode"
+    >
+    </dropdown-autocomplete-countries>
 
-  <mat-form-field id="mobileNumber">
-    <span
-      matPrefix
-      *ngIf="
-        phoneVerificationFormControls.countryTelephoneCode.value &&
-        phoneVerificationFormControls.countryTelephoneCode.value.length > 0 &&
-        codeStartsWithDigit(
-          phoneVerificationFormControls.countryTelephoneCode.value
-        )
+    <mat-form-field id="mobileNumber">
+      <span
+        matPrefix
+        *ngIf="
+          phoneVerificationFormControls.countryTelephoneCode.value &&
+          phoneVerificationFormControls.countryTelephoneCode.value.length > 0 &&
+          codeStartsWithDigit(
+            phoneVerificationFormControls.countryTelephoneCode.value
+          )
+        "
+        >+{{ phoneVerificationFormControls.countryTelephoneCode.value }}</span
+      >
+      <input
+        type="text"
+        placeholder="{{
+          'kyc.phone_verification.mobile_number_placeholder' | ddxLocale
+        }}"
+        matInput
+        name="mobileNumber"
+        formControlName="mobileNumber"
+      />
+      <!-- <mat-error
+        *ngIf="
+          phoneVerificationFormGroup.controls.mobileNumber.hasError('required')
+        "
+      >
+        {{ 'kyc.phone_verification.mobile_number_error_required' | ddxLocale }}
+      </mat-error>
+      <mat-error
+        *ngIf="
+          phoneVerificationFormGroup.controls.mobileNumber.hasError('maxlength')
+        "
+      >
+        {{ 'kyc.phone_verification.mobile_number_error_maxlength' | ddxLocale }}
+      </mat-error>
+      <mat-error
+        *ngIf="
+          phoneVerificationFormGroup.controls.mobileNumber.hasError('pattern')
+        "
+      >
+        {{ 'kyc.phone_verification.mobile_number_error_pattern' | ddxLocale }}
+      </mat-error> -->
+    </mat-form-field>
+  </div>
+
+  <div arrangeStack id="submitNumberButtonContainer">
+    <button
+      mat-flat-button
+      color="accent"
+      type="button"
+      [disabled]="
+        !phoneVerificationFormControls.countryTelephoneCode.valid ||
+        !phoneVerificationFormControls.mobileNumber.valid ||
+        !timerFinished
       "
-      >+{{ phoneVerificationFormControls.countryTelephoneCode.value }}</span
+      (click)="onSubmitNumber()"
+      #submitNumberButton
     >
-    <input
-      type="text"
-      placeholder="{{
-        'kyc.phone_verification.mobile_number_placeholder' | ddxLocale
-      }}"
-      matInput
-      name="mobileNumber"
-      formControlName="mobileNumber"
-    />
-    <mat-error
-      *ngIf="
-        phoneVerificationFormGroup.controls.mobileNumber.hasError('required')
-      "
+      {{ 'kyc.phone_verification.button_submit' | ddxLocale }}
+    </button>
+  </div>
+
+  <div arrangeInline id="resendCode">
+    <button
+      mat-stroked-button
+      color="basic"
+      type="button"
+      [ngClass]="{ hidden: !hasSubmittedNumber }"
+      [disabled]="!timerFinished"
+      (click)="onSubmitNumber()"
+      #submitNumberButton
     >
-      {{ 'kyc.phone_verification.mobile_number_error_required' | ddxLocale }}
-    </mat-error>
-    <mat-error
-      *ngIf="
-        phoneVerificationFormGroup.controls.mobileNumber.hasError('maxlength')
-      "
-    >
-      {{ 'kyc.phone_verification.mobile_number_error_maxlength' | ddxLocale }}
-    </mat-error>
-    <mat-error
-      *ngIf="
-        phoneVerificationFormGroup.controls.mobileNumber.hasError('pattern')
-      "
-    >
-      {{ 'kyc.phone_verification.mobile_number_error_pattern' | ddxLocale }}
-    </mat-error>
-  </mat-form-field>
+      {{ 'kyc.phone_verification.resend_code_button' | ddxLocale }}
+    </button>
+  </div>
+
+  <div arrangeInline id="timer">
+    <span>{{ countdownTimer }}</span>
+  </div>
+
+  <div id="code" [ngClass]="{ hidden: !hasSubmittedNumber }">
+    <p class="message">
+      {{ 'kyc.phone_verification.verification_message' | ddxLocale }}
+    </p>
+    <mat-form-field>
+      <input
+        type="text"
+        placeholder="123456"
+        matInput
+        name="code"
+        formControlName="code"
+      />
+      <mat-error
+        *ngIf="phoneVerificationFormGroup.controls.code.hasError('required')"
+      >
+        {{ 'kyc.phone_verification.code_error_required' | ddxLocale }}
+      </mat-error>
+      <mat-error
+        *ngIf="phoneVerificationFormGroup.controls.code.hasError('minlength')"
+      >
+        {{ 'kyc.phone_verification.code_error_minlength' | ddxLocale }}
+      </mat-error>
+      <mat-error
+        *ngIf="phoneVerificationFormGroup.controls.code.hasError('maxlength')"
+      >
+        {{ 'kyc.phone_verification.code_error_maxlength' | ddxLocale }}
+      </mat-error>
+      <mat-error
+        *ngIf="phoneVerificationFormGroup.controls.code.hasError('pattern')"
+      >
+        {{ 'kyc.phone_verification.code_error_pattern' | ddxLocale }}
+      </mat-error>
+      <div *ngIf="errors && errors.code" class="error-feedback">
+        <mat-error *ngFor="let error of errors.code">
+          {{ error }}
+        </mat-error>
+      </div>
+    </mat-form-field>
+  </div>
 
   <pro-button color="primary" type="submit" #submitButton>
     {{ 'auth.signup.next' | ddxLocale }}

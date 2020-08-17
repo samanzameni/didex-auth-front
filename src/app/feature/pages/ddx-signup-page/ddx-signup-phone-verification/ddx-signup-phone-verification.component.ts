@@ -11,6 +11,7 @@ import { interval, timer } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { PhoneVerificationPageDirective } from '@feature/templates';
+import { AuthRESTService } from '@core/services/REST';
 import { FormBuilder } from '@angular/forms';
 import { secondsToTime } from '@core/util/time';
 
@@ -35,7 +36,8 @@ export class SignupPhoneVerificationComponent
     protected router: Router,
     protected el: ElementRef,
     protected renderer: Renderer2,
-    protected formBuilder: FormBuilder
+    protected formBuilder: FormBuilder,
+    private restService: AuthRESTService
   ) {
     super(router, el, renderer, formBuilder);
     this.renderer.addClass(this.el.nativeElement, 'phone-verification-form');
@@ -83,41 +85,41 @@ export class SignupPhoneVerificationComponent
   }
 
   onSubmitNumber(): void {
-    // this.startCountdown();
-    // const numbetButton =
-    //   this.submitNumberButton.nativeElement ||
-    //   this.submitNumberButton._elementRef.nativeElement;
-    // this.renderer.addClass(numbetButton, 'is-loading');
-    // const { code, ...dataToSend } = this.kycForm.value;
-    // this.restService.requestSendConfirmationMobileNumber(dataToSend).subscribe(
-    //   (response) => {
-    //     this.renderer.removeClass(numbetButton, 'is-loading');
-    //     this.hasSubmittedMobileNumber = true;
-    //   },
-    //   (errorResponse) => {
-    //     this.renderer.removeClass(numbetButton, 'is-loading');
-    //   }
-    // );
+    this.startCountdown();
+    const numbetButton =
+      this.submitNumberButton.nativeElement ||
+      this.submitNumberButton._elementRef.nativeElement;
+    this.renderer.addClass(numbetButton, 'is-loading');
+    const { code, ...dataToSend } = this.phoneVerification.value;
+    this.restService.requestSendConfirmationMobileNumber(dataToSend).subscribe(
+      (response) => {
+        this.renderer.removeClass(numbetButton, 'is-loading');
+        this.hasSubmittedMobileNumber = true;
+      },
+      (errorResponse) => {
+        this.renderer.removeClass(numbetButton, 'is-loading');
+      }
+    );
   }
 
   onSubmit(): void {
-    // this.setLoadingOn();
-    // this.formErrors = {};
-    // const dataToSend = this.kycForm.value;
-    // this.restService.requestUpdateMobileNumber(dataToSend).subscribe(
-    //   (response) => {
-    //     this.setLoadingOff();
-    //     this.router.navigateByUrl('/user/kyc/identity-proof');
-    //   },
-    //   (errorResponse) => {
-    //     this.setLoadingOff();
-    //     if (errorResponse.status === 400) {
-    //       const errors = errorResponse.error.errors;
-    //       if (errors.Code) {
-    //         this.formErrors.code = errors.Code;
-    //       }
-    //     }
-    //   }
-    // );
+    this.setLoadingOn();
+    this.formErrors = {};
+    const dataToSend = this.phoneVerification.value;
+    this.restService.requestUpdateMobileNumber(dataToSend).subscribe(
+      (response) => {
+        this.setLoadingOff();
+        this.router.navigateByUrl('/user/kyc/identity-proof');
+      },
+      (errorResponse) => {
+        this.setLoadingOff();
+        if (errorResponse.status === 400) {
+          const errors = errorResponse.error.errors;
+          if (errors.Code) {
+            this.formErrors.code = errors.Code;
+          }
+        }
+      }
+    );
   }
 }
