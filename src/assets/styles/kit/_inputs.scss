@@ -14,12 +14,16 @@ form {
     display: flex;
 
     h1.title {
-      font-weight: lighter;
+      font-weight: 600;
       width: 100%;
       text-align: left;
 
       &.active {
         color: $ddx-accent-main;
+      }
+
+      a {
+        text-decoration: none;
       }
 
       b {
