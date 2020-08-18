@@ -87,13 +87,10 @@ export class AuthRESTService extends AbstractRESTService {
     ) as Observable<AuthFormResponse>;
   }
 
-  public requestEmailValidation(
-    data: AuthEmailValidationData
-  ): Observable<any> {
+  public requestEmailValidation(): Observable<any> {
     return this.httpPureRequest(
       `api/Account/validate-email`,
-      'GET',
-      data
+      'GET'
     ) as Observable<any>;
   }
 
