@@ -71,10 +71,12 @@ export class SignupCredentialsComponent extends AuthPageDirective
       .subscribe(
         (response) => {
           this.setLoadingOff();
+          console.log(formData);
           this.router.navigateByUrl('signup/phone-verification');
         },
         (errorResponse) => {
           this.setLoadingOff();
+          console.log(formData);
 
           if (errorResponse.status === 400) {
             const errors = errorResponse.error;

@@ -106,7 +106,8 @@ export class SignupPhoneVerificationComponent
     this.setLoadingOn();
     this.formErrors = {};
     const dataToSend = this.phoneVerification.value;
-    this.restService.requestUpdateMobileNumber(dataToSend).subscribe(
+    console.log(dataToSend);
+    this.restService.requestLogin(dataToSend).subscribe(
       (response) => {
         this.setLoadingOff();
         this.router.navigateByUrl('/signup/successful');
