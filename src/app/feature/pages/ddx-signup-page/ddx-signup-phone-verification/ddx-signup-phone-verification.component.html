@@ -86,32 +86,33 @@
         name="code"
         formControlName="code"
       />
-      <mat-error
-        *ngIf="phoneVerificationFormGroup.controls.code.hasError('required')"
-      >
-        {{ 'kyc.phone_verification.code_error_required' | ddxLocale }}
-      </mat-error>
-      <mat-error
-        *ngIf="phoneVerificationFormGroup.controls.code.hasError('minlength')"
-      >
-        {{ 'kyc.phone_verification.code_error_minlength' | ddxLocale }}
-      </mat-error>
-      <mat-error
-        *ngIf="phoneVerificationFormGroup.controls.code.hasError('maxlength')"
-      >
-        {{ 'kyc.phone_verification.code_error_maxlength' | ddxLocale }}
-      </mat-error>
-      <mat-error
-        *ngIf="phoneVerificationFormGroup.controls.code.hasError('pattern')"
-      >
-        {{ 'kyc.phone_verification.code_error_pattern' | ddxLocale }}
-      </mat-error>
-      <div *ngIf="errors && errors.code" class="error-feedback">
-        <mat-error *ngFor="let error of errors.code">
-          {{ error }}
-        </mat-error>
-      </div>
     </mat-form-field>
+  </div>
+
+  <mat-error
+    *ngIf="phoneVerificationFormGroup.controls.code.hasError('required')"
+  >
+    {{ 'kyc.phone_verification.code_error_required' | ddxLocale }}
+  </mat-error>
+  <mat-error
+    *ngIf="phoneVerificationFormGroup.controls.code.hasError('minlength')"
+  >
+    {{ 'kyc.phone_verification.code_error_minlength' | ddxLocale }}
+  </mat-error>
+  <mat-error
+    *ngIf="phoneVerificationFormGroup.controls.code.hasError('maxlength')"
+  >
+    {{ 'kyc.phone_verification.code_error_maxlength' | ddxLocale }}
+  </mat-error>
+  <mat-error
+    *ngIf="phoneVerificationFormGroup.controls.code.hasError('pattern')"
+  >
+    {{ 'kyc.phone_verification.code_error_pattern' | ddxLocale }}
+  </mat-error>
+  <div *ngIf="errors && errors.code" class="error-feedback">
+    <mat-error *ngFor="let error of errors.code">
+      {{ error }}
+    </mat-error>
   </div>
 
   <div id="get-code__container">

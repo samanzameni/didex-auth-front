@@ -52,5 +52,10 @@
     pro-button#next-button {
       margin-bottom: 25px;
     }
+
+    mat-error {
+      margin-inline-start: auto;
+      width: 70%;
+    }
   }
 }
