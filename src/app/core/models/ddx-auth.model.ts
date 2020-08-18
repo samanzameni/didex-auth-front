@@ -23,3 +23,7 @@ export interface AuthFormResponse {
   twoFactorEnabled: boolean;
   roles: string[];
 }
+
+export interface AuthEmailValidationData {
+  email: string;
+}

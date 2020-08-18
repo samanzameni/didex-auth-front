@@ -8,6 +8,7 @@ import {
   AuthResetPasswordFormData,
   AuthResetPasswordData,
   AuthEmailActivationData,
+  AuthEmailValidationData,
 } from '@core/models';
 import { Observable } from 'rxjs';
 import { LocaleService } from '../ddx-locale.service';
@@ -84,6 +85,16 @@ export class AuthRESTService extends AbstractRESTService {
       'POST',
       data
     ) as Observable<AuthFormResponse>;
+  }
+
+  public requestEmailValidation(
+    data: AuthEmailValidationData
+  ): Observable<any> {
+    return this.httpPureRequest(
+      `api/Account/validate-email`,
+      'GET',
+      data
+    ) as Observable<any>;
   }
 
   public requestChangePassword(data: any): Observable<any> {
