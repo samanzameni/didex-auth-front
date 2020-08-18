@@ -109,7 +109,7 @@ export class SignupPhoneVerificationComponent
     this.restService.requestUpdateMobileNumber(dataToSend).subscribe(
       (response) => {
         this.setLoadingOff();
-        this.router.navigateByUrl('/user/kyc/identity-proof');
+        this.router.navigateByUrl('/signup/successful');
       },
       (errorResponse) => {
         this.setLoadingOff();
