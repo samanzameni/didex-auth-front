@@ -9,4 +9,6 @@ export class SignupSuccessfulComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSubmit(): void {}
 }

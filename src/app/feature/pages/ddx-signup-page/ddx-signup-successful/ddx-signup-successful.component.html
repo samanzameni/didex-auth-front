@@ -10,10 +10,10 @@
 
   <button
     class="continue-button"
-    routerLink="/"
     mat-raised-button
     color="primary"
     type="button"
+    (click)="onSubmit()"
   >
     {{ 'auth.success.continue' | ddxLocale }}
   </button>
