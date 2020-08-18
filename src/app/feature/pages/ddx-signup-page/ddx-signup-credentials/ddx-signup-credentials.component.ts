@@ -69,10 +69,23 @@ export class SignupCredentialsComponent extends AuthPageDirective
 
     this.authService
       .requestEmailValidation(formData as AuthEmailValidationData)
-      .subscribe((response) => {
-        this.setLoadingOff();
-        console.log('yay!!!');
-      });
+      .subscribe(
+        (response) => {
+          this.setLoadingOff();
+          this.router.navigateByUrl('signup/phone-verification');
+        },
+        (errorResponse) => {
+          this.setLoadingOff();
+
+          if (errorResponse.status === 400) {
+            const errors = errorResponse.error;
+
+            if (errors.Email) {
+              this.formErrors.email = errors.Email;
+            }
+          }
+        }
+      );
 
     // this.authService.requestSignUp(formData as AuthFormData).subscribe(
     //   (response) => {
