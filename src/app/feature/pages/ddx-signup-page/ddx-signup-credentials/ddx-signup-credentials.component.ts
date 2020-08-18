@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { mustMatch, isStrong } from '@core/util/validators';
-import { AuthFormData } from '@core/models';
+import { AuthFormData, AuthEmailValidationData } from '@core/models';
 import { AuthService } from '@core/services';
 import { Router } from '@angular/router';
 import { AuthPageDirective } from '@feature/templates/ddx-auth-page.template';
@@ -65,32 +65,41 @@ export class SignupCredentialsComponent extends AuthPageDirective
     this.formErrors = {};
 
     const { confirmPassword, acceptedTerms, ...formData } = this.authForm.value;
-    this.authService.requestSignUp(formData as AuthFormData).subscribe(
-      (response) => {
+    console.log(this.authForm.value);
+
+    this.authService
+      .requestEmailValidation(formData as AuthEmailValidationData)
+      .subscribe((response) => {
         this.setLoadingOff();
-        this.router.navigateByUrl('/signup/success');
-      },
-      (errorResponse) => {
-        this.setLoadingOff();
+        console.log('yay!!!');
+      });
 
-        if (errorResponse.status === 400) {
-          const errors = errorResponse.error.errors;
+    // this.authService.requestSignUp(formData as AuthFormData).subscribe(
+    //   (response) => {
+    //     this.setLoadingOff();
+    //     this.router.navigateByUrl('/signup/success');
+    //   },
+    //   (errorResponse) => {
+    //     this.setLoadingOff();
 
-          if (errors.email) {
-            this.formErrors.email = errors.email;
-          }
+    //     if (errorResponse.status === 400) {
+    //       const errors = errorResponse.error.errors;
 
-          if (errors.password) {
-            this.formErrors.password = errors.password;
-          }
+    //       if (errors.email) {
+    //         this.formErrors.email = errors.email;
+    //       }
 
-          for (const key of Object.keys(errors)) {
-            if (!['email', 'password', 'default'].includes(key)) {
-              alert(`An error occured: There is something wrong with ${key}`);
-            }
-          }
-        }
-      }
-    );
+    //       if (errors.password) {
+    //         this.formErrors.password = errors.password;
+    //       }
+
+    //       for (const key of Object.keys(errors)) {
+    //         if (!['email', 'password', 'default'].includes(key)) {
+    //           alert(`An error occured: There is something wrong with ${key}`);
+    //         }
+    //       }
+    //     }
+    //   }
+    // );
   }
 }

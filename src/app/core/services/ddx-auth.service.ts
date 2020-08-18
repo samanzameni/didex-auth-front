@@ -13,8 +13,9 @@ import { Observable } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import * as jwtDecode from 'jwt-decode';
-import { HttpResponse } from '@angular/common/http';
+import { HttpResponse, HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpParams } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
@@ -23,7 +24,8 @@ export class AuthService {
   constructor(
     private restService: AuthRESTService,
     private storageService: StorageService,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
   ) {
     this.isUserAuthorized = !!this.storageService.getUserAccessToken();
   }
@@ -93,12 +95,10 @@ export class AuthService {
     const options = data.email
       ? { params: new HttpParams().set('Email', data.email) }
       : {};
-    return this.restService.requestEmailValidation().pipe(
-      tap((response) => {
-        if (response.status === 204) {
-          this.router.navigateByUrl('signup/phone-verification');
-        }
-      })
+
+    return this.http.get(
+      'https://devapi.didex.com/api/Account/validate-email',
+      options
     );
   }
 
