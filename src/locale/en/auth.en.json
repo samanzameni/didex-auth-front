@@ -48,7 +48,9 @@
     "recapthca_message_terms": "Terms of Service",
     "recaptcha_message_after": "apply",
     "not_a_member": "Not a member?",
-    "sign_up": "Sign Up"
+    "sign_up": "Sign Up",
+    "create-account": "Create your account",
+    "buy-crypto": "Securely buy crypto and start trading on a trusted exchange"
   },
 
   "signup": {

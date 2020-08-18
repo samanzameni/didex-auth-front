@@ -1,110 +1,116 @@
 <form
-  arrangeStack
   autocomplete="off"
   [formGroup]="authFormGroup"
   (ngSubmit)="onSubmit()"
   #form
 >
-  <div class="title__container">
-    <h1 class="title active">
-      {{ 'auth.signin.title' | ddxLocale }}
-    </h1>
-    <h1 class="title">
-      <a routerLink="/signup">
-        {{ 'auth.signup.title' | ddxLocale }}
-      </a>
-    </h1>
+  <div class="signin-background__container">
+    <h1>{{ 'auth.signin.create-account' | ddxLocale }}</h1>
+    <p>{{ 'auth.signin.buy-crypto' | ddxLocale }}</p>
   </div>
 
   <!-- <hr class="title-seperator" /> -->
 
-  <p class="footnote forgot-password">
-    <a routerLink="/forgot-password">{{
-      'auth.signin.forgot_password' | ddxLocale
-    }}</a>
-  </p>
+  <div class="signin-form__container">
+    <div class="title__container">
+      <h1 class="title active">
+        {{ 'auth.signin.title' | ddxLocale }}
+      </h1>
+      <h1 class="title">
+        <a routerLink="/signup">
+          {{ 'auth.signup.title' | ddxLocale }}
+        </a>
+      </h1>
+    </div>
 
-  <mat-form-field for="email">
-    <mat-label>{{ 'auth.signin.email' | ddxLocale }}</mat-label>
-    <input
-      type="email"
-      formControlName="email"
-      matInput
-      name="email"
-      id="email"
-      placeholder="{{ 'auth.signin.email_placeholder' | ddxLocale }}"
-      autofocus
-      #emailInput
-    />
-  </mat-form-field>
-  <ng-container *ngIf="authFormControls.email.dirty">
-    <mat-error *ngIf="authFormControls.email.hasError('required')">
-      {{ 'auth.signin.email_error_required' | ddxLocale }}
-    </mat-error>
-    <mat-error *ngIf="authFormControls.email.hasError('email')">
-      {{ 'auth.signin.email_error_invalid' | ddxLocale }}
-    </mat-error>
-    <ng-container *ngIf="authFormErrors && authFormErrors.email">
-      <mat-error *ngFor="let error of authFormErrors.email">
-        {{ error }}
-      </mat-error>
-    </ng-container>
-  </ng-container>
-
-  <mat-form-field for="password">
-    <mat-label>{{ 'auth.signin.password' | ddxLocale }}</mat-label>
-    <input
-      [type]="isHidden ? 'password' : 'text'"
-      formControlName="password"
-      matInput
-      name="password"
-      id="password"
-    />
-    <mat-icon matSuffix (click)="toggleHidePassword()">{{
-      isHidden ? 'visibility_off' : 'visibility'
-    }}</mat-icon>
-  </mat-form-field>
-  <ng-container *ngIf="authFormControls.password.dirty">
-    <mat-error *ngIf="authFormControls.password.hasError('required')">
-      {{ 'auth.signin.password_error_required' | ddxLocale }}
-    </mat-error>
-    <ng-container *ngIf="authFormErrors && authFormErrors.password">
-      <mat-error *ngFor="let error of authFormErrors.password">
-        {{ error }}
-      </mat-error>
-    </ng-container>
-  </ng-container>
-
-  <div arrangeCenter #recaptcha class="recaptcha-container"></div>
-  <input type="hidden" name="token" formControlName="token" value="" />
-
-  <pro-button
-    color="primary"
-    type="submit"
-    [disabled]="!isFormValid"
-    #submitButton
-  >
-    {{ 'auth.signin.sign_in' | ddxLocale }}
-  </pro-button>
-
-  <div class="description">
-    <p class="footnote captcha">
-      {{ 'auth.signin.recaptcha_message_before' | ddxLocale }}
-      <a href="https://policies.google.com/privacy" target="_blank">{{
-        'auth.signin.recaptcha_message_privacy' | ddxLocale
+    <p class="footnote forgot-password">
+      <a routerLink="/forgot-password">{{
+        'auth.signin.forgot_password' | ddxLocale
       }}</a>
-      {{ 'auth.signin.recaptcha_message_between' | ddxLocale }}
-      <a href="https://policies.google.com/terms" target="_blank">{{
-        'auth.signin.recaptcha_message_terms' | ddxLocale
-      }}</a>
-      {{ 'auth.signin.recaptcha_message_after' | ddxLocale }}
     </p>
 
-    <!-- <p class="footnote message">
-      {{ 'auth.signin.not_a_member' | ddxLocale }}
-      <a tabindex="-1" routerLink="/signup">{{
-        'auth.signin.sign_up' | ddxLocale
-      }}</a>
-    </p> -->
+    <mat-form-field for="email">
+      <mat-label>{{ 'auth.signin.email' | ddxLocale }}</mat-label>
+      <input
+        type="email"
+        formControlName="email"
+        matInput
+        name="email"
+        id="email"
+        placeholder="{{ 'auth.signin.email_placeholder' | ddxLocale }}"
+        autofocus
+        #emailInput
+      />
+    </mat-form-field>
+    <ng-container *ngIf="authFormControls.email.dirty">
+      <mat-error *ngIf="authFormControls.email.hasError('required')">
+        {{ 'auth.signin.email_error_required' | ddxLocale }}
+      </mat-error>
+      <mat-error *ngIf="authFormControls.email.hasError('email')">
+        {{ 'auth.signin.email_error_invalid' | ddxLocale }}
+      </mat-error>
+      <ng-container *ngIf="authFormErrors && authFormErrors.email">
+        <mat-error *ngFor="let error of authFormErrors.email">
+          {{ error }}
+        </mat-error>
+      </ng-container>
+    </ng-container>
+
+    <mat-form-field for="password">
+      <mat-label>{{ 'auth.signin.password' | ddxLocale }}</mat-label>
+      <input
+        [type]="isHidden ? 'password' : 'text'"
+        formControlName="password"
+        matInput
+        name="password"
+        id="password"
+      />
+      <mat-icon matSuffix (click)="toggleHidePassword()">{{
+        isHidden ? 'visibility_off' : 'visibility'
+      }}</mat-icon>
+    </mat-form-field>
+    <ng-container *ngIf="authFormControls.password.dirty">
+      <mat-error *ngIf="authFormControls.password.hasError('required')">
+        {{ 'auth.signin.password_error_required' | ddxLocale }}
+      </mat-error>
+      <ng-container *ngIf="authFormErrors && authFormErrors.password">
+        <mat-error *ngFor="let error of authFormErrors.password">
+          {{ error }}
+        </mat-error>
+      </ng-container>
+    </ng-container>
+
+    <div arrangeCenter #recaptcha class="recaptcha-container"></div>
+    <input type="hidden" name="token" formControlName="token" value="" />
+
+    <pro-button
+      color="primary"
+      type="submit"
+      [disabled]="!isFormValid"
+      #submitButton
+    >
+      {{ 'auth.signin.sign_in' | ddxLocale }}
+    </pro-button>
+
+    <div class="description">
+      <p class="footnote captcha">
+        {{ 'auth.signin.recaptcha_message_before' | ddxLocale }}
+        <a href="https://policies.google.com/privacy" target="_blank">{{
+          'auth.signin.recaptcha_message_privacy' | ddxLocale
+        }}</a>
+        {{ 'auth.signin.recaptcha_message_between' | ddxLocale }}
+        <a href="https://policies.google.com/terms" target="_blank">{{
+          'auth.signin.recaptcha_message_terms' | ddxLocale
+        }}</a>
+        {{ 'auth.signin.recaptcha_message_after' | ddxLocale }}
+      </p>
+
+      <!-- <p class="footnote message">
+        {{ 'auth.signin.not_a_member' | ddxLocale }}
+        <a tabindex="-1" routerLink="/signup">{{
+          'auth.signin.sign_up' | ddxLocale
+        }}</a>
+      </p> -->
+    </div>
   </div>
 </form>
