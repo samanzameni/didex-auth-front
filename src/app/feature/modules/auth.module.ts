@@ -46,11 +46,12 @@ const routes: Routes = [
         path: 'phone-verification',
         component: SignupPhoneVerificationComponent,
       },
-      {
-        path: 'successful',
-        component: SignupSuccessfulComponent,
-      },
     ],
+  },
+
+  {
+    path: 'signup/successful',
+    component: SignupSuccessfulComponent,
   },
 
   {
