@@ -63,10 +63,27 @@ $input-width: 535px;
         height: 100%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
         img#background-img {
           object-fit: contain;
           max-height: 360px;
+        }
+
+        div.signin-overlay__text {
+          position: absolute;
+          width: max-content;
+
+          h1 {
+            color: $ddx-accent-main;
+            padding: 10px 0;
+          }
+
+          p {
+            padding: 10px 0;
+            font-weight: bold;
+          }
         }
       }
     }
