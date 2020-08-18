@@ -65,7 +65,6 @@ export class SignupCredentialsComponent extends AuthPageDirective
     this.formErrors = {};
 
     const { confirmPassword, acceptedTerms, ...formData } = this.authForm.value;
-    console.log(this.authForm.value);
 
     this.authService
       .requestEmailValidation(formData as AuthEmailValidationData)
