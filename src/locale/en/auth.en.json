@@ -80,8 +80,8 @@
     "next": "Next",
     "submit": "Submit",
     "sms-code": "SMS Code",
-    "create-account": "Create your account",
-    "buy-crypto": "Securely buy crypto and start trading on a trusted exchange"
+    "signup-account": "Create your account",
+    "signup-buy-crypto": "Securely buy crypto and start trading on a trusted exchange"
   },
 
   "success": {
