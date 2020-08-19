@@ -1,4 +1,4 @@
-<div id="successful-content__container">
+<div id="successful-content__container" dir="{{ direction$ | async }}">
   <img
     id="successful-logo"
     src="assets/images/signup-successful-icon.svg"
@@ -8,7 +8,7 @@
   <h1>{{ 'auth.success.title' | ddxLocale }}</h1>
   <p>{{ 'auth.success.message' | ddxLocale }}</p>
 
-  <button
+  <!-- <button
     class="continue-button"
     mat-raised-button
     color="primary"
@@ -16,5 +16,5 @@
     (click)="onSubmit()"
   >
     {{ 'auth.success.continue' | ddxLocale }}
-  </button>
+  </button> -->
 </div>

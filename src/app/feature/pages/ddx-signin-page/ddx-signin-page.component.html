@@ -3,6 +3,7 @@
   [formGroup]="authFormGroup"
   (ngSubmit)="onSubmit()"
   #form
+  dir="{{ direction$ | async }}"
 >
   <div class="signin-background__container">
     <img

@@ -1,6 +1,12 @@
 .title,
 h1 {
-  font-family: 'overpass';
+  &.en {
+    font-family: 'segoe';
+  }
+
+  &.fa {
+    font-family: 'shabnam';
+  }
   font-size: 26px;
   line-height: 26px;
   font-weight: bolder;
@@ -8,7 +14,13 @@ h1 {
 
 .headline,
 h2 {
-  font-family: 'overpass';
+  &.en {
+    font-family: 'segoe';
+  }
+
+  &.fa {
+    font-family: 'shabnam';
+  }
   font-size: 26px;
   line-height: 26px;
   font-weight: normal;
@@ -16,7 +28,13 @@ h2 {
 
 .subhead,
 h3 {
-  font-family: 'overpass';
+  &.en {
+    font-family: 'segoe';
+  }
+
+  &.fa {
+    font-family: 'shabnam';
+  }
   font-size: 16px;
   line-height: 16px;
   font-weight: normal;
@@ -24,43 +42,134 @@ h3 {
 
 .body,
 p {
-  font-family: 'overpass';
+  &.en {
+    font-family: 'segoe';
+  }
+
+  &.fa {
+    font-family: 'shabnam';
+  }
   font-size: 14px;
   line-height: 14px;
   font-weight: normal;
 }
 
 .callout {
-  font-family: 'overpass';
+  &.en {
+    font-family: 'segoe';
+  }
+
+  &.fa {
+    font-family: 'shabnam';
+  }
   font-size: 16px;
   line-height: 16px;
   font-weight: normal;
 }
 
 .callout-small {
-  font-family: 'overpass';
+  &.en {
+    font-family: 'segoe';
+  }
+
+  &.fa {
+    font-family: 'shabnam';
+  }
   font-size: 14px;
   line-height: 14px;
   font-weight: bold;
 }
 
 .footnote {
-  font-family: 'overpass';
+  &.en {
+    font-family: 'segoe';
+  }
+
+  &.fa {
+    font-family: 'shabnam';
+  }
   font-size: 12px;
   line-height: 12px;
   font-weight: normal;
 }
 
 .caption {
-  font-family: 'overpass';
+  &.en {
+    font-family: 'segoe';
+  }
+
+  &.fa {
+    font-family: 'shabnam';
+  }
   font-size: 14px;
   line-height: 14px;
   font-weight: bold;
 }
 
 .caption-small {
-  font-family: 'overpass';
+  &.en {
+    font-family: 'segoe';
+  }
+
+  &.fa {
+    font-family: 'shabnam';
+  }
   font-size: 12px;
   line-height: 12px;
   font-weight: lighter;
+}
+
+@import '~@angular/material/theming';
+
+.en {
+  $custom-typography: mat-typography-config(
+    $font-family: 'segoe',
+  );
+
+  @include mat-core($custom-typography);
+  @include mat-checkbox-typography($custom-typography);
+  @include angular-material-typography($custom-typography);
+
+  mat-label,
+  form .mat-form-field,
+  .mat-form-field-label,
+  .mat-button,
+  .mat-raised-button,
+  .mat-icon-button,
+  .mat-stroked-button,
+  .mat-flat-button,
+  .mat-fab,
+  .mat-mini-fab,
+  .mat-checkbox-layout,
+  ::ng-deep .mat-form-field-label,
+  ::ng-deep mat-label {
+    font-family: 'segoe';
+  }
+}
+
+.fa {
+  $custom-typography: mat-typography-config(
+    $font-family: 'shabnam',
+  );
+
+  @include mat-core($custom-typography);
+  @include mat-checkbox-typography($custom-typography);
+  @include angular-material-typography($custom-typography);
+
+  mat-label,
+  form .mat-form-field,
+  .mat-form-field-label,
+  .mat-button,
+  .mat-raised-button,
+  .mat-icon-button,
+  .mat-stroked-button,
+  .mat-flat-button,
+  .mat-fab,
+  .mat-mini-fab,
+  .mat-checkbox-layout,
+  ::ng-deep .mat-form-field-label,
+  ::ng-deep mat-label {
+    direction: rtl;
+    font-family: 'shabnam';
+  }
 }

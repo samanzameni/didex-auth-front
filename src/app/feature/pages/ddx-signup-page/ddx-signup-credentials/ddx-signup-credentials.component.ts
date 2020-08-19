@@ -9,11 +9,16 @@ import {
 import { FormBuilder, Validators } from '@angular/forms';
 import { mustMatch, isStrong } from '@core/util/validators';
 import { AuthFormData, AuthEmailValidationData } from '@core/models';
-import { AuthService, DdxRegisterDataService } from '@core/services';
+import {
+  AuthService,
+  DdxRegisterDataService,
+  DirectionService,
+} from '@core/services';
 import { Router } from '@angular/router';
 import { AuthPageDirective } from '@feature/templates/ddx-auth-page.template';
 import { MatCheckbox } from '@angular/material/checkbox';
 import { environment } from '@environments/environment';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'ddx-signup-credentials',
@@ -30,7 +35,8 @@ export class SignupCredentialsComponent extends AuthPageDirective
     protected router: Router,
     protected authService: AuthService,
     protected cdRef: ChangeDetectorRef,
-    private userDataService: DdxRegisterDataService
+    private userDataService: DdxRegisterDataService,
+    private directionService: DirectionService
   ) {
     super(formBuilder, renderer, router, authService, cdRef);
   }
@@ -55,6 +61,10 @@ export class SignupCredentialsComponent extends AuthPageDirective
 
   ngAfterViewInit(): void {
     // super.ngAfterViewInit();
+  }
+
+  get direction$(): Observable<string> {
+    return this.directionService.direction$;
   }
 
   get isFormValid(): boolean {

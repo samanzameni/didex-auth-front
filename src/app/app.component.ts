@@ -1,5 +1,12 @@
-import { Component } from '@angular/core';
-import { LocaleService, Locale, LocaleModel } from '@core/services';
+import { Component, OnInit } from '@angular/core';
+import {
+  LocaleService,
+  Locale,
+  LocaleModel,
+  DirectionService,
+  Direction,
+} from '@core/services';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +14,10 @@ import { LocaleService, Locale, LocaleModel } from '@core/services';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private localeService: LocaleService) {}
+  constructor(
+    private localeService: LocaleService,
+    private directionService: DirectionService
+  ) {}
 
   handleLocaleChange($event: Locale): void {
     this.localeService.changeLocale($event);
@@ -20,5 +30,13 @@ export class AppComponent {
 
   get currentLocaleModel(): LocaleModel {
     return this.localeService.currentLocaleModel;
+  }
+
+  get direction$(): Observable<Direction> {
+    return this.directionService.direction$;
+  }
+
+  get locale$(): Observable<Locale> {
+    return this.localeService.locale$;
   }
 }

@@ -9,10 +9,10 @@ import {
 import { AuthPageDirective } from '@feature/templates/ddx-auth-page.template';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthService } from '@core/services';
+import { AuthService, DirectionService } from '@core/services';
 import { AuthFormData } from '@core/models';
 import { environment } from '@environments/environment';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 
 @Component({
   selector: 'ddx-signin-page',
@@ -32,7 +32,8 @@ export class SignInPageComponent extends AuthPageDirective
     protected route: ActivatedRoute,
     protected router: Router,
     protected authService: AuthService,
-    protected cdRef: ChangeDetectorRef
+    protected cdRef: ChangeDetectorRef,
+    private directionService: DirectionService
   ) {
     super(formBuilder, renderer, router, authService, cdRef);
     this.redirectURL = null;
@@ -61,6 +62,10 @@ export class SignInPageComponent extends AuthPageDirective
     if (this.paramSubscription) {
       this.paramSubscription.unsubscribe();
     }
+  }
+
+  get direction$(): Observable<string> {
+    return this.directionService.direction$;
   }
 
   onSubmit(): void {

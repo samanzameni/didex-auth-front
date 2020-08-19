@@ -52,7 +52,7 @@
       }
 
       p.captcha {
-        text-align: left;
+        text-align: start;
       }
 
       p.message {
@@ -61,7 +61,7 @@
 
       p.forgot-password {
         width: 100%;
-        text-align: right;
+        text-align: end;
       }
     }
 
@@ -73,7 +73,7 @@
     .forgot-password {
       width: 100%;
       font-weight: lighter;
-      text-align: right;
+      text-align: end;
 
       a,
       a:hover,
@@ -99,7 +99,7 @@
         }
 
         p.message {
-          text-align: right;
+          text-align: end;
         }
       }
     }

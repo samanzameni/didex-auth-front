@@ -1,6 +1,18 @@
 :host {
   position: relative;
 
+  & > div {
+    position: relative;
+  }
+
+  .en {
+    font-family: 'segoe';
+  }
+
+  .fa {
+    font-family: 'shabnam';
+  }
+
   .locale-selector {
     position: fixed;
     top: 0px;

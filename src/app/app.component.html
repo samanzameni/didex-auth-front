@@ -1,13 +1,18 @@
-<mat-form-field class="locale-selector">
-  <mat-select
-    disableOptionCentering
-    [value]="currentLocaleModel.locale"
-    panelClass="locale-selector-panel"
-    (valueChange)="handleLocaleChange($event)"
-  >
-    <mat-option *ngFor="let item of availableLocales" [value]="item.locale">
-      {{ item.caption }}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-<router-outlet></router-outlet>
+<div
+  dir="{{ direction$ | async }}"
+  class="{{ direction$ | async }} {{ locale$ | async }}"
+>
+  <mat-form-field class="locale-selector">
+    <mat-select
+      disableOptionCentering
+      [value]="currentLocaleModel.locale"
+      panelClass="locale-selector-panel"
+      (valueChange)="handleLocaleChange($event)"
+    >
+      <mat-option *ngFor="let item of availableLocales" [value]="item.locale">
+        {{ item.caption }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <router-outlet></router-outlet>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DirectionService } from '@core/services';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'ddx-signup-successful',
@@ -6,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ddx-signup-successful.component.scss'],
 })
 export class SignupSuccessfulComponent implements OnInit {
-  constructor() {}
+  constructor(private directionService: DirectionService) {}
 
   ngOnInit(): void {}
+
+  get direction$(): Observable<string> {
+    return this.directionService.direction$;
+  }
 
   onSubmit(): void {}
 }

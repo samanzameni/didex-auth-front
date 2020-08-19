@@ -5,6 +5,7 @@
   #form
   *ngIf="phoneVerification"
   [formGroup]="phoneVerification"
+  dir="{{ direction$ | async }}"
 >
   <div class="mobile-number__container">
     <dropdown-autocomplete-countries

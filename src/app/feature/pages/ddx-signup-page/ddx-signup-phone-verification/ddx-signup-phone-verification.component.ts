@@ -7,14 +7,18 @@ import {
 } from '@angular/core';
 import { DropdownSelectItem, AuthSignUpFormData } from '@core/models';
 import { CONSTANTS, COUNTRIES } from '@core/util/constants';
-import { interval, timer } from 'rxjs';
+import { interval, timer, Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { PhoneVerificationPageDirective } from '@feature/templates';
 import { AuthRESTService } from '@core/services/REST';
 import { FormBuilder } from '@angular/forms';
 import { secondsToTime } from '@core/util/time';
-import { AuthService, DdxRegisterDataService } from '@core/services';
+import {
+  AuthService,
+  DdxRegisterDataService,
+  DirectionService,
+} from '@core/services';
 
 @Component({
   selector: 'ddx-signup-phone-verification',
@@ -42,7 +46,8 @@ export class SignupPhoneVerificationComponent
     protected formBuilder: FormBuilder,
     private authService: AuthService,
     private restService: AuthRESTService,
-    private userDataService: DdxRegisterDataService
+    private userDataService: DdxRegisterDataService,
+    private directionService: DirectionService
   ) {
     super(router, el, renderer, formBuilder);
     this.renderer.addClass(this.el.nativeElement, 'phone-verification-form');
@@ -57,6 +62,10 @@ export class SignupPhoneVerificationComponent
 
   ngOnInit(): void {
     super.ngOnInit();
+  }
+
+  get direction$(): Observable<string> {
+    return this.directionService.direction$;
   }
 
   get countriesList(): DropdownSelectItem[] {
