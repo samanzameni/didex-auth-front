@@ -14,6 +14,7 @@ import { environment } from '@environments/environment';
 export class ActivateEmailPageComponent implements OnInit {
   private email: string;
   private token: string;
+  private redirect_url: string;
 
   private currentPageState: string;
 
@@ -30,7 +31,7 @@ export class ActivateEmailPageComponent implements OnInit {
     const link = document.createElement('a');
     const baseURL =
       'https://' + (environment.production ? '' : 'dev.') + 'didex.com';
-    link.href = `${baseURL}`;
+    link.href = this.redirect_url || baseURL;
     link.style.width = '1px';
     link.style.height = '1px';
     link.style.position = 'fixed';
@@ -44,6 +45,7 @@ export class ActivateEmailPageComponent implements OnInit {
     this.route.queryParams.subscribe((params) => {
       this.email = params.email;
       this.token = params.token;
+      this.redirect_url = params.redirect_url;
 
       this.authService
         .requestVerifyEmail({ email: this.email, token: this.token })
