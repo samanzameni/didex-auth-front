@@ -32,7 +32,7 @@ export class AuthRESTService extends AbstractRESTService {
   }
 
   public requestSendConfirmationMobileNumber(data: any): Observable<any> {
-    return this.httpPOST('api/Trader/SendConfirmationMobileNumber', data);
+    return this.httpPOST('api/Account/SendConfirmationMobileNumber', data);
   }
 
   public requestUpdateMobileNumber(data: any): Observable<any> {

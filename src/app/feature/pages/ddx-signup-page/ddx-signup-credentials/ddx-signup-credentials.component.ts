@@ -54,7 +54,7 @@ export class SignupCredentialsComponent extends AuthPageDirective
   }
 
   ngAfterViewInit(): void {
-    super.ngAfterViewInit();
+    // super.ngAfterViewInit();
   }
 
   get isFormValid(): boolean {

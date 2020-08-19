@@ -1,11 +1,14 @@
 import { Injectable, ApplicationRef } from '@angular/core';
 
 import * as en_locale from '@locale/en';
-import * as cn_locale from '@locale/cn';
+import * as zh_locale from '@locale/zh';
 import * as ru_locale from '@locale/ru';
-import { StorageService } from './ddx-storage.service';
+import * as fa_locale from '@locale/fa';
 
-export type Locale = 'en' | 'cn' | 'ru';
+import { StorageService } from './ddx-storage.service';
+import { BehaviorSubject, Observable } from 'rxjs';
+
+export type Locale = 'en' | 'zh' | 'ru' | 'fa';
 export type LocaleModel = {
   locale: Locale;
   caption: string;
@@ -15,6 +18,7 @@ export type LocaleModel = {
   providedIn: 'root',
 })
 export class LocaleService {
+  private _locale$: BehaviorSubject<Locale>;
   private locale: Locale;
   private localeModels: LocaleModel[];
 
@@ -23,11 +27,13 @@ export class LocaleService {
   constructor(private storageService: StorageService) {
     this.localeModels = [
       { locale: 'en', caption: 'English' },
-      { locale: 'cn', caption: '中文' },
+      { locale: 'zh', caption: '中文' },
       { locale: 'ru', caption: 'русский' },
+      { locale: 'fa', caption: 'فارسی' },
     ];
 
     this.changeLocale(this.storageService.getStoredLocale() || 'en');
+    this._locale$ = new BehaviorSubject(this.locale);
   }
 
   get currentLocale(): Locale {
@@ -40,6 +46,10 @@ export class LocaleService {
 
   get availableLocales(): LocaleModel[] {
     return this.localeModels;
+  }
+
+  get locale$(): Observable<Locale> {
+    return this._locale$.asObservable();
   }
 
   public changeLocale(newLocale: Locale): void {
@@ -93,11 +103,14 @@ export class LocaleService {
     try {
       let localeFile;
       switch (this.locale) {
-        case 'cn':
-          localeFile = cn_locale[decodedMessageID.messageSection];
-          break;
         case 'ru':
           localeFile = ru_locale[decodedMessageID.messageSection];
+          break;
+        case 'zh':
+          localeFile = zh_locale[decodedMessageID.messageSection];
+          break;
+        case 'fa':
+          localeFile = fa_locale[decodedMessageID.messageSection];
           break;
         case 'en':
         default:
