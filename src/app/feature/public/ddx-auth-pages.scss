@@ -2,7 +2,7 @@
 
 :host {
   display: flex;
-  align-items: center;
+  // align-items: center;
   justify-content: center;
   width: 100vw;
   min-height: 100vh;
@@ -19,68 +19,14 @@
       display: flex;
       align-items: center;
 
-      img {
-        height: 30px;
-        object-fit: contain;
-        margin-right: 5px;
-      }
+      // img {
+      //   height: 30px;
+      //   object-fit: contain;
+      //   margin-right: 5px;
+      // }
 
       b {
         margin: 0 5px;
-      }
-    }
-
-    .password-hints-container {
-      margin: 0px 0 10px 0;
-
-      li {
-        position: relative;
-        font-size: 10px;
-        margin: 0 2px;
-        padding-left: 15px;
-        transition: cubic-bezier(0.4, 0, 0.2, 1);
-
-        &:before {
-          content: '\2022';
-          display: flex;
-          width: 10px;
-          height: 10px;
-          position: absolute;
-          top: 3px;
-          left: 0;
-          color: $ddx-light;
-          font-size: 20px;
-          align-items: center;
-          justify-content: center;
-        }
-
-        &.approved {
-          color: $ddx-green;
-
-          &:before {
-            color: $ddx-green;
-          }
-        }
-      }
-    }
-
-    ::ng-deep mat-checkbox,
-    mat-checkbox {
-      margin-bottom: 10px;
-      font-size: 12px;
-
-      ::ng-deep .mat-checkbox-label,
-      .mat-checkbox-label {
-        line-height: 14px;
-        white-space: normal;
-      }
-
-      ::ng-deep .mat-icon,
-      .mat-icon {
-        font-size: 15px;
-        line-height: 15px;
-        width: 15px;
-        height: 15px;
       }
     }
 
@@ -91,8 +37,8 @@
       margin-top: 15px;
 
       p {
-        width: 50%;
-        flex-shrink: 0;
+        width: 100%;
+
         color: $ddx-light-darker;
         font-weight: lighter;
 
@@ -106,7 +52,6 @@
       }
 
       p.captcha {
-        display: none;
         text-align: left;
       }
 
@@ -137,6 +82,10 @@
         text-decoration: none;
         font-weight: normal;
       }
+    }
+
+    #term-acceptance__checkbox {
+      margin: 40px 0;
     }
   }
 }

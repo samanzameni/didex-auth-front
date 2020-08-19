@@ -8,6 +8,7 @@ import {
   AuthResetPasswordFormData,
   AuthResetPasswordData,
   AuthEmailActivationData,
+  AuthEmailValidationData,
 } from '@core/models';
 import { Observable } from 'rxjs';
 import { LocaleService } from '../ddx-locale.service';
@@ -28,6 +29,14 @@ export class AuthRESTService extends AbstractRESTService {
       'POST',
       data
     ) as Observable<AuthFormResponse>;
+  }
+
+  public requestSendConfirmationMobileNumber(data: any): Observable<any> {
+    return this.httpPOST('api/Trader/SendConfirmationMobileNumber', data);
+  }
+
+  public requestUpdateMobileNumber(data: any): Observable<any> {
+    return this.httpPUT('api/Trader/MobileNumber', data);
   }
 
   public requestLogin(
@@ -77,6 +86,14 @@ export class AuthRESTService extends AbstractRESTService {
       data
     ) as Observable<AuthFormResponse>;
   }
+
+  // public requestEmailValidation(options: string): Observable<any> {
+  //   const options{
+  //     headers: this.getFullHeaders(),
+  //     observe: 'response',
+  //   }
+  //   return this.http.get(`api/Account/validate-email`,options);
+  // }
 
   public requestChangePassword(data: any): Observable<any> {
     return this.httpPOST(`api/Account/changePassword`, data) as Observable<any>;

@@ -1,0 +1,61 @@
+@import '../../../../../styles.scss';
+
+:host {
+  form {
+    div.mobile-number__container {
+      display: flex;
+      justify-content: space-between;
+
+      dropdown-autocomplete-countries#countryTelephoneCode {
+        width: 25%;
+      }
+      mat-form-field#mobileNumber {
+        width: 70%;
+      }
+    }
+
+    div#code-input {
+      display: flex;
+      justify-content: space-between;
+
+      p.message {
+        width: 25%;
+
+        display: flex;
+        align-items: center;
+        padding-top: 6px;
+      }
+
+      mat-form-field#sms-code__input {
+        width: 70%;
+      }
+    }
+
+    #get-code__container {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+      margin-bottom: 20px;
+
+      span#timer {
+        display: flex;
+        align-items: center;
+        padding-right: 10px;
+      }
+
+      button {
+        width: 20%;
+      }
+    }
+
+    pro-button#next-button {
+      margin-bottom: 25px;
+    }
+
+    mat-error {
+      margin-inline-start: auto;
+      width: 70%;
+    }
+  }
+}

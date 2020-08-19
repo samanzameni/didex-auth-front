@@ -1,0 +1,40 @@
+@import '../../../../../styles.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  width: 100vw;
+
+  div#successful-content__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    img#successful-logo {
+      padding-bottom: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 26px;
+      color: $ddx-accent-main;
+      padding: 10px 0;
+    }
+
+    p {
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    button.continue-button {
+      width: 145px;
+
+      margin-top: 10px;
+    }
+  }
+}

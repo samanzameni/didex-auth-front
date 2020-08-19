@@ -23,3 +23,16 @@ export interface AuthFormResponse {
   twoFactorEnabled: boolean;
   roles: string[];
 }
+
+export interface AuthEmailValidationData {
+  email: string;
+}
+
+export interface AuthSignUpFormData {
+  email: string;
+  password: string;
+  mobileNumber: string;
+  countryTelephoneCode: string;
+  code: string;
+  token: string;
+}

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {
   ProButtonComponent,
   ExternalUrlRedirectorComponent,
+  DropdownAutocompleteCountriesComponent,
 } from './components';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -31,6 +32,7 @@ import {
     //
     ProButtonComponent,
     ExternalUrlRedirectorComponent,
+    DropdownAutocompleteCountriesComponent,
   ],
   imports: [
     CommonModule,
@@ -55,6 +57,7 @@ import {
     //
     ProButtonComponent,
     ExternalUrlRedirectorComponent,
+    DropdownAutocompleteCountriesComponent,
   ],
 })
 export class WidgetModule {}

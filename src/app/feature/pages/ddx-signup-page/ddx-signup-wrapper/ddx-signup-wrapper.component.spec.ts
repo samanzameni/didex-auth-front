@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SignUpPageComponent } from './ddx-signup-page.component';
+import { SignUpWrapperComponent } from './ddx-signup-wrapper.component';
 
 describe('DdxSignupPageComponent', () => {
-  let component: SignUpPageComponent;
-  let fixture: ComponentFixture<SignUpPageComponent>;
+  let component: SignUpWrapperComponent;
+  let fixture: ComponentFixture<SignUpWrapperComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SignUpPageComponent],
+      declarations: [SignUpWrapperComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SignUpPageComponent);
+    fixture = TestBed.createComponent(SignUpWrapperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

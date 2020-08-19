@@ -1,0 +1,154 @@
+<form
+  arrangeStack
+  autocomplete="off"
+  (ngSubmit)="onSubmit()"
+  #form
+  *ngIf="phoneVerification"
+  [formGroup]="phoneVerification"
+>
+  <div class="mobile-number__container">
+    <dropdown-autocomplete-countries
+      id="countryTelephoneCode"
+      caption="{{ 'kyc.phone_verification.country' | ddxLocale }}"
+      desiredValueKey="phoneCode"
+      [control]="phoneVerificationFormControls.countryTelephoneCode"
+    >
+    </dropdown-autocomplete-countries>
+
+    <mat-form-field id="mobileNumber">
+      <span
+        matPrefix
+        *ngIf="
+          phoneVerificationFormControls.countryTelephoneCode.value &&
+          phoneVerificationFormControls.countryTelephoneCode.value.length > 0 &&
+          codeStartsWithDigit(
+            phoneVerificationFormControls.countryTelephoneCode.value
+          )
+        "
+        >+{{ phoneVerificationFormControls.countryTelephoneCode.value }}</span
+      >
+      <input
+        type="text"
+        placeholder="{{
+          'kyc.phone_verification.mobile_number_placeholder' | ddxLocale
+        }}"
+        matInput
+        name="mobileNumber"
+        formControlName="mobileNumber"
+      />
+      <!-- <mat-error
+        *ngIf="
+          phoneVerificationFormGroup.controls.mobileNumber.hasError('required')
+        "
+      >
+        {{ 'kyc.phone_verification.mobile_number_error_required' | ddxLocale }}
+      </mat-error>
+      <mat-error
+        *ngIf="
+          phoneVerificationFormGroup.controls.mobileNumber.hasError('maxlength')
+        "
+      >
+        {{ 'kyc.phone_verification.mobile_number_error_maxlength' | ddxLocale }}
+      </mat-error>
+      <mat-error
+        *ngIf="
+          phoneVerificationFormGroup.controls.mobileNumber.hasError('pattern')
+        "
+      >
+        {{ 'kyc.phone_verification.mobile_number_error_pattern' | ddxLocale }}
+      </mat-error> -->
+    </mat-form-field>
+  </div>
+
+  <!-- <div arrangeInline id="resendCode">
+    <button
+      mat-stroked-button
+      color="basic"
+      type="button"
+      [ngClass]="{ hidden: !hasSubmittedNumber }"
+      [disabled]="!timerFinished"
+      (click)="onSubmitNumber()"
+      #submitNumberButton
+    >
+      {{ 'kyc.phone_verification.resend_code_button' | ddxLocale }}
+    </button>
+  </div> -->
+
+  <div id="code-input">
+    <p class="message">
+      {{ 'auth.signup.sms-code' | ddxLocale }}
+    </p>
+    <mat-form-field id="sms-code__input">
+      <input
+        type="text"
+        placeholder="123456"
+        matInput
+        name="code"
+        formControlName="code"
+      />
+    </mat-form-field>
+  </div>
+
+  <mat-error
+    *ngIf="phoneVerificationFormGroup.controls.code.hasError('required')"
+  >
+    {{ 'kyc.phone_verification.code_error_required' | ddxLocale }}
+  </mat-error>
+  <mat-error
+    *ngIf="phoneVerificationFormGroup.controls.code.hasError('minlength')"
+  >
+    {{ 'kyc.phone_verification.code_error_minlength' | ddxLocale }}
+  </mat-error>
+  <mat-error
+    *ngIf="phoneVerificationFormGroup.controls.code.hasError('maxlength')"
+  >
+    {{ 'kyc.phone_verification.code_error_maxlength' | ddxLocale }}
+  </mat-error>
+  <mat-error
+    *ngIf="phoneVerificationFormGroup.controls.code.hasError('pattern')"
+  >
+    {{ 'kyc.phone_verification.code_error_pattern' | ddxLocale }}
+  </mat-error>
+  <div *ngIf="errors && errors.code" class="error-feedback">
+    <mat-error *ngFor="let error of errors.code">
+      {{ error }}
+    </mat-error>
+  </div>
+
+  <div id="get-code__container">
+    <span id="timer">{{ countdownTimer }}</span>
+
+    <button
+      mat-flat-button
+      color="accent"
+      type="button"
+      [disabled]="
+        !phoneVerificationFormControls.countryTelephoneCode.valid ||
+        !phoneVerificationFormControls.mobileNumber.valid ||
+        !timerFinished
+      "
+      (click)="onSubmitNumber()"
+      #submitNumberButton
+    >
+      {{ 'auth.signup.get-code' | ddxLocale }}
+    </button>
+  </div>
+
+  <pro-button id="next-button" color="primary" type="submit" #submitButton>
+    {{ 'auth.signup.next' | ddxLocale }}
+  </pro-button>
+
+  <div class="description">
+    <p class="footnote captcha">
+      {{ 'auth.signup.recaptcha_message_before' | ddxLocale }}
+      <a href="https://policies.google.com/privacy" target="_blank">{{
+        'auth.signup.recaptcha_message_privacy' | ddxLocale
+      }}</a>
+      {{ 'auth.signup.recaptcha_message_between' | ddxLocale }}
+      <a href="https://policies.google.com/terms" target="_blank">{{
+        'auth.signup.recaptcha_message_terms' | ddxLocale
+      }}</a>
+      {{ 'auth.signup.recaptcha_message_after' | ddxLocale }}
+    </p>
+  </div>
+</form>

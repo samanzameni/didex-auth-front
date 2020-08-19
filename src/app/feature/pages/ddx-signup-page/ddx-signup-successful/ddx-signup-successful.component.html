@@ -1,0 +1,20 @@
+<div id="successful-content__container">
+  <img
+    id="successful-logo"
+    src="assets/images/signup-successful-icon.svg"
+    alt="signup successful"
+  />
+
+  <h1>{{ 'auth.success.title' | ddxLocale }}</h1>
+  <p>{{ 'auth.success.message' | ddxLocale }}</p>
+
+  <button
+    class="continue-button"
+    mat-raised-button
+    color="primary"
+    type="button"
+    (click)="onSubmit()"
+  >
+    {{ 'auth.success.continue' | ddxLocale }}
+  </button>
+</div>

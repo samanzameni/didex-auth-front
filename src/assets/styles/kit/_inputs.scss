@@ -1,30 +1,47 @@
 @import './typography';
 @import './animations';
 
-$input-width: 420px;
+$input-width: 535px;
 
 form {
-  width: 100%;
-  max-width: $input-width;
+  // width: 100%;
+  // max-width: $input-width;
   box-sizing: border-box;
 
-  h1.title {
-    font-weight: lighter;
-    width: 100%;
-    text-align: left;
+  // margin: 0 10px;
 
-    b {
-      font-weight: bold;
-    }
-  }
+  // .title__container {
+  //   display: flex;
+  //   margin-bottom: 20px;
 
-  hr.title-seperator {
-    width: 30%;
-    margin-right: auto;
-    margin-left: 0;
-    margin-bottom: 20px;
-    border: 1px solid $ddx-accent-main;
-  }
+  //   h1.title {
+  //     font-weight: 600;
+  //     width: 100%;
+  //     text-align: left;
+  //     padding-bottom: 10px;
+
+  //     &.active {
+  //       color: $ddx-accent-main;
+  //       border-bottom: 1px solid $ddx-accent-main;
+  //     }
+
+  //     a {
+  //       text-decoration: none;
+  //     }
+
+  //     b {
+  //       font-weight: bold;
+  //     }
+  //   }
+  // }
+
+  // hr.title-seperator {
+  //   width: 30%;
+  //   margin-right: auto;
+  //   margin-left: 0;
+  //   margin-bottom: 20px;
+  //   border: 1px solid $ddx-accent-main;
+  // }
 
   .mat-form-field-appearance-outline .mat-form-field-suffix {
     top: 0em;
@@ -43,6 +60,7 @@ form {
   }
 
   .mat-form-field {
+    width: 100%;
     font-size: 14px;
   }
 }

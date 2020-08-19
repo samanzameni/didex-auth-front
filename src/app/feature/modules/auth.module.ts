@@ -6,9 +6,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { WidgetModule } from '@widget/widget.module';
 import {
   SignInPageComponent,
-  SignUpPageComponent,
+  SignUpWrapperComponent,
+  SignupCredentialsComponent,
+  SignupPhoneVerificationComponent,
+  SignupSuccessfulComponent,
   ForgotPasswordPageComponent,
-  SignUpSuccessPageComponent,
   ResetPasswordPageComponent,
   ActivateEmailPageComponent,
   TwoFactorSigninPageComponent,
@@ -36,14 +38,22 @@ const routes: Routes = [
   },
   {
     path: 'signup',
-    pathMatch: 'full',
-    component: SignUpPageComponent,
+    component: SignUpWrapperComponent,
+    children: [
+      { path: '', pathMatch: 'full', redirectTo: 'credentials' },
+      { path: 'credentials', component: SignupCredentialsComponent },
+      {
+        path: 'phone-verification',
+        component: SignupPhoneVerificationComponent,
+      },
+    ],
   },
+
   {
-    path: 'signup/success',
-    pathMatch: 'full',
-    component: SignUpSuccessPageComponent,
+    path: 'signup/successful',
+    component: SignupSuccessfulComponent,
   },
+
   {
     path: 'forgot-password',
     component: ForgotPasswordPageComponent,
@@ -61,9 +71,12 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     SignInPageComponent,
-    SignUpPageComponent,
+    SignUpWrapperComponent,
+    SignupCredentialsComponent,
+    SignupPhoneVerificationComponent,
+    SignupSuccessfulComponent,
     ForgotPasswordPageComponent,
-    SignUpSuccessPageComponent,
+
     ResetPasswordPageComponent,
     ActivateEmailPageComponent,
     TwoFactorSigninPageComponent,

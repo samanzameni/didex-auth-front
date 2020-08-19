@@ -3,7 +3,7 @@
     "success_all_set": "All set!",
     "success_redirect_message": "You will be redirected to homepage soon ...",
     "error_error": "Error!",
-    "error_message": "An error occured while activating your account."
+    "error_message": "An error occurred while activating your account."
   },
 
   "forgot": {
@@ -22,7 +22,7 @@
     "title": "Reset you password",
     "new_password": "New Password",
     "password_hint_length": "Must be at least 8 characters",
-    "password_hint_lower": "Must contain a lower case character",
+    "password_hint_lower": "Must contain at least a lowercase letter",
     "password_hint_upper": "Must contain an upper case character",
     "password_hint_number": "Must contain a number/digit",
     "password_hint_sign": "Must contain a sign",
@@ -33,7 +33,7 @@
   },
 
   "signin": {
-    "title": "Sign in to DidEx",
+    "title": "Sign in",
     "forgot_password": "Forgot password?",
     "email": "Email",
     "email_placeholder": "abc@example.com",
@@ -48,38 +48,46 @@
     "recapthca_message_terms": "Terms of Service",
     "recaptcha_message_after": "apply",
     "not_a_member": "Not a member?",
-    "sign_up": "Sign Up"
+    "sign_up": "Sign Up",
+    "signin-account": "Sign in to your account",
+    "signin-buy-crypto": "Securely buy crypto and start trading on a trusted exchange"
   },
 
   "signup": {
-    "title": "Sign up for DidEx",
+    "title": "Sign up",
     "email": "Email",
     "email_placeholder": "abc@example.com",
     "email_error_required": "Email is required",
     "email_error_invalid": "Email must be a valid address",
     "password": "Password",
     "password_hint_length": "Must be at least 8 characters",
-    "password_hint_lower": "Must contain a lower case character",
-    "password_hint_upper": "Must contain an upper case character",
+    "password_hint_lower": "Must contain at least a lowercase letter",
+    "password_hint_upper": "Must contain an uppercase character",
     "password_hint_number": "Must contain a number/digit",
     "password_hint_sign": "Must contain a sign",
     "confirm_password": "Confirm Password",
     "confirm_password_error_required": "Password must be confirmed",
     "confirm_password_error_match": "Passwords must match",
-    "terms_check": "Creating an account means you’re okay with our Terms of Service, Privacy Policy, and our default Notification Settings.",
+    "terms_check": "I acknowledge that I have read, fully understand and agree to DidEx Terms of Service, Privacy Policy and default notification settings.",
     "sign_in": "Sign In",
-    "recaptcha_message_before": "This site is protected by reCAPTCHA and the Google",
-    "recaptcha_message_privacy": "Privacy Policy",
+    "recaptcha_message_before": "This site is protected by reCAPTCHA and the",
+    "recaptcha_message_privacy": "Google Privacy Policy",
     "recaptcha_message_between": "and",
     "recapthca_message_terms": "Terms of Service",
     "recaptcha_message_after": "apply",
     "not_a_member": "Not a member?",
-    "sign_up": "Sign Up"
+    "sign_up": "Sign Up",
+    "next": "Next",
+    "get-code": "Get Code",
+    "sms-code": "SMS Code",
+    "signup-account": "Create your account",
+    "signup-buy-crypto": "Securely buy crypto and start trading on a trusted exchange"
   },
 
   "success": {
-    "title": "Success!",
-    "message": "Check your mailbox for the activation email"
+    "title": "You have successfully registered",
+    "message": "Please check your email to verify and activate your account.",
+    "continue": "Continue"
   },
 
   "2fa": {

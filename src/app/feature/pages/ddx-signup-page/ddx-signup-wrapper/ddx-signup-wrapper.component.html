@@ -1,0 +1,27 @@
+<form>
+  <div class="signup-background__container">
+    <img
+      id="background-img"
+      src="assets/images/background-rectangles.svg"
+      alt="background image"
+    />
+    <div class="signup-overlay__text">
+      <h1>{{ 'auth.signup.signup-account' | ddxLocale }}</h1>
+      <p>{{ 'auth.signup.signup-buy-crypto' | ddxLocale }}</p>
+    </div>
+  </div>
+
+  <div class="signup-wrapper">
+    <div class="title__container">
+      <h1 class="title">
+        <a routerLink="/signin">
+          {{ 'auth.signin.title' | ddxLocale }}
+        </a>
+      </h1>
+      <h1 class="title active">
+        {{ 'auth.signup.title' | ddxLocale }}
+      </h1>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</form>

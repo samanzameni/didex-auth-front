@@ -1,45 +1,44 @@
-@import '../../../../styles.scss';
+@import '../../../../../styles.scss';
 
 $input-width: 535px;
 
 :host {
-  form {
+  div.signup-background__container {
+    display: none;
+  }
+
+  div.signup-wrapper {
     width: 100%;
     max-width: $input-width;
     box-sizing: border-box;
 
     margin: 100px 10px 0 10px;
+    padding: 10px;
 
     display: flex;
     flex-direction: column;
 
-    div.signin-background__container {
-      display: none;
-    }
+    .title__container {
+      display: flex;
+      margin-bottom: 20px;
 
-    div.signin-form__container {
-      .title__container {
-        display: flex;
-        margin-bottom: 20px;
+      h1.title {
+        font-weight: 600;
+        width: 100%;
+        text-align: left;
+        padding-bottom: 10px;
 
-        h1.title {
-          font-weight: 600;
-          width: 100%;
-          text-align: left;
-          padding-bottom: 10px;
+        &.active {
+          color: $ddx-accent-main;
+          border-bottom: 1px solid $ddx-accent-main;
+        }
 
-          &.active {
-            color: $ddx-accent-main;
-            border-bottom: 1px solid $ddx-accent-main;
-          }
+        a {
+          text-decoration: none;
+        }
 
-          a {
-            text-decoration: none;
-          }
-
-          b {
-            font-weight: bold;
-          }
+        b {
+          font-weight: bold;
         }
       }
     }
@@ -55,12 +54,15 @@ $input-width: 535px;
       flex-direction: row;
       align-items: center;
       justify-content: space-evenly;
-      margin: 0;
-      max-width: 1500px;
-      max-height: 357px;
 
-      div.signin-background__container {
+      width: 100%;
+      margin: 0;
+      max-width: 1900px;
+      max-height: 590px;
+
+      div.signup-background__container {
         height: 100%;
+        width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -68,10 +70,12 @@ $input-width: 535px;
 
         img#background-img {
           object-fit: contain;
-          max-height: 360px;
+          max-height: 590px;
+
+          width: -webkit-fill-available;
         }
 
-        div.signin-overlay__text {
+        div.signup-overlay__text {
           position: absolute;
           width: max-content;
 
@@ -85,6 +89,10 @@ $input-width: 535px;
             font-weight: bold;
           }
         }
+      }
+
+      div.signup-wrapper {
+        margin: 0;
       }
     }
   }
