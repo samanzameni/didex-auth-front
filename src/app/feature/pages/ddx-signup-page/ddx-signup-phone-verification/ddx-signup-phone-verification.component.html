@@ -79,13 +79,7 @@
       {{ 'auth.signup.sms-code' | ddxLocale }}
     </p>
     <mat-form-field id="sms-code__input">
-      <input
-        type="text"
-        placeholder="123456"
-        matInput
-        name="code"
-        formControlName="code"
-      />
+      <input type="text" matInput name="code" formControlName="code" />
     </mat-form-field>
   </div>
 
@@ -134,7 +128,19 @@
     </button>
   </div>
 
-  <pro-button id="next-button" color="primary" type="submit" #submitButton>
+  <div arrangeCenter #recaptcha class="recaptcha-container"></div>
+  <input type="hidden" name="token" formControlName="token" value="" />
+
+  <pro-button
+    [disabled]="
+      !phoneVerificationFormControls.countryTelephoneCode.valid ||
+      !phoneVerificationFormControls.mobileNumber.valid
+    "
+    id="next-button"
+    color="primary"
+    type="submit"
+    #submitButton
+  >
     {{ 'auth.signup.next' | ddxLocale }}
   </pro-button>
 
