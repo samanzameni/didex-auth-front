@@ -9,7 +9,7 @@ import {
 import { FormBuilder, Validators } from '@angular/forms';
 import { mustMatch, isStrong } from '@core/util/validators';
 import { AuthFormData, AuthEmailValidationData } from '@core/models';
-import { AuthService } from '@core/services';
+import { AuthService, DdxRegisterDataService } from '@core/services';
 import { Router } from '@angular/router';
 import { AuthPageDirective } from '@feature/templates/ddx-auth-page.template';
 import { MatCheckbox } from '@angular/material/checkbox';
@@ -29,7 +29,8 @@ export class SignupCredentialsComponent extends AuthPageDirective
     protected renderer: Renderer2,
     protected router: Router,
     protected authService: AuthService,
-    protected cdRef: ChangeDetectorRef
+    protected cdRef: ChangeDetectorRef,
+    private userDataService: DdxRegisterDataService
   ) {
     super(formBuilder, renderer, router, authService, cdRef);
   }
@@ -71,7 +72,11 @@ export class SignupCredentialsComponent extends AuthPageDirective
       .subscribe(
         (response) => {
           this.setLoadingOff();
+          this.userDataService.changeEmail(formData.email);
+          this.userDataService.changePassword(formData.password);
+          this.userDataService.changeToken(formData.token);
           console.log(formData);
+
           this.router.navigateByUrl('signup/phone-verification');
         },
         (errorResponse) => {

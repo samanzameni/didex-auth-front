@@ -5,7 +5,7 @@ import {
   Renderer2,
   ElementRef,
 } from '@angular/core';
-import { DropdownSelectItem } from '@core/models';
+import { DropdownSelectItem, AuthSignUpFormData } from '@core/models';
 import { CONSTANTS, COUNTRIES } from '@core/util/constants';
 import { interval, timer } from 'rxjs';
 import { take } from 'rxjs/operators';
@@ -14,7 +14,7 @@ import { PhoneVerificationPageDirective } from '@feature/templates';
 import { AuthRESTService } from '@core/services/REST';
 import { FormBuilder } from '@angular/forms';
 import { secondsToTime } from '@core/util/time';
-import { AuthService } from '@core/services';
+import { AuthService, DdxRegisterDataService } from '@core/services';
 
 @Component({
   selector: 'ddx-signup-phone-verification',
@@ -33,13 +33,16 @@ export class SignupPhoneVerificationComponent
   @ViewChild('submitNumberButton')
   submitNumberButton: any;
 
+  public userRegistrationData: AuthSignUpFormData;
+
   constructor(
     protected router: Router,
     protected el: ElementRef,
     protected renderer: Renderer2,
     protected formBuilder: FormBuilder,
     private authService: AuthService,
-    private restService: AuthRESTService
+    private restService: AuthRESTService,
+    private userDataService: DdxRegisterDataService
   ) {
     super(router, el, renderer, formBuilder);
     this.renderer.addClass(this.el.nativeElement, 'phone-verification-form');
@@ -107,7 +110,11 @@ export class SignupPhoneVerificationComponent
   onSubmit(): void {
     this.setLoadingOn();
     this.formErrors = {};
-    const dataToSend = this.phoneVerification.value;
+    const dataToSend: AuthSignUpFormData = this.phoneVerification.value;
+    dataToSend.email = this.userDataService.email;
+    dataToSend.password = this.userDataService.password;
+    dataToSend.token = this.userDataService.token;
+
     this.authService.requestSignUp(dataToSend).subscribe(
       (response) => {
         this.setLoadingOff();
