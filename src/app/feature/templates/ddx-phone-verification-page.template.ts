@@ -10,6 +10,7 @@ import { ThrowStmt } from '@angular/compiler';
 import { shouldShowErrors } from '@core/util/forms';
 import { ProButtonComponent } from '@widget/components';
 import { CONSTANTS } from '@core/util/constants';
+import { environment } from '@environments/environment';
 
 @Directive()
 export abstract class PhoneVerificationPageDirective {
@@ -51,6 +52,7 @@ export abstract class PhoneVerificationPageDirective {
           Validators.pattern('[0-9]*'),
         ],
       ],
+      token: ['', environment.production ? [Validators.required] : []],
     });
   }
 

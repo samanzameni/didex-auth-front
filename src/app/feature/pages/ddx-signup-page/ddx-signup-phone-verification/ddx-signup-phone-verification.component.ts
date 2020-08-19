@@ -113,7 +113,7 @@ export class SignupPhoneVerificationComponent
     const dataToSend: AuthSignUpFormData = this.phoneVerification.value;
     dataToSend.email = this.userDataService.email;
     dataToSend.password = this.userDataService.password;
-    dataToSend.token = this.userDataService.token;
+    // dataToSend.token = this.userDataService.token;
 
     this.authService.requestSignUp(dataToSend).subscribe(
       (response) => {
