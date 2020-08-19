@@ -39,10 +39,6 @@ export class AuthRESTService extends AbstractRESTService {
     return this.httpPUT('api/Trader/MobileNumber', data);
   }
 
-  public requestSignIn(data: any): Observable<any> {
-    return this.httpPUT('api/Account/register', data);
-  }
-
   public requestLogin(
     data: AuthFormData
   ): Observable<HttpResponse<AuthFormResponse>> {

@@ -14,6 +14,7 @@ import { PhoneVerificationPageDirective } from '@feature/templates';
 import { AuthRESTService } from '@core/services/REST';
 import { FormBuilder } from '@angular/forms';
 import { secondsToTime } from '@core/util/time';
+import { AuthService } from '@core/services';
 
 @Component({
   selector: 'ddx-signup-phone-verification',
@@ -37,6 +38,7 @@ export class SignupPhoneVerificationComponent
     protected el: ElementRef,
     protected renderer: Renderer2,
     protected formBuilder: FormBuilder,
+    private authService: AuthService,
     private restService: AuthRESTService
   ) {
     super(router, el, renderer, formBuilder);
@@ -106,8 +108,7 @@ export class SignupPhoneVerificationComponent
     this.setLoadingOn();
     this.formErrors = {};
     const dataToSend = this.phoneVerification.value;
-    console.log(dataToSend);
-    this.restService.requestLogin(dataToSend).subscribe(
+    this.authService.requestSignUp(dataToSend).subscribe(
       (response) => {
         this.setLoadingOff();
         this.router.navigateByUrl('/signup/successful');
