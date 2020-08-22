@@ -10,10 +10,14 @@
     z-index: 10;
   }
 
-  .auth-pages__wrapper {
+  ::ng-deep .auth-pages__wrapper {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
+
+    div.auth-form__wrapper {
+      max-width: 404px;
+    }
   }
 }
