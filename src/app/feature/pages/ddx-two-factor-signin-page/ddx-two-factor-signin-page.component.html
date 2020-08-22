@@ -9,9 +9,8 @@
     <a href="/"><img src="assets/images/logo-white-symbol.svg" alt="logo" /></a>
     {{ 'auth.2fa.title' | ddxLocale }}
   </h1>
-  <hr class="title-seperator" />
 
-  <mat-form-field appearance="outline">
+  <mat-form-field>
     <mat-label>{{ 'auth.2fa.code' | ddxLocale }}</mat-label>
     <input matInput type="text" name="code" formControlName="code" required />
   </mat-form-field>

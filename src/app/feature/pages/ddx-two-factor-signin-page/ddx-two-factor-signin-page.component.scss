@@ -1,0 +1,32 @@
+@import '../../../../styles.scss';
+
+:host {
+  width: 100%;
+  form {
+    width: 100vw;
+    max-width: 535px;
+
+    h1.title {
+      // width: 75%;
+      text-align: start;
+      padding-bottom: 10px;
+
+      color: $ddx-accent-main;
+      border-bottom: 1px solid $ddx-accent-main;
+    }
+
+    mat-hint {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: $break-tablet) {
+  :host {
+    width: 30vw;
+    form {
+      width: 100%;
+      max-width: 424px;
+    }
+  }
+}
