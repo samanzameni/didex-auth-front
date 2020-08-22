@@ -3,6 +3,8 @@
 $input-width: 535px;
 
 :host {
+  max-width: 424px;
+
   div.signup-background__container {
     display: none;
   }

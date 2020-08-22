@@ -37,6 +37,18 @@ const routes: Routes = [
         component: SignInPageComponent,
       },
       {
+        path: 'forgot-password',
+        component: ForgotPasswordPageComponent,
+      },
+      {
+        path: 'reset-password',
+        component: ResetPasswordPageComponent,
+      },
+      {
+        path: 'signin/two-factor',
+        component: TwoFactorSigninPageComponent,
+      },
+      {
         path: 'signup',
         component: SignUpWrapperComponent,
         children: [
@@ -60,10 +72,7 @@ const routes: Routes = [
   //   path: 'signin',
   //   component: SignInPageComponent,
   // },
-  {
-    path: 'signin/two-factor',
-    component: TwoFactorSigninPageComponent,
-  },
+
   // {
   //   path: 'signup',
   //   component: SignUpWrapperComponent,
@@ -83,14 +92,6 @@ const routes: Routes = [
     component: SignupSuccessfulComponent,
   },
 
-  {
-    path: 'forgot-password',
-    component: ForgotPasswordPageComponent,
-  },
-  {
-    path: 'reset-password',
-    component: ResetPasswordPageComponent,
-  },
   {
     path: 'activate-email',
     component: ActivateEmailPageComponent,
