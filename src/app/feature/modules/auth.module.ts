@@ -21,6 +21,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
 import { LocalePipeModule } from './locale-pipe.module';
+import { PhoneVerificationGuard } from '@core/guards/phone-verification.guard';
 
 const routes: Routes = [
   {
@@ -44,6 +45,7 @@ const routes: Routes = [
       { path: 'credentials', component: SignupCredentialsComponent },
       {
         path: 'phone-verification',
+        canActivate: [PhoneVerificationGuard],
         component: SignupPhoneVerificationComponent,
       },
     ],

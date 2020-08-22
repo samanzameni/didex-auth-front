@@ -5,9 +5,8 @@ import { AuthSignUpFormData } from '@core/models';
   providedIn: 'root',
 })
 export class DdxRegisterDataService {
-  public email: string;
-  public password: string;
-  public token: string;
+  public email: string = null;
+  public password: string = null;
 
   constructor() {}
 
@@ -19,9 +18,5 @@ export class DdxRegisterDataService {
   changePassword(password: string) {
     this.password = password;
     console.log(password);
-  }
-
-  changeToken(token: string) {
-    this.token = token;
   }
 }
