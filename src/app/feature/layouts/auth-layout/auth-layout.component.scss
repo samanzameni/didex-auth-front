@@ -33,6 +33,10 @@
     ::ng-deep .auth-pages__wrapper {
       div.rectangle-background__container {
         display: block;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
       }
     }
   }
