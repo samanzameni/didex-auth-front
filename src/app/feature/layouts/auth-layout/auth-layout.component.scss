@@ -1,7 +1,19 @@
-.locale-selector {
-  position: fixed;
-  top: 0px;
-  right: 10px;
+:host {
+  background: linear-gradient(to top right, #000a33, #001044);
+  min-height: 100vh;
 
-  z-index: 10;
+  .locale-selector {
+    position: fixed;
+    top: 0px;
+    right: 10px;
+
+    z-index: 10;
+  }
+
+  .auth-pages__wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
