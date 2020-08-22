@@ -28,6 +28,10 @@ $input-width: 535px;
         text-align: start;
         padding-bottom: 10px;
 
+        &:nth-child(2) {
+          margin-inline-end: 15px;
+        }
+
         &.active {
           color: $ddx-accent-main;
           border-bottom: 1px solid $ddx-accent-main;

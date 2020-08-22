@@ -28,6 +28,10 @@
           text-align: start;
           padding-bottom: 10px;
 
+          &:first-child {
+            margin-inline-end: 15px;
+          }
+
           &.active {
             color: $ddx-accent-main;
             border-bottom: 1px solid $ddx-accent-main;
