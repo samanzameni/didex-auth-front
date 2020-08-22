@@ -30,7 +30,6 @@ export class SignupPhoneVerificationComponent
   extends PhoneVerificationPageDirective
   implements OnInit {
   private hasSubmittedMobileNumber: boolean;
-  private formErrors: any;
   private countries: DropdownSelectItem[];
   public countdownTimer: string;
   public timerFinished: boolean = true;
@@ -133,10 +132,17 @@ export class SignupPhoneVerificationComponent
       },
       (errorResponse) => {
         this.setLoadingOff();
+
         if (errorResponse.status === 400) {
           const errors = errorResponse.error.errors;
           if (errors.Code) {
             this.formErrors.code = errors.Code;
+          }
+          if (errors.Email) {
+            this.formErrors.email = errors.Email;
+          }
+          if (errors.Password) {
+            this.formErrors.password = errors.Password;
           }
         }
       }

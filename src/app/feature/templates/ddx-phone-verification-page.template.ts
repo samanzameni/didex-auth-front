@@ -17,6 +17,7 @@ import { StorageService } from '@core/services';
 @Directive()
 export abstract class PhoneVerificationPageDirective {
   public phoneVerification: FormGroup;
+  public formErrors: any;
 
   @ViewChild('submitButton') submitButton: ProButtonComponent;
 
@@ -26,7 +27,9 @@ export abstract class PhoneVerificationPageDirective {
     protected renderer: Renderer2,
     protected formBuilder: FormBuilder,
     protected storageService: StorageService
-  ) {}
+  ) {
+    this.formErrors = {};
+  }
 
   ngOnInit() {
     this.phoneVerification = this.formBuilder.group({
@@ -40,7 +43,7 @@ export abstract class PhoneVerificationPageDirective {
       ],
       mobileNumber: [
         '',
-        determineRegion(this.storageService.getUserAccessToken()) !== '2'
+        determineRegion(this.storageService.getUserAccessToken()) === '2'
           ? [Validators.required, Validators.pattern(/^9[0-9]{9}$/)]
           : [
               Validators.required,
@@ -87,6 +90,10 @@ export abstract class PhoneVerificationPageDirective {
 
   getKeys(object: any): string[] {
     return object ? Object.keys(object) : [];
+  }
+
+  get phoneVerificationFormErrors(): any {
+    return this.formErrors;
   }
 
   abstract onSubmit(): void;

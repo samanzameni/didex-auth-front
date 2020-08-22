@@ -124,6 +124,15 @@
   <div arrangeCenter #recaptcha class="recaptcha-container"></div>
   <input type="hidden" name="token" formControlName="token" value="" />
 
+  <ng-container *ngIf="formErrors.password || formErrors.email">
+    <mat-error *ngFor="let error of formErrors.email">
+      {{ error }}
+    </mat-error>
+    <mat-error *ngFor="let error of formErrors.password">
+      {{ error }}
+    </mat-error>
+  </ng-container>
+
   <pro-button
     [disabled]="!phoneVerification.valid"
     id="next-button"
