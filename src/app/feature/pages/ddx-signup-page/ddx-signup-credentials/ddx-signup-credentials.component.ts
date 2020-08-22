@@ -48,7 +48,7 @@ export class SignupCredentialsComponent extends AuthPageDirective
         password: ['', [Validators.required, Validators.minLength(8)]],
         confirmPassword: ['', [Validators.required, Validators.minLength(8)]],
         acceptedTerms: [false, [Validators.requiredTrue]],
-        token: ['', environment.production ? [Validators.required] : []],
+        // token: ['', environment.production ? [Validators.required] : []],
       },
       {
         validators: [
@@ -84,14 +84,12 @@ export class SignupCredentialsComponent extends AuthPageDirective
           this.setLoadingOff();
           this.userDataService.changeEmail(formData.email);
           this.userDataService.changePassword(formData.password);
-          this.userDataService.changeToken(formData.token);
-          console.log(formData);
+          // this.userDataService.changeToken(formData.token);
 
           this.router.navigateByUrl('signup/phone-verification');
         },
         (errorResponse) => {
           this.setLoadingOff();
-          console.log(formData);
 
           if (errorResponse.status === 400) {
             const errors = errorResponse.error;
