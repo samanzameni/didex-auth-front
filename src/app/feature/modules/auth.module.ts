@@ -56,27 +56,27 @@ const routes: Routes = [
   //   pathMatch: 'full',
   //   redirectTo: 'signin',
   // },
-  {
-    path: 'signin',
-    component: SignInPageComponent,
-  },
+  // {
+  //   path: 'signin',
+  //   component: SignInPageComponent,
+  // },
   {
     path: 'signin/two-factor',
     component: TwoFactorSigninPageComponent,
   },
-  {
-    path: 'signup',
-    component: SignUpWrapperComponent,
-    children: [
-      { path: '', pathMatch: 'full', redirectTo: 'credentials' },
-      { path: 'credentials', component: SignupCredentialsComponent },
-      {
-        path: 'phone-verification',
-        canActivate: [PhoneVerificationGuard],
-        component: SignupPhoneVerificationComponent,
-      },
-    ],
-  },
+  // {
+  //   path: 'signup',
+  //   component: SignUpWrapperComponent,
+  //   children: [
+  //     { path: '', pathMatch: 'full', redirectTo: 'credentials' },
+  //     { path: 'credentials', component: SignupCredentialsComponent },
+  //     {
+  //       path: 'phone-verification',
+  //       canActivate: [PhoneVerificationGuard],
+  //       component: SignupPhoneVerificationComponent,
+  //     },
+  //   ],
+  // },
 
   {
     path: 'signup/successful',
@@ -105,6 +105,7 @@ const routes: Routes = [
     SignupPhoneVerificationComponent,
     SignupSuccessfulComponent,
     ForgotPasswordPageComponent,
+    AuthLayoutComponent,
 
     ResetPasswordPageComponent,
     ActivateEmailPageComponent,
