@@ -84,7 +84,6 @@ export class SignupCredentialsComponent extends AuthPageDirective
           this.setLoadingOff();
           this.userDataService.changeEmail(formData.email);
           this.userDataService.changePassword(formData.password);
-          // this.userDataService.changeToken(formData.token);
 
           this.router.navigateByUrl('signup/phone-verification');
         },
@@ -100,33 +99,5 @@ export class SignupCredentialsComponent extends AuthPageDirective
           }
         }
       );
-
-    // this.authService.requestSignUp(formData as AuthFormData).subscribe(
-    //   (response) => {
-    //     this.setLoadingOff();
-    //     this.router.navigateByUrl('/signup/success');
-    //   },
-    //   (errorResponse) => {
-    //     this.setLoadingOff();
-
-    //     if (errorResponse.status === 400) {
-    //       const errors = errorResponse.error.errors;
-
-    //       if (errors.email) {
-    //         this.formErrors.email = errors.email;
-    //       }
-
-    //       if (errors.password) {
-    //         this.formErrors.password = errors.password;
-    //       }
-
-    //       for (const key of Object.keys(errors)) {
-    //         if (!['email', 'password', 'default'].includes(key)) {
-    //           alert(`An error occured: There is something wrong with ${key}`);
-    //         }
-    //       }
-    //     }
-    //   }
-    // );
   }
 }
