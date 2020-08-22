@@ -54,6 +54,7 @@ $input-width: 535px;
 @media screen and (min-width: $break-tablet) {
   :host {
     align-items: center;
+    max-width: 1900px;
 
     form {
       display: flex;
@@ -63,7 +64,7 @@ $input-width: 535px;
 
       width: 100%;
       margin: 0;
-      max-width: 1900px;
+
       max-height: 590px;
 
       div.signup-background__container {
