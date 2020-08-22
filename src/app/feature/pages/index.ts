@@ -1,3 +1,4 @@
+export * from '../layouts/auth-layout/auth-layout.component';
 export * from './ddx-activate-email-page/ddx-activate-email-page.component';
 export * from './ddx-forgot-password-page/ddx-forgot-password-page.component';
 export * from './ddx-reset-password-page/ddx-reset-password-page.component';
