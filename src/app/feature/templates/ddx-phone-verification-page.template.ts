@@ -4,7 +4,15 @@ import {
   AbstractControl,
   Validators,
 } from '@angular/forms';
-import { ViewChild, ElementRef, Renderer2, Directive } from '@angular/core';
+import {
+  ViewChild,
+  ElementRef,
+  Renderer2,
+  Directive,
+  ChangeDetectorRef,
+  OnInit,
+  AfterViewInit,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { ThrowStmt } from '@angular/compiler';
 import { shouldShowErrors } from '@core/util/forms';
@@ -15,18 +23,21 @@ import { determineRegion } from '@core/util/region';
 import { StorageService } from '@core/services';
 
 @Directive()
-export abstract class PhoneVerificationPageDirective {
+export abstract class PhoneVerificationPageDirective
+  implements OnInit, AfterViewInit {
   public phoneVerification: FormGroup;
   public formErrors: any;
 
   @ViewChild('submitButton') submitButton: ProButtonComponent;
+  @ViewChild('recaptcha') recaptchaElement: ElementRef;
 
   constructor(
     protected router: Router,
     protected el: ElementRef,
     protected renderer: Renderer2,
     protected formBuilder: FormBuilder,
-    protected storageService: StorageService
+    protected storageService: StorageService,
+    protected cdRef: ChangeDetectorRef
   ) {
     this.formErrors = {};
   }
@@ -64,6 +75,10 @@ export abstract class PhoneVerificationPageDirective {
     });
   }
 
+  ngAfterViewInit(): void {
+    this.addRecaptchaScript();
+  }
+
   public shouldShowErrors(control: AbstractControl): boolean {
     return shouldShowErrors(control);
   }
@@ -97,4 +112,41 @@ export abstract class PhoneVerificationPageDirective {
   }
 
   abstract onSubmit(): void;
+
+  protected addRecaptchaScript() {
+    // tslint:disable-next-line: no-string-literal
+    window['grecaptchaCallback'] = () => {
+      this.renderReCaptcha();
+    };
+
+    ((id, obj) => {
+      let scriptTag;
+      const formerScripts = document.getElementsByTagName('script')[0];
+
+      scriptTag = document.createElement('script');
+      scriptTag.id = id;
+      scriptTag.src =
+        'https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit';
+      scriptTag.async = true;
+      formerScripts.parentNode.insertBefore(scriptTag, formerScripts);
+    })('recaptcha-sdk', this);
+  }
+
+  renderReCaptcha() {
+    // tslint:disable-next-line: no-string-literal
+    window['grecaptcha'].render(this.recaptchaElement.nativeElement, {
+      sitekey: '6Leik-cUAAAAAJG-1oLQ6nT6NQmL8k3D7QM-jOD2',
+      theme: 'dark',
+      callback: (response) => {
+        if (typeof response === 'string') {
+          this.setReCaptchaToken(response);
+        }
+      },
+    });
+  }
+
+  setReCaptchaToken(token: string): void {
+    this.phoneVerification.controls.token.setValue(token);
+    this.cdRef.detectChanges();
+  }
 }

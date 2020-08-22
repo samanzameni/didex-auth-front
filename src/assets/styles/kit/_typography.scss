@@ -126,12 +126,8 @@ p {
     $font-family: 'segoe',
   );
 
-  @include mat-core($custom-typography);
-  @include mat-checkbox-typography($custom-typography);
-  @include angular-material-typography($custom-typography);
-
   mat-label,
-  form .mat-form-field,
+  .mat-form-field,
   .mat-form-field-label,
   .mat-button,
   .mat-raised-button,
@@ -145,6 +141,10 @@ p {
   ::ng-deep mat-label {
     font-family: 'segoe';
   }
+
+  @include mat-core($custom-typography);
+  @include mat-checkbox-typography($custom-typography);
+  @include angular-material-typography($custom-typography);
 }
 
 .fa {
@@ -152,12 +152,8 @@ p {
     $font-family: 'shabnam',
   );
 
-  @include mat-core($custom-typography);
-  @include mat-checkbox-typography($custom-typography);
-  @include angular-material-typography($custom-typography);
-
   mat-label,
-  form .mat-form-field,
+  .mat-form-field,
   .mat-form-field-label,
   .mat-button,
   .mat-raised-button,
@@ -172,4 +168,8 @@ p {
     direction: rtl;
     font-family: 'shabnam';
   }
+
+  @include mat-core($custom-typography);
+  @include mat-checkbox-typography($custom-typography);
+  @include angular-material-typography($custom-typography);
 }

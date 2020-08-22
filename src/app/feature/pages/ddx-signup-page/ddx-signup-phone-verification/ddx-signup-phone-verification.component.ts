@@ -4,6 +4,8 @@ import {
   ViewChild,
   Renderer2,
   ElementRef,
+  ChangeDetectorRef,
+  AfterViewInit,
 } from '@angular/core';
 import { DropdownSelectItem, AuthSignUpFormData } from '@core/models';
 import { CONSTANTS, COUNTRIES } from '@core/util/constants';
@@ -28,7 +30,7 @@ import {
 })
 export class SignupPhoneVerificationComponent
   extends PhoneVerificationPageDirective
-  implements OnInit {
+  implements OnInit, AfterViewInit {
   private hasSubmittedMobileNumber: boolean;
   private countries: DropdownSelectItem[];
   public countdownTimer: string;
@@ -45,12 +47,13 @@ export class SignupPhoneVerificationComponent
     protected renderer: Renderer2,
     protected formBuilder: FormBuilder,
     protected storageService: StorageService,
+    protected cdRef: ChangeDetectorRef,
     private authService: AuthService,
     private restService: AuthRESTService,
     private userDataService: DdxRegisterDataService,
     private directionService: DirectionService
   ) {
-    super(router, el, renderer, formBuilder, storageService);
+    super(router, el, renderer, formBuilder, storageService, cdRef);
     this.renderer.addClass(this.el.nativeElement, 'phone-verification-form');
     this.hasSubmittedMobileNumber = false;
     this.countries = COUNTRIES.map((country) => {
@@ -63,6 +66,10 @@ export class SignupPhoneVerificationComponent
 
   ngOnInit(): void {
     super.ngOnInit();
+  }
+
+  ngAfterViewInit(): void {
+    super.ngAfterViewInit();
   }
 
   get direction$(): Observable<string> {

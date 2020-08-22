@@ -54,7 +54,7 @@ $input-width: 535px;
 @media screen and (min-width: $break-tablet) {
   :host {
     align-items: center;
-    max-width: 1900px;
+    // max-width: 1900px;
 
     form {
       display: flex;
@@ -63,11 +63,11 @@ $input-width: 535px;
       justify-content: space-evenly;
 
       width: 100%;
-      max-width: 404px;
+      max-width: 424px;
       padding: 10px;
       margin: 0;
 
-      max-height: 590px;
+      // max-height: 590px;
 
       div.signup-background__container {
         height: 100%;
@@ -79,7 +79,7 @@ $input-width: 535px;
 
         img#background-img {
           object-fit: contain;
-          max-height: 693px;
+          // max-height: 693px;
         }
 
         div.signup-overlay__text {
