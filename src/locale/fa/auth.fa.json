@@ -33,7 +33,7 @@
   },
 
   "signin": {
-    "title": "ورود به دیداکس",
+    "title": "ورود",
     "forgot_password": "فراموشی رمز عبور",
     "email": "ایمیل",
     "email_placeholder": "abc@example.com",
@@ -54,7 +54,7 @@
   },
 
   "signup": {
-    "title": "ثبت نام در دیداکس",
+    "title": "ثبت نام",
     "email": "ایمیل خود را وارد کنید",
     "email_placeholder": "abc@example.com",
     "email_error_required": "وارد کردن ایمیل الزامی است.",
