@@ -11,6 +11,7 @@ import { shouldShowErrors } from '@core/util/forms';
 import { ProButtonComponent } from '@widget/components';
 import { CONSTANTS } from '@core/util/constants';
 import { environment } from '@environments/environment';
+import { determineRegion } from '@core/util/region';
 
 @Directive()
 export abstract class PhoneVerificationPageDirective {
@@ -37,11 +38,13 @@ export abstract class PhoneVerificationPageDirective {
       ],
       mobileNumber: [
         '',
-        [
-          Validators.required,
-          Validators.maxLength(15),
-          Validators.pattern('[0-9]*'),
-        ],
+        determineRegion() === '2'
+          ? [Validators.required, Validators.pattern('^9[0-9]{9}$')]
+          : [
+              Validators.required,
+              Validators.maxLength(15),
+              Validators.pattern('[0-9]*'),
+            ],
       ],
       code: [
         '',
