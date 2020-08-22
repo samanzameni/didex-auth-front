@@ -49,14 +49,12 @@ export function isPhoneNumber(controlName: string) {
       return;
     }
 
-    const isNumber = /^\d+$/.test(control.value);
-    const startsWithNine = /^9/.test(control.value);
-    const hasTenDigits = /[a-z]/.test(control.value);
+    const isValidPhoneNumber = /^9[0-9]{9}$/.test(control.value);
 
-    if (isNumber && startsWithNine && hasTenDigits) {
+    if (isValidPhoneNumber) {
       control.setErrors(null);
     } else {
-      control.setErrors({ isStrong: true });
+      control.setErrors({ InvalidPhoneNumber: true });
     }
   };
 }
