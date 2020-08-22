@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { AuthTokenData } from '@core/models/ddx-token-data.model';
 import { Locale } from './ddx-locale.service';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class StorageService {
   constructor() {}
 

@@ -37,7 +37,7 @@
         name="mobileNumber"
         formControlName="mobileNumber"
       />
-      <!-- <mat-error
+      <mat-error
         *ngIf="
           phoneVerificationFormGroup.controls.mobileNumber.hasError('required')
         "
@@ -57,7 +57,7 @@
         "
       >
         {{ 'kyc.phone_verification.mobile_number_error_pattern' | ddxLocale }}
-      </mat-error> -->
+      </mat-error>
     </mat-form-field>
   </div>
 
@@ -84,24 +84,16 @@
     </mat-form-field>
   </div>
 
-  <mat-error
-    *ngIf="phoneVerificationFormGroup.controls.code.hasError('required')"
-  >
+  <mat-error *ngIf="phoneVerification.controls.code.hasError('required')">
     {{ 'kyc.phone_verification.code_error_required' | ddxLocale }}
   </mat-error>
-  <mat-error
-    *ngIf="phoneVerificationFormGroup.controls.code.hasError('minlength')"
-  >
+  <mat-error *ngIf="phoneVerification.controls.code.hasError('minlength')">
     {{ 'kyc.phone_verification.code_error_minlength' | ddxLocale }}
   </mat-error>
-  <mat-error
-    *ngIf="phoneVerificationFormGroup.controls.code.hasError('maxlength')"
-  >
+  <mat-error *ngIf="phoneVerification.controls.code.hasError('maxlength')">
     {{ 'kyc.phone_verification.code_error_maxlength' | ddxLocale }}
   </mat-error>
-  <mat-error
-    *ngIf="phoneVerificationFormGroup.controls.code.hasError('pattern')"
-  >
+  <mat-error *ngIf="phoneVerification.controls.code.hasError('pattern')">
     {{ 'kyc.phone_verification.code_error_pattern' | ddxLocale }}
   </mat-error>
   <div *ngIf="errors && errors.code" class="error-feedback">
@@ -133,10 +125,7 @@
   <input type="hidden" name="token" formControlName="token" value="" />
 
   <pro-button
-    [disabled]="
-      !phoneVerificationFormControls.countryTelephoneCode.valid ||
-      !phoneVerificationFormControls.mobileNumber.valid
-    "
+    [disabled]="!phoneVerification.valid"
     id="next-button"
     color="primary"
     type="submit"

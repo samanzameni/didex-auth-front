@@ -12,6 +12,7 @@ import { ProButtonComponent } from '@widget/components';
 import { CONSTANTS } from '@core/util/constants';
 import { environment } from '@environments/environment';
 import { determineRegion } from '@core/util/region';
+import { StorageService } from '@core/services';
 
 @Directive()
 export abstract class PhoneVerificationPageDirective {
@@ -23,7 +24,8 @@ export abstract class PhoneVerificationPageDirective {
     protected router: Router,
     protected el: ElementRef,
     protected renderer: Renderer2,
-    protected formBuilder: FormBuilder
+    protected formBuilder: FormBuilder,
+    protected storageService: StorageService
   ) {}
 
   ngOnInit() {
@@ -38,8 +40,8 @@ export abstract class PhoneVerificationPageDirective {
       ],
       mobileNumber: [
         '',
-        determineRegion() === '2'
-          ? [Validators.required, Validators.pattern('^9[0-9]{9}$')]
+        determineRegion(this.storageService.getUserAccessToken()) !== '2'
+          ? [Validators.required, Validators.pattern(/^9[0-9]{9}$/)]
           : [
               Validators.required,
               Validators.maxLength(15),

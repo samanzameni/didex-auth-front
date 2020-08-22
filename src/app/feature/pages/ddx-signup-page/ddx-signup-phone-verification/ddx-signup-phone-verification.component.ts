@@ -18,6 +18,7 @@ import {
   AuthService,
   DdxRegisterDataService,
   DirectionService,
+  StorageService,
 } from '@core/services';
 
 @Component({
@@ -44,12 +45,13 @@ export class SignupPhoneVerificationComponent
     protected el: ElementRef,
     protected renderer: Renderer2,
     protected formBuilder: FormBuilder,
+    protected storageService: StorageService,
     private authService: AuthService,
     private restService: AuthRESTService,
     private userDataService: DdxRegisterDataService,
     private directionService: DirectionService
   ) {
-    super(router, el, renderer, formBuilder);
+    super(router, el, renderer, formBuilder, storageService);
     this.renderer.addClass(this.el.nativeElement, 'phone-verification-form');
     this.hasSubmittedMobileNumber = false;
     this.countries = COUNTRIES.map((country) => {
