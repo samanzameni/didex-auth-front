@@ -1,3 +1,5 @@
+@import '../../../../styles.scss';
+
 :host {
   background: linear-gradient(to top right, #000a33, #001044);
   min-height: 100vh;
@@ -16,8 +18,22 @@
     align-items: center;
     justify-content: space-around;
 
+    div.rectangle-background__container {
+      display: none;
+    }
+
     div.auth-form__wrapper {
       max-width: 404px;
+    }
+  }
+}
+
+@media screen and (min-width: $break-tablet) {
+  :host {
+    ::ng-deep .auth-pages__wrapper {
+      div.rectangle-background__container {
+        display: block;
+      }
     }
   }
 }
