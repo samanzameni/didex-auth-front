@@ -3,6 +3,7 @@ import {
   HttpClient,
   HttpRequest,
   HttpResponse,
+  HttpParams,
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
@@ -119,9 +120,12 @@ export abstract class AbstractRESTService {
    * Sends a GET request with custom headers
    *
    */
-  public httpGET(url: string): Observable<any> {
+  protected httpGET(url: string, params: any = {}): Observable<any> {
     return this.http.get(this.baseURL + url, {
       headers: this.getFullHeaders(),
+      params: new HttpParams({
+        fromObject: params,
+      }),
     });
   }
 

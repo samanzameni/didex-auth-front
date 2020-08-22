@@ -87,13 +87,9 @@ export class AuthRESTService extends AbstractRESTService {
     ) as Observable<AuthFormResponse>;
   }
 
-  // public requestEmailValidation(options: string): Observable<any> {
-  //   const options{
-  //     headers: this.getFullHeaders(),
-  //     observe: 'response',
-  //   }
-  //   return this.http.get(`api/Account/validate-email`,options);
-  // }
+  public requestEmailValidation(options: any): Observable<any> {
+    return this.httpGET(`api/Account/validate-email`, options);
+  }
 
   public requestChangePassword(data: any): Observable<any> {
     return this.httpPOST(`api/Account/changePassword`, data) as Observable<any>;

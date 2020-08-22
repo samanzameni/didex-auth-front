@@ -92,14 +92,9 @@ export class AuthService {
     data: AuthEmailValidationData
   ): Observable<any> {
     data.email = data.email.trim();
-    const options = data.email
-      ? { params: new HttpParams().set('Email', data.email) }
-      : {};
+    const options = data.email ? { Email: data.email } : {};
 
-    return this.http.get(
-      'https://devapi.didex.com/api/Account/validate-email',
-      options
-    );
+    return this.restService.requestEmailValidation(options);
   }
 
   public requestResetPassword(
