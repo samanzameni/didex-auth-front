@@ -40,3 +40,23 @@ export function isStrong(controlName: string) {
     }
   };
 }
+
+export function isPhoneNumber(controlName: string) {
+  return (formGroup: FormGroup) => {
+    const control = formGroup.controls[controlName];
+
+    if (control.errors && !control.errors.isStrong) {
+      return;
+    }
+
+    const isNumber = /^\d+$/.test(control.value);
+    const startsWithNine = /^9/.test(control.value);
+    const hasTenDigits = /[a-z]/.test(control.value);
+
+    if (isNumber && startsWithNine && hasTenDigits) {
+      control.setErrors(null);
+    } else {
+      control.setErrors({ isStrong: true });
+    }
+  };
+}
