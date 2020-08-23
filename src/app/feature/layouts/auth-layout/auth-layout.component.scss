@@ -17,13 +17,19 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    div.auth-pages__inner-container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
 
-    div.rectangle-background__container {
-      display: none;
-    }
+      width: 100%;
+      div.rectangle-background__container {
+        display: none;
+      }
 
-    div.auth-form__wrapper {
-      // width: 100%;
+      div.auth-form__wrapper {
+        // width: 100%;
+      }
     }
   }
 }
@@ -31,11 +37,13 @@
 @media screen and (min-width: $break-tablet) {
   :host {
     ::ng-deep .auth-pages__wrapper {
-      div.rectangle-background__container {
-        display: block;
-        img {
-          max-width: 100%;
-          max-height: 100%;
+      div.auth-pages__inner-container {
+        div.rectangle-background__container {
+          display: block;
+          img {
+            max-width: 100%;
+            max-height: 100%;
+          }
         }
       }
     }

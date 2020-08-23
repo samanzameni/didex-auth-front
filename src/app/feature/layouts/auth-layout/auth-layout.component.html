@@ -12,18 +12,20 @@
 </mat-form-field>
 
 <div class="auth-pages__wrapper">
-  <div class="rectangle-background__container">
-    <img
-      id="background-img"
-      src="assets/images/background-rectangles.svg"
-      alt="background image"
-    />
-    <div class="signin-overlay__text">
-      <!-- <h1>{{ 'auth.signin.signin-account' | ddxLocale }}</h1>
+  <div class="auth-pages__inner-container">
+    <div class="rectangle-background__container">
+      <img
+        id="background-img"
+        src="assets/images/background-rectangles.svg"
+        alt="background image"
+      />
+      <div class="signin-overlay__text">
+        <!-- <h1>{{ 'auth.signin.signin-account' | ddxLocale }}</h1>
     <p>{{ 'auth.signin.signin-buy-crypto' | ddxLocale }}</p> -->
+      </div>
+    </div>
+    <div class="auth-form__wrapper">
+      <router-outlet></router-outlet>
     </div>
   </div>
-  <div class="auth-form__wrapper">
-  <router-outlet></router-outlet>
-</div>
 </div>
