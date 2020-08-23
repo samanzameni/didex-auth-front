@@ -12,11 +12,9 @@ export class DdxRegisterDataService {
 
   changeEmail(email: string) {
     this.email = email;
-    console.log(email);
   }
 
   changePassword(password: string) {
     this.password = password;
-    console.log(password);
   }
 }
