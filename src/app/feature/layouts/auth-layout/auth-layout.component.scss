@@ -15,13 +15,14 @@
   ::ng-deep .auth-pages__wrapper {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
     div.auth-pages__inner-container {
       display: flex;
       align-items: flex-start;
       justify-content: space-around;
 
+      margin-top: 80px;
       width: 100%;
       div.rectangle-background__container {
         display: none;
@@ -37,7 +38,9 @@
 @media screen and (min-width: $break-tablet) {
   :host {
     ::ng-deep .auth-pages__wrapper {
+      align-items: center;
       div.auth-pages__inner-container {
+        margin-top: 0;
         div.rectangle-background__container {
           display: block;
           img {
