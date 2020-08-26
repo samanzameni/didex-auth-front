@@ -4,6 +4,34 @@
   background: linear-gradient(to top right, #000a33, #001044);
   min-height: 100vh;
 
+  body {
+    .mat-select-panel {
+      &.locale-selector-panel {
+        transform: none !important;
+        margin-top: 30px !important;
+
+        .mat-option {
+          text-align: center;
+          &:last-child {
+            font-family: Shabnam;
+          }
+        }
+      }
+    }
+  }
+
+  .mat-select-panel .mat-option {
+    font-family: Shabnam;
+
+    &.locale-selector-panel {
+      .mat-option {
+        &:last-child {
+          font-family: Shabnam;
+        }
+      }
+    }
+  }
+
   .locale-selector {
     position: fixed;
     top: 0px;

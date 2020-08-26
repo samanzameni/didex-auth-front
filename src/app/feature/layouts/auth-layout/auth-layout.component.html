@@ -5,7 +5,11 @@
     panelClass="locale-selector-panel"
     (valueChange)="handleLocaleChange($event)"
   >
-    <mat-option *ngFor="let item of availableLocales" [value]="item.locale">
+    <mat-option
+      style="font-family: Shabnam;"
+      *ngFor="let item of availableLocales"
+      [value]="item.locale"
+    >
       {{ item.caption }}
     </mat-option>
   </mat-select>
