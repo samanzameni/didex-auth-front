@@ -5,7 +5,7 @@ h1 {
   }
 
   &.fa {
-    font-family: 'shabnam';
+    font-family: IRANSans;
   }
   font-size: 26px;
   line-height: 26px;
@@ -19,7 +19,7 @@ h2 {
   }
 
   &.fa {
-    font-family: 'shabnam';
+    font-family: IRANSans;
   }
   font-size: 26px;
   line-height: 26px;
@@ -33,7 +33,7 @@ h3 {
   }
 
   &.fa {
-    font-family: 'shabnam';
+    font-family: IRANSans;
   }
   font-size: 16px;
   line-height: 16px;
@@ -47,7 +47,7 @@ p {
   }
 
   &.fa {
-    font-family: 'shabnam';
+    font-family: IRANSans;
   }
   font-size: 14px;
   line-height: 14px;
@@ -60,7 +60,7 @@ p {
   }
 
   &.fa {
-    font-family: 'shabnam';
+    font-family: IRANSans;
   }
   font-size: 16px;
   line-height: 16px;
@@ -73,7 +73,7 @@ p {
   }
 
   &.fa {
-    font-family: 'shabnam';
+    font-family: IRANSans;
   }
   font-size: 14px;
   line-height: 14px;
@@ -86,7 +86,7 @@ p {
   }
 
   &.fa {
-    font-family: 'shabnam';
+    font-family: IRANSans;
   }
   font-size: 12px;
   line-height: 12px;
@@ -99,7 +99,7 @@ p {
   }
 
   &.fa {
-    font-family: 'shabnam';
+    font-family: IRANSans;
   }
   font-size: 14px;
   line-height: 14px;
@@ -112,7 +112,7 @@ p {
   }
 
   &.fa {
-    font-family: 'shabnam';
+    font-family: IRANSans;
   }
   font-size: 12px;
   line-height: 12px;
@@ -149,7 +149,7 @@ p {
 
 .fa {
   $custom-typography: mat-typography-config(
-    $font-family: 'shabnam',
+    $font-family: IRANSans,
   );
 
   mat-label,
@@ -166,7 +166,7 @@ p {
   ::ng-deep .mat-form-field-label,
   ::ng-deep mat-label {
     direction: rtl;
-    font-family: 'shabnam';
+    font-family: IRANSans;
   }
 
   @include mat-core($custom-typography);
