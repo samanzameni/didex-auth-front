@@ -4,6 +4,13 @@
   background: linear-gradient(to top right, #000a33, #001044);
   min-height: 100vh;
 
+  .auth-page__layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
   body {
     .mat-select-panel {
       &.locale-selector-panel {
@@ -33,7 +40,7 @@
   }
 
   .locale-selector {
-    position: fixed;
+    position: absolute;
     top: 0px;
     right: 10px;
 
@@ -50,7 +57,7 @@
       align-items: flex-start;
       justify-content: space-around;
 
-      margin-top: 80px;
+      margin-top: 20%;
       width: 100%;
       div.rectangle-background__container {
         display: none;
