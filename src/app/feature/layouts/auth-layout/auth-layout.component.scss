@@ -47,6 +47,19 @@
     z-index: 10;
   }
 
+  .locale-selector.mat-form-field-appearance-legacy {
+    font-size: 14px;
+    width: 70px;
+    text-align: right;
+
+    ::ng-deep .mat-form-field-wrapper,
+    .mat-form-field-wrapper {
+      .mat-form-field-underline {
+        display: none;
+      }
+    }
+  }
+
   ::ng-deep .auth-pages__wrapper {
     min-height: 100vh;
     display: flex;
