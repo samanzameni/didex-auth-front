@@ -5,6 +5,7 @@ import {
   AfterViewInit,
   OnDestroy,
   ChangeDetectorRef,
+  Inject,
 } from '@angular/core';
 import { AuthPageDirective } from '@feature/templates/ddx-auth-page.template';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -84,7 +85,7 @@ export class SignInPageComponent extends AuthPageDirective
               )
             );
           } else {
-            this.handleRedirectionOnSuccess();
+            this.handleRedirectionOnSuccess(document.location.hostname);
           }
         } else if (response.status === 202) {
           if (this.redirectURL && this.redirectURL.length > 0) {
