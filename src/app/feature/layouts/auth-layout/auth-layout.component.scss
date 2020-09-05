@@ -3,9 +3,10 @@
 :host {
   background: linear-gradient(to top right, #000a33, #001044);
   min-height: 100vh;
+  position: relative;
 
   .locale-selector {
-    position: fixed;
+    position: absolute;
     top: 0px;
     right: 10px;
 

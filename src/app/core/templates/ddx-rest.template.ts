@@ -67,13 +67,29 @@ export abstract class AbstractRESTService {
     url = this.baseURL + url;
     switch (method) {
       case 'GET':
-        return this.http.get(url);
+        return this.http.get(url, {
+          headers: {
+            'Accept-Language': this.localeService.currentLocale,
+          },
+        });
       case 'POST':
-        return this.http.post(url, body);
+        return this.http.post(url, body, {
+          headers: {
+            'Accept-Language': this.localeService.currentLocale,
+          },
+        });
       case 'PUT':
-        return this.http.put(url, body);
+        return this.http.put(url, body, {
+          headers: {
+            'Accept-Language': this.localeService.currentLocale,
+          },
+        });
       case 'DELETE':
-        return this.http.delete(url);
+        return this.http.delete(url, {
+          headers: {
+            'Accept-Language': this.localeService.currentLocale,
+          },
+        });
       default:
         return undefined;
     }
@@ -95,21 +111,33 @@ export abstract class AbstractRESTService {
         return this.http.get(url, {
           observe: 'response',
           withCredentials: true,
+          headers: {
+            'Accept-Language': this.localeService.currentLocale,
+          },
         });
       case 'POST':
         return this.http.post(url, body, {
           observe: 'response',
           withCredentials: true,
+          headers: {
+            'Accept-Language': this.localeService.currentLocale,
+          },
         });
       case 'PUT':
         return this.http.put(url, body, {
           observe: 'response',
           withCredentials: true,
+          headers: {
+            'Accept-Language': this.localeService.currentLocale,
+          },
         });
       case 'DELETE':
         return this.http.delete(url, {
           observe: 'response',
           withCredentials: true,
+          headers: {
+            'Accept-Language': this.localeService.currentLocale,
+          },
         });
       default:
         return undefined;
