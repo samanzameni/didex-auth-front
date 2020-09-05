@@ -19,7 +19,8 @@ import { AuthResetPasswordFormData } from '@core/models';
     './ddx-forgot-password-page.component.scss',
   ],
 })
-export class ForgotPasswordPageComponent extends AuthPageDirective
+export class ForgotPasswordPageComponent
+  extends AuthPageDirective
   implements OnInit, AfterViewInit {
   submittedEmail: string;
 
@@ -36,7 +37,14 @@ export class ForgotPasswordPageComponent extends AuthPageDirective
 
   ngOnInit() {
     this.authForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.email,
+          Validators.pattern('^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$'),
+        ],
+      ],
     });
   }
 
