@@ -46,7 +46,7 @@
     "recaptcha_message_privacy": "قوانین حریم خصوصی",
     "recaptcha_message_between": "و",
     "recaptcha_message_terms": "قوانین استفاده",
-    "recaptcha_message_after": "پذیرش",
+    "recaptcha_message_after": "اعمال می‌شود",
     "not_a_member": "عضو نیستید؟",
     "sign_up": "ثبت نام",
     "signin-account": "به حساب کاربری خود وارد شوید",
@@ -74,14 +74,15 @@
     "recaptcha_message_privacy": "قوانین حریم خصوصی",
     "recaptcha_message_between": "و",
     "recaptcha_message_terms": "شرایط استفاده",
-    "recaptcha_message_after": "پذیرش",
+    "recaptcha_message_after": "اعمال می‌شود",
     "already_a_member": "عضو هستید؟",
     "sign_up": "ثبت نام",
     "next": "مرحله بعد",
     "get-code": "دریافت کد",
     "sms-code": "کد پیامکی",
     "signup-account": "حساب خود را ایجاد کنید",
-    "signup-buy-crypto": "در امنیت کامل رمزارز بخرید و در بستری مطمئن معامله کنید."
+    "signup-buy-crypto": "در امنیت کامل رمزارز بخرید و در بستری مطمئن معامله کنید.",
+    "choose_country": "انتخاب کشور"
   },
 
   "success": {

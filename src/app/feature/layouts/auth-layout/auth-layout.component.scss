@@ -5,12 +5,60 @@
   min-height: 100vh;
   position: relative;
 
+  .auth-page__layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  body {
+    .mat-select-panel {
+      &.locale-selector-panel {
+        transform: none !important;
+        margin-top: 30px !important;
+
+        .mat-option {
+          text-align: center;
+          &:last-child {
+            font-family: IRANSans;
+          }
+        }
+      }
+    }
+  }
+
+  .mat-select-panel .mat-option {
+    font-family: IRANSans;
+
+    &.locale-selector-panel {
+      .mat-option {
+        &:last-child {
+          font-family: IRANSans;
+        }
+      }
+    }
+  }
+
   .locale-selector {
     position: absolute;
     top: 0px;
     right: 10px;
 
     z-index: 10;
+  }
+
+  .locale-selector.mat-form-field-appearance-legacy {
+    font-size: 14px;
+    width: 70px;
+    text-align: right;
+
+    ::ng-deep .mat-form-field-wrapper,
+    .mat-form-field-wrapper {
+      .mat-form-field-underline {
+        display: none;
+      }
+    }
   }
 
   ::ng-deep .auth-pages__wrapper {
@@ -23,7 +71,7 @@
       align-items: flex-start;
       justify-content: space-around;
 
-      margin-top: 80px;
+      margin-top: 20%;
       width: 100%;
       div.rectangle-background__container {
         display: none;

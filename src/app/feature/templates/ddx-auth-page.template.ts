@@ -122,9 +122,9 @@ export abstract class AuthPageDirective implements AfterViewInit {
     this.cdRef.detectChanges();
   }
 
-  handleRedirectionOnSuccess(): void {
+  handleRedirectionOnSuccess(hostname: string): void {
     const url =
-      'https://' + (environment.production ? '' : 'dev.') + 'didex.com';
+      'https://' + (environment.production ? '' : 'dev.') + hostname;
     const link = document.createElement('a');
     link.href = url;
     link.style.width = '1px';

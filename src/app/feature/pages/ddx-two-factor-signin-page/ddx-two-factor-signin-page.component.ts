@@ -5,6 +5,7 @@ import {
   Renderer2,
   OnDestroy,
   ChangeDetectorRef,
+  Inject,
 } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -76,7 +77,7 @@ export class TwoFactorSigninPageComponent extends AuthPageDirective
             )
           );
         } else {
-          this.handleRedirectionOnSuccess();
+          this.handleRedirectionOnSuccess(document.location.hostname);
         }
       },
       (errorResponse) => {
