@@ -3,6 +3,7 @@
 :host {
   background: linear-gradient(to top right, #000a33, #001044);
   min-height: 100vh;
+  position: relative;
 
   .auth-page__layout {
     height: 100vh;
