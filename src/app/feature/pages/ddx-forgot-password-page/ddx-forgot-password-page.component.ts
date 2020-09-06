@@ -37,14 +37,7 @@ export class ForgotPasswordPageComponent
 
   ngOnInit() {
     this.authForm = this.formBuilder.group({
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.email,
-          Validators.pattern('^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$'),
-        ],
-      ],
+      email: ['', [Validators.required, Validators.email]],
     });
   }
 
