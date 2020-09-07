@@ -13,11 +13,22 @@ import { Observable } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   constructor(
     private localeService: LocaleService,
     private directionService: DirectionService
   ) {}
+
+  ngOnInit(): void {
+    const body = document.querySelector('body');
+    this.directionService.direction$.subscribe((dir) => {
+      body.setAttribute('dir', dir);
+    });
+
+    this.localeService.locale$.subscribe((locale) => {
+      body.classList.value = locale;
+    });
+  }
 
   handleLocaleChange($event: Locale): void {
     this.localeService.changeLocale($event);
