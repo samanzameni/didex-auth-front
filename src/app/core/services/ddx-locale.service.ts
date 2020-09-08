@@ -1,4 +1,4 @@
-import { Injectable, ApplicationRef } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 import * as en_locale from '@locale/en';
 import * as zh_locale from '@locale/zh';
@@ -25,14 +25,42 @@ export class LocaleService {
   private currentActiveLocale: LocaleModel;
 
   constructor(private storageService: StorageService) {
-    this.localeModels = [
-      { locale: 'en', caption: 'English' },
-      { locale: 'zh', caption: '中文' },
-      { locale: 'ru', caption: 'русский' },
-      { locale: 'fa', caption: 'فارسی' },
-    ];
+    let defaultLocale;
 
-    this.changeLocale(this.storageService.getStoredLocale() || 'en');
+    if (this.isOnLocalhost()) {
+      this.localeModels = [
+        { locale: 'en', caption: 'English' },
+        { locale: 'zh', caption: '中文' },
+        { locale: 'ru', caption: 'русский' },
+        { locale: 'fa', caption: 'فارسی' },
+      ];
+
+      defaultLocale = 'en';
+    } else if (this.isOnRegionTwo()) {
+      this.localeModels = [
+        // { locale: 'en', caption: 'English' },
+        // { locale: 'zh', caption: '中文' },
+        // { locale: 'ru', caption: 'русский' },
+        { locale: 'fa', caption: 'فارسی' },
+      ];
+
+      defaultLocale = 'fa';
+    } else {
+      this.localeModels = [
+        { locale: 'en', caption: 'English' },
+        { locale: 'zh', caption: '中文' },
+        { locale: 'ru', caption: 'русский' },
+        // { locale: 'fa', caption: 'فارسی' },
+      ];
+
+      defaultLocale = 'en';
+    }
+
+    // const defaultLocale =
+    //   this.storageService.getStoredLocale() ||
+    //   (this.isOnRegionTwo() ? 'fa' : 'en');
+
+    this.changeLocale(defaultLocale, true);
     this._locale$ = new BehaviorSubject(this.locale);
   }
 
@@ -52,9 +80,15 @@ export class LocaleService {
     return this._locale$.asObservable();
   }
 
-  public changeLocale(newLocale: Locale): void {
+  public changeLocale(
+    newLocale: Locale,
+    shouldSaveOnStorage: boolean = false
+  ): void {
     this.locale = newLocale;
-    this.storageService.setStoredLocale(newLocale);
+
+    if (shouldSaveOnStorage) {
+      this.storageService.setStoredLocale(newLocale);
+    }
 
     for (const l of this.availableLocales) {
       if (l.locale === newLocale) {
@@ -62,6 +96,14 @@ export class LocaleService {
         break;
       }
     }
+  }
+
+  public isOnLocalhost(): boolean {
+    return window.location.hostname.startsWith('localhost');
+  }
+
+  public isOnRegionTwo(): boolean {
+    return window.location.hostname.endsWith('.ir');
   }
 
   /*
