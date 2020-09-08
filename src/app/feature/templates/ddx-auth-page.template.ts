@@ -111,7 +111,7 @@ export abstract class AuthPageDirective implements AfterViewInit {
     return /[a-z]/.test(value);
   }
   hasSpecial(value: string): boolean {
-    return /[!@#$%^&*_?]/.test(value);
+    return /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/\\]/.test(value);
   }
   isAtLeastEightCharacters(value: string): boolean {
     return value && value.length >= 8;
@@ -123,8 +123,7 @@ export abstract class AuthPageDirective implements AfterViewInit {
   }
 
   handleRedirectionOnSuccess(hostname: string): void {
-    const url =
-      'https://' + (environment.production ? '' : 'dev.') + hostname;
+    const url = 'https://' + (environment.production ? '' : 'dev.') + hostname;
     const link = document.createElement('a');
     link.href = url;
     link.style.width = '1px';
