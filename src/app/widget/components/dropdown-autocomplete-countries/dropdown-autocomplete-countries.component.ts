@@ -3,9 +3,9 @@ import { DataEntryDirective } from '@widget/templates';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
-import { COUNTRIES } from '@core/util/constants';
+import { COUNTRIES, IRAN } from '@core/util/constants';
 import { CountryData, DropdownSelectItem } from '@core/models';
-import { AuthService } from '@core/services';
+import { AuthService, LocaleService } from '@core/services';
 
 @Component({
   selector: 'dropdown-autocomplete-countries',
@@ -23,10 +23,23 @@ export class DropdownAutocompleteCountriesComponent
 
   filteredOptions: Observable<CountryData[]>;
 
-  constructor(private authService: AuthService) {
+  constructor(
+    private authService: AuthService,
+    private localeService: LocaleService
+  ) {
     super();
 
-    this.countriesList = COUNTRIES;
+    if (localeService.isOnLocalhost()) {
+      this.countriesList = [...IRAN, ...COUNTRIES];
+      this.caption = 'Choose';
+    } else if (!localeService.isOnRegionTwo()) {
+      this.countriesList = IRAN;
+      this.caption = 'انتخاب کشور';
+    } else {
+      this.countriesList = COUNTRIES;
+      this.caption = 'Choose';
+    }
+
     this.getTitleFromValue = this.getTitleFromValue.bind(this);
   }
 
@@ -35,12 +48,6 @@ export class DropdownAutocompleteCountriesComponent
       startWith(''),
       map((selected) => this._filter(selected))
     );
-
-    if (!this.caption && this.isTraderInRegionTwo) {
-      this.caption = 'انتخاب کشور';
-    } else if (!this.caption) {
-      this.caption = 'choose...';
-    }
   }
 
   private _filter(selected: string): CountryData[] {

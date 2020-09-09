@@ -18,13 +18,13 @@
     >
       <div class="f32">
         <span class="flag" [ngClass]="option.code.toLowerCase()"></span>
-        <span style="font-size: 14px; line-height: 14px;">{{
+        <span style="font-size: 14px; line-height: 14px">{{
           option.name
         }}</span>
       </div>
     </mat-option>
   </mat-autocomplete>
-  <mat-error *ngIf="control.hasError('required')">
+  <!-- <mat-error *ngIf="control.hasError('required')">
     This field is required.
-  </mat-error>
+  </mat-error> -->
 </mat-form-field>
