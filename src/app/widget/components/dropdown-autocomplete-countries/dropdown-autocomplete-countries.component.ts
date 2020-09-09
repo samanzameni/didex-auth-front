@@ -4,8 +4,13 @@ import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { startWith, map } from 'rxjs/operators';
 import { COUNTRIES, IRAN } from '@core/util/constants';
-import { CountryData, DropdownSelectItem } from '@core/models';
-import { AuthService, LocaleService } from '@core/services';
+import { CountryData } from '@core/models';
+import {
+  AuthService,
+  LocaleService,
+  DirectionService,
+  Direction,
+} from '@core/services';
 
 @Component({
   selector: 'dropdown-autocomplete-countries',
@@ -25,14 +30,15 @@ export class DropdownAutocompleteCountriesComponent
 
   constructor(
     private authService: AuthService,
-    private localeService: LocaleService
+    private localeService: LocaleService,
+    private directionService: DirectionService
   ) {
     super();
 
     if (localeService.isOnLocalhost()) {
       this.countriesList = [...IRAN, ...COUNTRIES];
       this.caption = 'Choose';
-    } else if (!localeService.isOnRegionTwo()) {
+    } else if (localeService.isOnRegionTwo()) {
       this.countriesList = IRAN;
       this.caption = 'انتخاب کشور';
     } else {
@@ -56,6 +62,10 @@ export class DropdownAutocompleteCountriesComponent
     return this.countriesList.filter((option) =>
       option.name.toLowerCase().includes(filterValue)
     );
+  }
+
+  get direction$(): Observable<Direction> {
+    return this.directionService.direction$;
   }
 
   get isValid(): boolean {
