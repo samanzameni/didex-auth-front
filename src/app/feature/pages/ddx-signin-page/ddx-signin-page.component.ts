@@ -23,7 +23,8 @@ import { Subscription, Observable } from 'rxjs';
     './ddx-signin-page.component.scss',
   ],
 })
-export class SignInPageComponent extends AuthPageDirective
+export class SignInPageComponent
+  extends AuthPageDirective
   implements OnInit, AfterViewInit, OnDestroy {
   private paramSubscription: Subscription;
   private redirectURL: string;
@@ -82,6 +83,7 @@ export class SignInPageComponent extends AuthPageDirective
             this.router.navigateByUrl(
               this.router.parseUrl(
                 '/external-redirect?redirect_url='.concat(this.redirectURL)
+                // '/external-redirect?redirect_url=/trade'
               )
             );
           } else {
@@ -92,6 +94,7 @@ export class SignInPageComponent extends AuthPageDirective
             this.router.navigateByUrl(
               this.router.parseUrl(
                 '/signin/two-factor?redirect_url='.concat(this.redirectURL)
+                // '/signin/two-factor?redirect_url=/trade'
               )
             );
           } else {
