@@ -9,13 +9,10 @@ $input-width: 535px;
     display: none;
   }
 
-  div.signup-wrapper {
+  div.signup_wrapper {
     width: 100%;
     max-width: $input-width;
     box-sizing: border-box;
-
-    // margin: 100px 10px 0 10px;
-    // padding: 10px;
 
     display: flex;
     flex-direction: column;
@@ -97,7 +94,7 @@ $input-width: 535px;
         }
       }
 
-      div.signup-wrapper {
+      div.signup_wrapper {
         margin: 0;
       }
     }
