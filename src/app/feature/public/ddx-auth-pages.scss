@@ -9,15 +9,6 @@
     color: $ddx-light;
     box-sizing: border-box;
 
-    .title {
-      display: flex;
-      align-items: center;
-
-      b {
-        margin: 0 5px;
-      }
-    }
-
     .description {
       display: flex;
       align-items: flex-start;
