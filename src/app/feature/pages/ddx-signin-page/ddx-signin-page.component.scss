@@ -1,14 +1,10 @@
 @import '../../../../styles.scss';
 
-// $input-width: 535px;
-
 :host {
   form {
     width: 100%;
     max-width: 424px;
     box-sizing: border-box;
-
-    // margin: 100px 10px 0 10px;
 
     display: flex;
     flex-direction: column;
