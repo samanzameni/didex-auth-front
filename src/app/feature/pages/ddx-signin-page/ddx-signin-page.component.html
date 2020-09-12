@@ -2,7 +2,6 @@
   autocomplete="off"
   [formGroup]="authFormGroup"
   (ngSubmit)="onSubmit()"
-  #form
   dir="{{ direction$ | async }}"
 >
   <div class="signin-form__container">
@@ -98,13 +97,6 @@
         }}</a>
         {{ 'auth.signin.recaptcha_message_after' | ddxLocale }}
       </p>
-
-      <!-- <p class="footnote message">
-        {{ 'auth.signin.not_a_member' | ddxLocale }}
-        <a tabindex="-1" routerLink="/signup">{{
-          'auth.signin.sign_up' | ddxLocale
-        }}</a>
-      </p> -->
     </div>
   </div>
 </form>
