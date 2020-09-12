@@ -45,7 +45,6 @@ export class SignInPageComponent
     this.authForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
-      token: ['', environment.production ? [Validators.required] : []],
     });
 
     this.paramSubscription = this.route.queryParams.subscribe((params) => {

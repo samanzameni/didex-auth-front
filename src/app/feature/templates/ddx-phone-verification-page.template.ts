@@ -75,7 +75,6 @@ export abstract class PhoneVerificationPageDirective
           Validators.pattern('[0-9]*'),
         ],
       ],
-      token: ['', environment.production ? [Validators.required] : []],
     });
   }
 
