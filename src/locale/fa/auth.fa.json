@@ -1,6 +1,6 @@
 ﻿{
   "activate": {
-    "success_all_set": "همه تنظیمات انجام شد",
+    "success_all_set": "تنظیمات شما با موفقیت انجام شد",
     "success_redirect_message": "شما به زودی به صفحه اصلی هدایت میشوید...",
     "error_error": "خطا!",
     "error_message": "هنگام فعالسازی حساب شما خطایی رخ داده است."
@@ -12,7 +12,7 @@
     "email_placeholder": "abc@example.com",
     "email_error_required": "وارد کردن ایمیل الزامی است",
     "email_error_invalid": "آدرس ایمیل شما باید معتبر باشد",
-    "reset_button": "تغییر رمز",
+    "reset_button": "تغییر رمز عبور",
     "reset_message": "راهنمای تغییر رمز عبور به ایمیل شما فرستاده شده است: ",
     "remember_message": "رمز عبور را به یاد می آورید?",
     "sign_in": "ورود"
@@ -43,10 +43,10 @@
     "password_error_required": "وارد کردن رمز عبور الزامی است",
     "sign_in": "ورود",
     "recaptcha_message_before": "این سایت توسط ربات reCAPTCHA و گوگل محافظت میشود",
-    "recaptcha_message_privacy": "قوانین حریم خصوصی",
-    "recaptcha_message_between": "و",
-    "recaptcha_message_terms": "قوانین استفاده",
-    "recaptcha_message_after": "اعمال می‌شود",
+    "recaptcha_message_privacy": "از قوانین حریم خصوصی گوگل",
+    "recaptcha_message_between": "استفاده",
+    "recaptcha_message_terms": "می کند",
+    "recaptcha_message_after": "پذیرش",
     "not_a_member": "عضو نیستید؟",
     "sign_up": "ثبت نام",
     "signin-account": "به حساب کاربری خود وارد شوید",
@@ -54,7 +54,7 @@
   },
 
   "signup": {
-    "title": "ثبت نام",
+    "title": "ثبت نام در «دیدکس»",
     "email": "ایمیل خود را وارد کنید",
     "email_placeholder": "abc@example.com",
     "email_error_required": "وارد کردن ایمیل الزامی است.",
@@ -74,7 +74,7 @@
     "recaptcha_message_privacy": "قوانین حریم خصوصی",
     "recaptcha_message_between": "و",
     "recaptcha_message_terms": "شرایط استفاده",
-    "recaptcha_message_after": "اعمال می‌شود",
+    "recaptcha_message_after": "پذیرش",
     "already_a_member": "عضو هستید؟",
     "sign_up": "ثبت نام",
     "next": "مرحله بعد",
@@ -94,7 +94,7 @@
   "2fa": {
     "title": "شناسایی دو مرحله ای",
     "code": "کد امنیتی",
-    "code_hint": "از نرم‌افزار کدساز",
+    "code_hint": "از نرم افزار کدساز استفاده کنید.",
     "code_error_required": "وارد کردن کد الزامی است",
     "sign_in": "ورود"
   }
