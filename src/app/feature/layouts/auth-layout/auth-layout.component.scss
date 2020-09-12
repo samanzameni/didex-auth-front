@@ -64,7 +64,7 @@
   }
 
   ::ng-deep .auth-pages__wrapper {
-    min-height: 100vh;
+    min-height: calc(100vh - 80px);
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
