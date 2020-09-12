@@ -1,7 +1,7 @@
 <form
   autocomplete="off"
   [formGroup]="authFormGroup"
-  (ngSubmit)="onSubmit()"
+  (ngSubmit)="submitReCaptchaV3()"
   dir="{{ direction$ | async }}"
 >
   <div class="signin-form__container">
@@ -72,10 +72,12 @@
       </ng-container>
     </ng-container>
 
-    <div arrangeCenter #recaptcha class="recaptcha-container"></div>
-    <input type="hidden" name="token" formControlName="token" value="" />
-
-    <pro-button color="primary" type="submit" [disabled]="!isFormValid">
+    <pro-button
+      color="primary"
+      type="submit"
+      [disabled]="!isFormValid"
+      #submitButton
+    >
       {{ 'auth.signin.sign_in' | ddxLocale }}
     </pro-button>
 

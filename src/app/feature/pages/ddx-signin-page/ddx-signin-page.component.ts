@@ -69,11 +69,11 @@ export class SignInPageComponent
     return this.directionService.direction$;
   }
 
-  onSubmit(): void {
+  onSubmit(token?: string): void {
     this.setLoadingOn();
     this.formErrors = {};
 
-    const formData = this.authForm.value;
+    const formData = Object.assign(this.authForm.value, { token });
     this.authService.requestSignIn(formData as AuthFormData).subscribe(
       (response) => {
         this.setLoadingOff();

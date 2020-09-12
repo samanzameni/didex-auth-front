@@ -46,6 +46,10 @@ a:active {
   scrollbar-width: 5px;
 }
 
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
