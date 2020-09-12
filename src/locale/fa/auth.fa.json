@@ -54,8 +54,8 @@
   },
 
   "signup": {
-    "title": "ثبت نام در «دیدکس»",
-    "email": "ایمیل خود را وارد کنید",
+    "title": "ثبت نام",
+    "email": "ایمیل",
     "email_placeholder": "abc@example.com",
     "email_error_required": "وارد کردن ایمیل الزامی است.",
     "email_error_invalid": "آدرس ایمیل شما باید معتبر باشد.",
@@ -65,7 +65,7 @@
     "password_hint_upper": "رمز عبور شما باید شامل حروف بزرگ باشد",
     "password_hint_number": "رمز عبور شما باید شامل عدد باشد",
     "password_hint_sign": "رمز عبور شما باید شامل علامت باشد",
-    "confirm_password": "تأئید رمز عبور",
+    "confirm_password": "تایید رمز عبور",
     "confirm_password_error_required": "رمز عبور خود را باید تأیید کنید",
     "confirm_password_error_match": "رمزهای عبور شما باید یکسان باشند.",
     "terms_check": "ایجاد حساب در دیداکس به معنای پذیرفتن سیاست های داخلی،شرایط استفاده و تنظیمات اعلان پیش ‌فرض ما می باشد. ",
