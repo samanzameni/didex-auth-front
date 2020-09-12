@@ -2,25 +2,16 @@
 
 :host {
   display: flex;
-  // align-items: center;
+
   justify-content: center;
-  // width: 100vw;
-  // min-height: 100vh;
 
   form {
     color: $ddx-light;
     box-sizing: border-box;
-    // padding: 10px;
 
     .title {
       display: flex;
       align-items: center;
-
-      // img {
-      //   height: 30px;
-      //   object-fit: contain;
-      //   margin-right: 5px;
-      // }
 
       b {
         margin: 0 5px;

@@ -32,7 +32,6 @@
         id="email"
         placeholder="{{ 'auth.signin.email_placeholder' | ddxLocale }}"
         autofocus
-        #emailInput
       />
     </mat-form-field>
     <ng-container *ngIf="authFormControls.email.dirty">
@@ -76,12 +75,7 @@
     <div arrangeCenter #recaptcha class="recaptcha-container"></div>
     <input type="hidden" name="token" formControlName="token" value="" />
 
-    <pro-button
-      color="primary"
-      type="submit"
-      [disabled]="!isFormValid"
-      #submitButton
-    >
+    <pro-button color="primary" type="submit" [disabled]="!isFormValid">
       {{ 'auth.signin.sign_in' | ddxLocale }}
     </pro-button>
 
