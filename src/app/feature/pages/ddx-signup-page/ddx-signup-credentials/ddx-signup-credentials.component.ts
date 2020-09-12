@@ -23,9 +23,13 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'ddx-signup-credentials',
   templateUrl: './ddx-signup-credentials.component.html',
-  styleUrls: ['./ddx-signup-credentials.component.scss'],
+  styleUrls: [
+    '../../../public/ddx-auth-pages.scss',
+    './ddx-signup-credentials.component.scss',
+  ],
 })
-export class SignupCredentialsComponent extends AuthPageDirective
+export class SignupCredentialsComponent
+  extends AuthPageDirective
   implements OnInit, AfterViewInit {
   @ViewChild(MatCheckbox) checkbox: MatCheckbox;
 
