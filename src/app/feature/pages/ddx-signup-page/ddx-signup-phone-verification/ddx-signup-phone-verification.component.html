@@ -2,7 +2,6 @@
   arrangeStack
   autocomplete="off"
   (ngSubmit)="onSubmit()"
-  #form
   *ngIf="phoneVerification"
   [formGroup]="phoneVerification"
   dir="{{ direction$ | async }}"
@@ -107,7 +106,7 @@
     </button>
   </div>
 
-  <div arrangeCenter #recaptcha class="recaptcha-container"></div>
+  <div #recaptcha class="recaptcha-container"></div>
   <input type="hidden" name="token" formControlName="token" value="" />
 
   <ng-container *ngIf="formErrors.password || formErrors.email">
