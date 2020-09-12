@@ -12,34 +12,6 @@
     justify-content: flex-start;
   }
 
-  body {
-    .mat-select-panel {
-      &.locale-selector-panel {
-        transform: none !important;
-        margin-top: 30px !important;
-
-        .mat-option {
-          text-align: center;
-          &:last-child {
-            font-family: IRANSans;
-          }
-        }
-      }
-    }
-  }
-
-  .mat-select-panel .mat-option {
-    font-family: IRANSans;
-
-    &.locale-selector-panel {
-      .mat-option {
-        &:last-child {
-          font-family: IRANSans;
-        }
-      }
-    }
-  }
-
   .locale-selector {
     margin-inline-start: 10px;
   }
