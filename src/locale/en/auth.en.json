@@ -1,7 +1,7 @@
 {
   "activate": {
-    "success_all_set": "All set!",
-    "success_redirect_message": "You will be redirected to homepage soon ...",
+    "success_all_set": "Your Changes have been saved",
+    "success_redirect_message": "You will be taken to the homepage soon...",
     "error_error": "Error!",
     "error_message": "An error occurred while activating your account."
   },
