@@ -46,7 +46,6 @@ export class ActivateEmailPageComponent implements OnInit {
       this.email = params.email;
       this.token = params.token;
       this.redirect_url = params.redirect_url;
-
       this.authService
         .requestVerifyEmail({ email: this.email, token: this.token })
         .subscribe(

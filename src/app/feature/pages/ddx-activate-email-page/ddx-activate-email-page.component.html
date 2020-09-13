@@ -4,10 +4,11 @@
   </ng-container>
 
   <ng-container *ngSwitchCase="'success'">
-    <h2>{{ 'auth.activate.success_all_set' | ddxLocale }}</h2>
-    <mat-hint [ngStyle]="{ 'margin-top': '10px' }">
+    <h1>{{ 'auth.activate.success_all_set' | ddxLocale }}</h1>
+    <h2>
       {{ 'auth.activate.success_redirect_message' | ddxLocale }}
-    </mat-hint>
+    </h2>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
   </ng-container>
 
   <ng-container *ngSwitchCase="'failed'">
