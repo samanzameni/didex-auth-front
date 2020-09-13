@@ -45,7 +45,6 @@ export class SignInPageComponent
     this.authForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
-      token: ['', environment.production ? [Validators.required] : []],
     });
 
     this.paramSubscription = this.route.queryParams.subscribe((params) => {
@@ -69,11 +68,11 @@ export class SignInPageComponent
     return this.directionService.direction$;
   }
 
-  onSubmit(): void {
+  onSubmit(token?: string): void {
     this.setLoadingOn();
     this.formErrors = {};
 
-    const formData = this.authForm.value;
+    const formData = Object.assign(this.authForm.value, { token });
     this.authService.requestSignIn(formData as AuthFormData).subscribe(
       (response) => {
         this.setLoadingOff();

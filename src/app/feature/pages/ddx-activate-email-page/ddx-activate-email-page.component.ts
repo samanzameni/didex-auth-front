@@ -28,17 +28,23 @@ export class ActivateEmailPageComponent implements OnInit {
 
   handleRedirectionOnSuccess(): void {
     // TODO: it's bullshit :D
-    const link = document.createElement('a');
-    const baseURL =
-      'https://' + (environment.production ? '' : 'dev.') + 'didex.com';
-    link.href = this.redirect_url || baseURL;
-    link.style.width = '1px';
-    link.style.height = '1px';
-    link.style.position = 'fixed';
-    link.style.top = '0';
-    link.style.left = '0';
-    document.getElementsByTagName('body')[0].appendChild(link);
-    link.click();
+    // const link = document.createElement('a');
+    // const baseURL =
+    //   'https://' + (environment.production ? '' : 'dev.') + 'didex.com';
+    // link.href = this.redirect_url || baseURL;
+    // link.style.width = '1px';
+    // link.style.height = '1px';
+    // link.style.position = 'fixed';
+    // link.style.top = '0';
+    // link.style.left = '0';
+    // document.getElementsByTagName('body')[0].appendChild(link);
+    // link.click();
+
+    this.router.navigateByUrl(
+      this.router.parseUrl(
+        '/external-redirect?redirect_url='.concat(this.redirect_url || '/trade')
+      )
+    );
   }
 
   ngOnInit(): void {

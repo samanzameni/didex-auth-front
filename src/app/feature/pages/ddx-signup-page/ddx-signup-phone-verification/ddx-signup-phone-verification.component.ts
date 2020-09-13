@@ -124,13 +124,13 @@ export class SignupPhoneVerificationComponent
     );
   }
 
-  onSubmit(): void {
+  onSubmit(token?: string): void {
     this.setLoadingOn();
     this.formErrors = {};
     const dataToSend: AuthSignUpFormData = this.phoneVerification.value;
     dataToSend.email = this.userDataService.email;
     dataToSend.password = this.userDataService.password;
-    // dataToSend.token = this.userDataService.token;
+    dataToSend.token = token;
 
     this.authService.requestSignUp(dataToSend).subscribe(
       (response) => {

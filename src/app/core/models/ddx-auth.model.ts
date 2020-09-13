@@ -1,6 +1,7 @@
 export interface AuthFormData {
   email: string;
   password: string;
+  token: string;
 }
 
 export interface AuthEmailActivationData {

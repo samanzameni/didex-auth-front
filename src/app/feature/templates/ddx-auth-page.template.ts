@@ -10,8 +10,8 @@ import {
 import { Router } from '@angular/router';
 import { AuthService } from '@core/services';
 import { ProButtonComponent } from '@widget/components';
-import { CONSTANTS } from '@core/util/constants';
-import { environment } from '@environments/environment';
+
+declare var grecaptcha: any;
 
 @Directive()
 export abstract class AuthPageDirective implements AfterViewInit {
@@ -29,6 +29,8 @@ export abstract class AuthPageDirective implements AfterViewInit {
     protected authService: AuthService,
     protected cdRef: ChangeDetectorRef
   ) {
+    this.submitReCaptchaV3 = this.submitReCaptchaV3.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
     this.formErrors = {};
     this.isPasswordHidden = true;
   }
@@ -54,35 +56,22 @@ export abstract class AuthPageDirective implements AfterViewInit {
   }
 
   protected addRecaptchaScript() {
-    // tslint:disable-next-line: no-string-literal
-    window['grecaptchaCallback'] = () => {
-      this.renderReCaptcha();
-    };
-
     ((id, obj) => {
       let scriptTag;
       const formerScripts = document.getElementsByTagName('script')[0];
 
       scriptTag = document.createElement('script');
       scriptTag.id = id;
+      scriptTag.onload = this.renderReCaptcha.bind(this);
       scriptTag.src =
-        'https://www.google.com/recaptcha/api.js?onload=grecaptchaCallback&amp;render=explicit';
+        'https://www.google.com/recaptcha/api.js?render=6LcgguIUAAAAAE1GXYfJd7z-uEah67Dd9kTgWcpz';
       scriptTag.async = true;
       formerScripts.parentNode.insertBefore(scriptTag, formerScripts);
-    })('recaptcha-sdk', this);
+    })('recaptchaV3', this);
   }
 
   renderReCaptcha() {
-    // tslint:disable-next-line: no-string-literal
-    window['grecaptcha'].render(this.recaptchaElement.nativeElement, {
-      sitekey: '6Leik-cUAAAAAJG-1oLQ6nT6NQmL8k3D7QM-jOD2',
-      theme: 'dark',
-      callback: (response) => {
-        if (typeof response === 'string') {
-          this.setReCaptchaToken(response);
-        }
-      },
-    });
+    console.log('=== reCAPTCHAv3 loaded');
   }
 
   get authFormGroup(): FormGroup {
@@ -137,5 +126,18 @@ export abstract class AuthPageDirective implements AfterViewInit {
     link.click();
   }
 
-  abstract onSubmit(): void;
+  submitReCaptchaV3(): void {
+    grecaptcha.ready(() => {
+      grecaptcha
+        .execute('6LcgguIUAAAAAE1GXYfJd7z-uEah67Dd9kTgWcpz', {
+          action: 'submit',
+        })
+        .then((token) => {
+          console.log('=== reCAPTCHA submitted ...');
+          this.onSubmit(token);
+        });
+    });
+  }
+
+  abstract onSubmit(token?: string): void;
 }

@@ -20,7 +20,7 @@ export class AuthLayoutComponent implements OnInit {
   ) {}
 
   handleLocaleChange($event: Locale): void {
-    this.localeService.changeLocale($event);
+    this.localeService.changeLocale($event, true);
     window.location.reload();
   }
 
