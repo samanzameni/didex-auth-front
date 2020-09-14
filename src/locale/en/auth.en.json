@@ -97,5 +97,9 @@
     "code_hint": "Code form your authenticator app",
     "code_error_required": "Code is required",
     "sign_in": "Sign In"
+  },
+
+  "redirection": {
+    "title": "You will be redirected soon..."
   }
 }
