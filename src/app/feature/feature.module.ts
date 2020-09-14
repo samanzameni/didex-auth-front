@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AuthModule } from './modules/auth.module';
 import { WidgetModule } from '@widget/widget.module';
 import { DdxWrongPageComponent } from './pages/ddx-wrong-page/ddx-wrong-page.component';
-import { LocalePipeModule } from '@feature/modules/locale-pipe.module';
+import { LocalePipeModule } from '@widget/modules/locale-pipe.module';
 
 @NgModule({
   declarations: [DdxWrongPageComponent],

@@ -21,7 +21,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
-import { LocalePipeModule } from './locale-pipe.module';
+import { LocalePipeModule } from '../../widget/modules/locale-pipe.module';
 import { PhoneVerificationGuard } from '@core/guards/phone-verification.guard';
 import { MatOption } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
