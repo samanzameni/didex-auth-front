@@ -12,9 +12,9 @@
   </ng-container>
 
   <ng-container *ngSwitchCase="'failed'">
-    <h2>{{ 'auth.activate.error_error' | ddxLocale }}</h2>
-    <mat-error [ngStyle]="{ 'margin-top': '10px' }">
+    <h1>{{ 'auth.activate.error_error' | ddxLocale }}</h1>
+    <h2>
       {{ 'auth.activate.error_message' | ddxLocale }}
-    </mat-error>
+    </h2>
   </ng-container>
 </section>
