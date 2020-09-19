@@ -18,6 +18,18 @@
       color: $ddx-light;
       box-sizing: border-box;
 
+      width: 424px;
+      max-width: 99vw;
+      box-sizing: border-box;
+
+      display: flex;
+      flex-direction: column;
+
+      .mat-divider {
+        width: 40%;
+        border-top-color: $ddx-accent-main;
+      }
+
       .description {
         display: flex;
         align-items: flex-start;
@@ -82,6 +94,24 @@
 @media screen and (min-width: $break-narrow-mobile) {
   :host {
     main {
+      form {
+        .description {
+          p.captcha {
+            display: block;
+          }
+
+          p.message {
+            text-align: start;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $break-tablet) {
+  :host {
+    main {
       section.auth-title__wrapper {
         display: flex;
         flex-direction: column;
@@ -111,17 +141,6 @@
 
           display: flex;
           flex-wrap: wrap;
-        }
-      }
-      form {
-        .description {
-          p.captcha {
-            display: block;
-          }
-
-          p.message {
-            text-align: start;
-          }
         }
       }
     }

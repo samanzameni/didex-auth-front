@@ -7,14 +7,11 @@
     display: flex;
     justify-content: space-evenly;
 
+    // section.auth-title__wrapper {
+    //   display: none;
+    // }
+
     form {
-      width: 424px;
-      max-width: 98vw;
-      box-sizing: border-box;
-
-      display: flex;
-      flex-direction: column;
-
       div.signin-form__container {
         .title__container {
           display: flex;
