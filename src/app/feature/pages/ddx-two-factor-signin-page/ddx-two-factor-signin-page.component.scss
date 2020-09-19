@@ -2,40 +2,82 @@
 
 :host {
   width: 100%;
-  form {
-    // width: 100vw;
-    // max-width: 535px;
 
-    width: 424px;
-    max-width: 98vw;
+  main {
+    width: 100vw;
 
-    h1.title {
-      // width: 75%;
-      text-align: start;
-      padding-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
 
-      color: $ddx-accent-main;
-      font-weight: bold;
-      // border-bottom: 1px solid $ddx-accent-main;
+    section.auth-title__wrapper {
+      display: none;
     }
+    form {
+      // width: 100vw;
+      // max-width: 535px;
 
-    .mat-divider {
-      width: 40%;
-      border-top-color: $ddx-accent-main;
-    }
+      width: 424px;
+      max-width: 98vw;
 
-    mat-hint {
-      margin-bottom: 20px;
+      h1.title {
+        // width: 75%;
+        text-align: start;
+        padding-bottom: 10px;
+
+        color: $ddx-accent-main;
+        font-weight: bold;
+        // border-bottom: 1px solid $ddx-accent-main;
+      }
+
+      .mat-divider {
+        width: 40%;
+        border-top-color: $ddx-accent-main;
+      }
+
+      mat-hint {
+        margin-bottom: 20px;
+      }
     }
   }
 }
 
 @media screen and (min-width: $break-tablet) {
   :host {
-    // width: 30vw;
-    form {
-      // width: 100%;
-      // max-width: 424px;
+    main {
+      section.auth-title__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        min-height: 50vh;
+        width: 50%;
+        line-height: 24px;
+
+        background-image: url('assets/images/background-rectangles.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        h1 {
+          color: $ddx-accent-main;
+          font-weight: bold;
+          font-size: 25px;
+          padding: 10px 0;
+        }
+
+        p {
+          font-size: 15px;
+          padding: 10px 0;
+
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+      form {
+        margin: 0;
+      }
     }
   }
 }

@@ -7,10 +7,6 @@
     display: flex;
     justify-content: space-evenly;
 
-    section.auth-title__wrapper {
-      display: none;
-    }
-
     form {
       width: 424px;
       max-width: 98vw;
@@ -51,7 +47,6 @@
 
 @media screen and (min-width: $break-tablet) {
   :host {
-    align-items: center;
     main {
       section.auth-title__wrapper {
         display: flex;

@@ -1,40 +1,51 @@
-<form
-  #disableForm="ngForm"
-  autocomplete="off"
-  arrangeStack
-  [formGroup]="authFormGroup"
-  (ngSubmit)="onSubmit()"
->
-  <h1 class="title">
-    <!-- <a href="/"><img src="assets/images/logo-white-symbol.svg" alt="logo" /></a> -->
-    {{ 'auth.2fa.title' | ddxLocale }}
-  </h1>
-  <mat-divider></mat-divider>
+<main class="main-container">
+  <section class="auth-title__wrapper">
+    <div class="auth-title__inner-wrapper">
+      <h1>{{ 'auth.signin.signin_account' | ddxLocale }}</h1>
+      <p>{{ 'auth.signin.signin_buy_crypto' | ddxLocale }}</p>
+    </div>
+  </section>
 
-  <mat-form-field>
-    <mat-label>{{ 'auth.2fa.code' | ddxLocale }}</mat-label>
-    <input matInput type="text" name="code" formControlName="code" required />
-  </mat-form-field>
-  <mat-hint>{{ 'auth.2fa.code_hint' | ddxLocale }}</mat-hint>
-  <ng-container *ngIf="authFormGroup.controls.code.dirty">
-    <mat-error *ngIf="authFormGroup.controls.code.hasError('required')"
-      >{{ 'auth.2fa.code_error_required' | ddxLocale }}
-    </mat-error>
-  </ng-container>
-  <ng-container *ngIf="!!authFormErrors && authFormErrors.code">
-    <mat-error *ngFor="let error of authFormErrors.code">{{ error }}</mat-error>
-  </ng-container>
-  <ng-container *ngIf="!!authFormErrors && authFormErrors.default">
-    <mat-error *ngFor="let error of authFormErrors.default">{{
-      error
-    }}</mat-error>
-  </ng-container>
-  <pro-button
-    color="primary"
-    type="submit"
-    [disabled]="!isFormValid"
-    #submitButton
+  <form
+    #disableForm="ngForm"
+    autocomplete="off"
+    arrangeStack
+    [formGroup]="authFormGroup"
+    (ngSubmit)="onSubmit()"
   >
-    {{ 'auth.2fa.sign_in' | ddxLocale }}
-  </pro-button>
-</form>
+    <h1 class="title">
+      <!-- <a href="/"><img src="assets/images/logo-white-symbol.svg" alt="logo" /></a> -->
+      {{ 'auth.2fa.title' | ddxLocale }}
+    </h1>
+    <mat-divider></mat-divider>
+
+    <mat-form-field>
+      <mat-label>{{ 'auth.2fa.code' | ddxLocale }}</mat-label>
+      <input matInput type="text" name="code" formControlName="code" required />
+    </mat-form-field>
+    <mat-hint>{{ 'auth.2fa.code_hint' | ddxLocale }}</mat-hint>
+    <ng-container *ngIf="authFormGroup.controls.code.dirty">
+      <mat-error *ngIf="authFormGroup.controls.code.hasError('required')"
+        >{{ 'auth.2fa.code_error_required' | ddxLocale }}
+      </mat-error>
+    </ng-container>
+    <ng-container *ngIf="!!authFormErrors && authFormErrors.code">
+      <mat-error *ngFor="let error of authFormErrors.code">{{
+        error
+      }}</mat-error>
+    </ng-container>
+    <ng-container *ngIf="!!authFormErrors && authFormErrors.default">
+      <mat-error *ngFor="let error of authFormErrors.default">{{
+        error
+      }}</mat-error>
+    </ng-container>
+    <pro-button
+      color="primary"
+      type="submit"
+      [disabled]="!isFormValid"
+      #submitButton
+    >
+      {{ 'auth.2fa.sign_in' | ddxLocale }}
+    </pro-button>
+  </form>
+</main>
