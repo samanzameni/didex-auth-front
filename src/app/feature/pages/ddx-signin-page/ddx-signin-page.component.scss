@@ -1,38 +1,47 @@
 @import '../../../../styles.scss';
 
 :host {
-  form {
-    // width: 100%;
-    // max-width: 424px;
-    width: 424px;
-    max-width: 99vw;
-    box-sizing: border-box;
+  main {
+    width: 100vw;
 
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
 
-    div.signin-form__container {
-      .title__container {
-        display: flex;
-        margin-bottom: 20px;
+    section.auth-title__wrapper {
+      display: none;
+    }
 
-        h1.title {
-          font-weight: bold;
-          width: 30%;
-          text-align: start;
-          padding-bottom: 10px;
+    form {
+      width: 424px;
+      max-width: 99vw;
+      box-sizing: border-box;
 
-          &:first-child {
-            margin-inline-end: 15px;
-          }
+      display: flex;
+      flex-direction: column;
 
-          &.active {
-            color: $ddx-accent-main;
-            border-bottom: 1px solid $ddx-accent-main;
-          }
+      div.signin-form__container {
+        .title__container {
+          display: flex;
+          margin-bottom: 20px;
 
-          a {
-            text-decoration: none;
+          h1.title {
+            font-weight: bold;
+            width: 30%;
+            text-align: start;
+            padding-bottom: 10px;
+
+            &:first-child {
+              margin-inline-end: 15px;
+            }
+
+            &.active {
+              color: $ddx-accent-main;
+              border-bottom: 1px solid $ddx-accent-main;
+            }
+
+            a {
+              text-decoration: none;
+            }
           }
         }
       }
@@ -43,13 +52,42 @@
 @media screen and (min-width: $break-tablet) {
   :host {
     align-items: center;
+    main {
+      section.auth-title__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
 
-    form {
-      // display: flex;
-      // flex-direction: row;
-      // align-items: center;
-      // justify-content: space-evenly;
-      margin: 0;
+        min-height: 50vh;
+        width: 50%;
+        line-height: 24px;
+
+        background-image: url('assets/images/background-rectangles.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        h1 {
+          color: $ddx-accent-main;
+          font-weight: bold;
+          font-size: 25px;
+          padding: 10px 0;
+        }
+
+        p {
+          font-size: 15px;
+          padding: 10px 0;
+
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+
+      form {
+        margin: 0;
+      }
     }
   }
 }

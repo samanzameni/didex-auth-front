@@ -18,17 +18,17 @@
       <stop offset="1" stop-color="#5be9ff"/>
     </linearGradient>
   </defs>
-  <g id="Group_3171" data-name="Group 3171" transform="translate(-168 -260)">
-    <rect id="Rectangle_1803" data-name="Rectangle 1803" width="217" height="219" rx="5" transform="translate(255 595)" opacity="0.55" fill="url(#linear-gradient)"/>
-    <rect id="Rectangle_1808" data-name="Rectangle 1808" width="127" height="128" rx="5" transform="translate(658 694)" opacity="0.55" fill="url(#linear-gradient-2)"/>
-    <rect id="Rectangle_1811" data-name="Rectangle 1811" width="83" height="84" rx="5" transform="translate(382 460)" opacity="0.55" fill="url(#linear-gradient-2)"/>
-    <rect id="Rectangle_1810" data-name="Rectangle 1810" width="127" height="128" rx="5" transform="translate(734 491)" opacity="0.55" fill="url(#linear-gradient-2)"/>
-    <rect id="Rectangle_1809" data-name="Rectangle 1809" width="127" height="128" rx="5" transform="translate(687 716) rotate(180)" opacity="0.55" fill="url(#linear-gradient-2)"/>
-    <rect id="Rectangle_1804" data-name="Rectangle 1804" width="217" height="405" rx="5" transform="translate(491 292)" opacity="0.06" fill="url(#linear-gradient-6)"/>
-    <rect id="Rectangle_1807" data-name="Rectangle 1807" width="123" height="125" rx="5" transform="translate(168 436)" fill="#3988f2" opacity="0.06"/>
-    <rect id="Rectangle_1806" data-name="Rectangle 1806" width="108" height="104" rx="5" transform="translate(363 260)" opacity="0.06" fill="url(#linear-gradient-7)"/>
-    <rect id="Rectangle_1805" data-name="Rectangle 1805" width="80" height="81" rx="5" transform="translate(263 384)" fill="#1cb9ff" opacity="0.09"/>
-    <rect id="Rectangle_1812" data-name="Rectangle 1812" width="16" height="17" rx="2" transform="translate(242 415)" fill="#1cb9ff" opacity="0.09"/>
-    <rect id="Rectangle_1813" data-name="Rectangle 1813" width="16" height="16" rx="2" transform="translate(734 469)" fill="#1cb9ff" opacity="0.09"/>
+  <g id="Group_3189" data-name="Group 3189" transform="translate(-139 -260)">
+    <rect id="Rectangle_1803" data-name="Rectangle 1803" width="217" height="219" rx="5" transform="translate(226 595)" opacity="0.55" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_1808" data-name="Rectangle 1808" width="127" height="128" rx="5" transform="translate(629 694)" opacity="0.55" fill="url(#linear-gradient-2)"/>
+    <rect id="Rectangle_1811" data-name="Rectangle 1811" width="83" height="84" rx="5" transform="translate(353 460)" opacity="0.55" fill="url(#linear-gradient-2)"/>
+    <rect id="Rectangle_1810" data-name="Rectangle 1810" width="127" height="128" rx="5" transform="translate(705 491)" opacity="0.55" fill="url(#linear-gradient-2)"/>
+    <rect id="Rectangle_1809" data-name="Rectangle 1809" width="127" height="128" rx="5" transform="translate(658 716) rotate(180)" opacity="0.55" fill="url(#linear-gradient-2)"/>
+    <rect id="Rectangle_1804" data-name="Rectangle 1804" width="217" height="405" rx="5" transform="translate(462 292)" opacity="0.06" fill="url(#linear-gradient-6)"/>
+    <rect id="Rectangle_1807" data-name="Rectangle 1807" width="123" height="125" rx="5" transform="translate(139 436)" fill="#3988f2" opacity="0.06"/>
+    <rect id="Rectangle_1806" data-name="Rectangle 1806" width="108" height="104" rx="5" transform="translate(334 260)" opacity="0.06" fill="url(#linear-gradient-7)"/>
+    <rect id="Rectangle_1805" data-name="Rectangle 1805" width="80" height="81" rx="5" transform="translate(234 384)" fill="#1cb9ff" opacity="0.09"/>
+    <rect id="Rectangle_1812" data-name="Rectangle 1812" width="16" height="17" rx="2" transform="translate(213 415)" fill="#1cb9ff" opacity="0.09"/>
+    <rect id="Rectangle_1813" data-name="Rectangle 1813" width="16" height="16" rx="2" transform="translate(705 469)" fill="#1cb9ff" opacity="0.09"/>
   </g>
 </svg>
