@@ -26,6 +26,7 @@ import { PhoneVerificationGuard } from '@core/guards/phone-verification.guard';
 import { MatOption } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDividerModule } from '@angular/material/divider';
 
 const routes: Routes = [
   {
@@ -105,6 +106,7 @@ const routes: Routes = [
     MatIconModule,
     MatSelectModule,
     MatProgressBarModule,
+    MatDividerModule,
   ],
   exports: [],
   providers: [],

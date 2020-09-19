@@ -3,8 +3,11 @@
 :host {
   width: 100%;
   form {
-    width: 100vw;
-    max-width: 535px;
+    // width: 100vw;
+    // max-width: 535px;
+
+    width: 424px;
+    max-width: 98vw;
 
     h1.title {
       // width: 75%;
@@ -12,7 +15,12 @@
       padding-bottom: 10px;
 
       color: $ddx-accent-main;
-      border-bottom: 1px solid $ddx-accent-main;
+      // border-bottom: 1px solid $ddx-accent-main;
+    }
+
+    .mat-divider {
+      width: 40%;
+      border-top-color: $ddx-accent-main;
     }
 
     mat-hint {
@@ -23,10 +31,10 @@
 
 @media screen and (min-width: $break-tablet) {
   :host {
-    width: 30vw;
+    // width: 30vw;
     form {
-      width: 100%;
-      max-width: 424px;
+      // width: 100%;
+      // max-width: 424px;
     }
   }
 }

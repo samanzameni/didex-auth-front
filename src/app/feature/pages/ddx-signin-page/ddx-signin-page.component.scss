@@ -2,8 +2,10 @@
 
 :host {
   form {
-    width: 100%;
-    max-width: 424px;
+    // width: 100%;
+    // max-width: 424px;
+    width: 424px;
+    max-width: 99vw;
     box-sizing: border-box;
 
     display: flex;
@@ -43,10 +45,10 @@
     align-items: center;
 
     form {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-evenly;
+      // display: flex;
+      // flex-direction: row;
+      // align-items: center;
+      // justify-content: space-evenly;
       margin: 0;
     }
   }
