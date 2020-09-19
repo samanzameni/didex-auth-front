@@ -1,40 +1,47 @@
 @import '../../../../../styles.scss';
 
-$input-width: 535px;
-
 :host {
-  width: 424px;
-  max-width: 98vw;
-
-  div.signup_wrapper {
-    width: 100%;
-    max-width: $input-width;
-    box-sizing: border-box;
+  main {
+    width: 100vw;
 
     display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
 
-    .title__container {
+    section.auth-title__wrapper {
+      display: none;
+    }
+
+    div.signup_wrapper {
+      width: 424px;
+      max-width: 98vw;
+
+      box-sizing: border-box;
+
       display: flex;
-      margin-bottom: 20px;
+      flex-direction: column;
 
-      h1.title {
-        font-weight: bold;
-        width: 30%;
-        text-align: start;
-        padding-bottom: 10px;
+      .title__container {
+        display: flex;
+        margin-bottom: 20px;
 
-        &:nth-child(2) {
-          margin-inline-start: 15px;
-        }
+        h1.title {
+          font-weight: bold;
+          width: 30%;
+          text-align: start;
+          padding-bottom: 10px;
 
-        &.active {
-          color: $ddx-accent-main;
-          border-bottom: 1px solid $ddx-accent-main;
-        }
+          &:nth-child(2) {
+            margin-inline-start: 15px;
+          }
 
-        a {
-          text-decoration: none;
+          &.active {
+            color: $ddx-accent-main;
+            border-bottom: 1px solid $ddx-accent-main;
+          }
+
+          a {
+            text-decoration: none;
+          }
         }
       }
     }
@@ -45,15 +52,45 @@ $input-width: 535px;
   :host {
     align-items: center;
 
-    section {
+    main {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-evenly;
 
-      width: 100%;
-      max-width: 424px;
       margin: 0;
+
+      section.auth-title__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        min-height: 50vh;
+        width: 50%;
+        line-height: 24px;
+
+        background-image: url('assets/images/background-rectangles.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        h1 {
+          color: $ddx-accent-main;
+          font-weight: bold;
+          font-size: 25px;
+          padding: 10px 0;
+        }
+
+        p {
+          font-size: 15px;
+          padding: 10px 0;
+
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
 
       // max-height: 590px;
 

@@ -49,8 +49,8 @@
     "recaptcha_message_after": "apply",
     "not_a_member": "Not a member?",
     "sign_up": "Sign Up",
-    "signin-account": "Sign in to your account",
-    "signin-buy-crypto": "Securely buy crypto and start trading on a trusted exchange"
+    "signin_account": "Sign in to your account",
+    "signin_buy_crypto": "Securely buy crypto and start trading on a trusted exchange"
   },
 
   "signup": {
@@ -78,10 +78,10 @@
     "not_a_member": "Not a member?",
     "sign_up": "Sign Up",
     "next": "Next",
-    "get-code": "Get Code",
-    "sms-code": "SMS Code",
-    "signup-account": "Create your account",
-    "signup-buy-crypto": "Securely buy crypto and start trading on a trusted exchange",
+    "get_code": "Get Code",
+    "sms_code": "SMS Code",
+    "signup_account": "Create your account",
+    "signup_buy_crypto": "Securely buy crypto and start trading on a trusted exchange",
     "choose_country": "Choose ..."
   },
 
