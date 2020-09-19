@@ -1,20 +1,35 @@
 <main class="auth-page__layout">
-  <mat-form-field class="locale-selector">
-    <mat-select
-      disableOptionCentering
-      [value]="currentLocaleModel.locale"
-      panelClass="locale-selector-panel"
-      (valueChange)="handleLocaleChange($event)"
-    >
-      <mat-option
-        style="font-family: IRANSans"
-        *ngFor="let item of availableLocales"
-        [value]="item.locale"
+  <nav>
+    <a routerLink="/">
+      <img
+        src="assets/images/logo-white-symbol.svg"
+        id="didexLogo"
+        alt="didex symbol"
+        width="50px"
+      />
+      <img
+        src="assets/images/logo-white-text.svg"
+        id="didexLogoText"
+        alt="didex text"
+      />
+    </a>
+    <mat-form-field class="locale-selector">
+      <mat-select
+        disableOptionCentering
+        [value]="currentLocaleModel.locale"
+        panelClass="locale-selector-panel"
+        (valueChange)="handleLocaleChange($event)"
       >
-        {{ item.caption }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+        <mat-option
+          style="font-family: IRANSans"
+          *ngFor="let item of availableLocales"
+          [value]="item.locale"
+        >
+          {{ item.caption }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </nav>
 
   <div class="auth-pages__wrapper">
     <div class="auth-pages__inner-container">
