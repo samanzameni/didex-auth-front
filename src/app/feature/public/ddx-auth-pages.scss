@@ -2,24 +2,66 @@
 
 :host {
   display: flex;
-
   justify-content: center;
 
-  form {
-    color: $ddx-light;
-    box-sizing: border-box;
+  main {
+    width: 100vw;
 
-    .description {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-evenly;
-      margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
 
-      p {
+    section.auth-title__wrapper {
+      display: none;
+    }
+
+    form {
+      color: $ddx-light;
+      box-sizing: border-box;
+
+      .description {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        margin-top: 15px;
+
+        p {
+          width: 100%;
+
+          color: $ddx-light-darker;
+          font-weight: lighter;
+
+          a,
+          a:hover,
+          a:active {
+            color: $ddx-accent-main;
+            text-decoration: none;
+            font-weight: normal;
+          }
+        }
+
+        p.captcha {
+          text-align: start;
+        }
+
+        p.message {
+          text-align: start;
+        }
+
+        p.forgot-password {
+          width: 100%;
+          text-align: end;
+        }
+      }
+
+      .recaptcha-container {
+        margin-bottom: 5px;
+        height: 78px;
+      }
+
+      .forgot-password {
         width: 100%;
-
-        color: $ddx-light-darker;
         font-weight: lighter;
+        text-align: end;
 
         a,
         a:hover,
@@ -30,55 +72,56 @@
         }
       }
 
-      p.captcha {
-        text-align: start;
+      #term-acceptance__checkbox {
+        margin: 40px 0;
       }
-
-      p.message {
-        text-align: start;
-      }
-
-      p.forgot-password {
-        width: 100%;
-        text-align: end;
-      }
-    }
-
-    .recaptcha-container {
-      margin-bottom: 5px;
-      height: 78px;
-    }
-
-    .forgot-password {
-      width: 100%;
-      font-weight: lighter;
-      text-align: end;
-
-      a,
-      a:hover,
-      a:active {
-        color: $ddx-accent-main;
-        text-decoration: none;
-        font-weight: normal;
-      }
-    }
-
-    #term-acceptance__checkbox {
-      margin: 40px 0;
     }
   }
 }
 
 @media screen and (min-width: $break-narrow-mobile) {
   :host {
-    form {
-      .description {
-        p.captcha {
-          display: block;
+    main {
+      section.auth-title__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        min-height: 50vh;
+        width: 50%;
+        line-height: 24px;
+
+        background-image: url('assets/images/background-rectangles.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        h1 {
+          color: $ddx-accent-main;
+          font-weight: bold;
+          font-size: 25px;
+          padding: 10px 0;
         }
 
-        p.message {
-          text-align: start;
+        p {
+          font-size: 15px;
+          padding: 10px 0;
+
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+      form {
+        .description {
+          p.captcha {
+            display: block;
+          }
+
+          p.message {
+            text-align: start;
+          }
         }
       }
     }
