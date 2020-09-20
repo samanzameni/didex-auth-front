@@ -10,7 +10,7 @@
 
           h1.title {
             font-weight: 600;
-            width: 30%;
+            width: 32%;
             text-align: start;
             padding-bottom: 10px;
 
@@ -33,10 +33,11 @@
   }
 }
 
-@media screen and (min-width: $break-tablet) {
+@media screen and (min-width: $break-narrow-desktop) {
   :host {
     main {
       form {
+        padding-top: 13vh;
         margin: 0;
       }
     }

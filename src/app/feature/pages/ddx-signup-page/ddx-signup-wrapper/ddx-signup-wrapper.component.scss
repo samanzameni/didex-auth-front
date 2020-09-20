@@ -17,7 +17,7 @@
 
         h1.title {
           font-weight: 600;
-          width: 30%;
+          width: 32%;
           text-align: start;
           padding-bottom: 10px;
 
@@ -39,7 +39,7 @@
   }
 }
 
-@media screen and (min-width: $break-tablet) {
+@media screen and (min-width: $break-narrow-desktop) {
   :host {
     align-items: center;
 
@@ -87,7 +87,7 @@
 
       div.signup_wrapper {
         margin: 0;
-        padding: 0;
+        padding: 13vh 0 0 0;
       }
     }
   }

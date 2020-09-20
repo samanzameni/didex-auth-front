@@ -75,7 +75,7 @@
       align-items: flex-start;
       justify-content: space-around;
 
-      margin-top: 20%;
+      margin-top: 50px;
       width: 100%;
 
       section.rectangle-background__container {
@@ -85,7 +85,7 @@
   }
 }
 
-@media screen and (min-width: $break-tablet) {
+@media screen and (min-width: $break-narrow-desktop) {
   :host {
     ::ng-deep .auth-pages__wrapper {
       align-items: center;
