@@ -44,6 +44,9 @@
     align-items: center;
 
     main {
+      width: 90vw;
+      height: 80vh;
+
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
@@ -57,7 +60,7 @@
         align-items: center;
         flex-wrap: wrap;
 
-        min-height: 50vh;
+        // min-height: 50vh;
         width: 50%;
         line-height: 24px;
 

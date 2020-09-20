@@ -5,7 +5,8 @@
   justify-content: center;
 
   main {
-    width: 100vw;
+    width: 90vw;
+    height: 80vh;
 
     display: flex;
     justify-content: space-evenly;
@@ -119,7 +120,7 @@
         align-items: center;
         flex-wrap: wrap;
 
-        min-height: 50vh;
+        height: 80vh;
         width: 50%;
         line-height: 24px;
 

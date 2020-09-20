@@ -24,41 +24,41 @@
 
 @media screen and (min-width: $break-tablet) {
   :host {
-    main {
-      section.auth-title__wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
+    // main {
+    //   section.auth-title__wrapper {
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     align-items: center;
+    //     flex-wrap: wrap;
 
-        min-height: 50vh;
-        width: 50%;
-        line-height: 24px;
+    //     // min-height: 50vh;
+    //     width: 50%;
+    //     line-height: 24px;
 
-        background-image: url('assets/images/background-rectangles.svg');
-        background-size: contain;
-        background-position: center;
-        background-repeat: no-repeat;
+    //     background-image: url('assets/images/background-rectangles.svg');
+    //     background-size: contain;
+    //     background-position: center;
+    //     background-repeat: no-repeat;
 
-        h1 {
-          color: $ddx-accent-main;
-          font-weight: bold;
-          font-size: 25px;
-          padding: 10px 0;
-        }
+    //     h1 {
+    //       color: $ddx-accent-main;
+    //       font-weight: bold;
+    //       font-size: 25px;
+    //       padding: 10px 0;
+    //     }
 
-        p {
-          font-size: 15px;
-          padding: 10px 0;
+    //     p {
+    //       font-size: 15px;
+    //       padding: 10px 0;
 
-          display: flex;
-          flex-wrap: wrap;
-        }
-      }
-      form {
-        margin: 0;
-      }
-    }
+    //       display: flex;
+    //       flex-wrap: wrap;
+    //     }
+    //   }
+    //   form {
+    //     margin: 0;
+    //   }
+    // }
   }
 }
