@@ -2,6 +2,10 @@
 
 :host {
   form {
+    width: 424px;
+    max-width: 99vw;
+    box-sizing: border-box;
+
     div.mobile-number__container {
       display: flex;
       justify-content: space-between;
