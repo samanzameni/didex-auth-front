@@ -3,7 +3,7 @@
 :host {
   form {
     width: 424px;
-    max-width: 99vw;
+    max-width: 100%;
     box-sizing: border-box;
 
     div.mobile-number__container {
@@ -51,6 +51,7 @@
       }
 
       button {
+        font-size: 0.8rem;
         width: 28%;
       }
     }
